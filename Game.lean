@@ -1,11 +1,15 @@
-import Game.Levels.DemoWorld
 
+import GameServer.Commands
+
+import Game.Levels.Propositional.Propositional
 -- Here's what we'll put on the title screen
-Title "Hello World Game"
+Title "Discrete Math with Lean4"
 Introduction
 "
-This text appears on the starting page where one selects the world/level to play.
-You can use markdown.
+Welcome to **Discrete Math with Lean4**, a fun and interactive game that will help you in proving several theorems **MH1812 - Discrete Mathematics**
+
+There are several levels that you can try out. Each level essentially covers the content taught in each topic. For instance,
+Level 2 would cover content taught in Topic 2.
 "
 
 Info "
@@ -20,7 +24,7 @@ Use markdown.
 /-! Information to be displayed on the servers landing page. -/
 Languages "English"
 CaptionShort "Game Template"
-CaptionLong "You should use this game as a template for your own game and add your own levels."
+CaptionLong "You should use this game as a template for your own game and add your own levels, if you are keen to learn more about Lean4."
 -- Prerequisites "" -- add this if your game depends on other games
 -- CoverImage "images/cover.png"
 

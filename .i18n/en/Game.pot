@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Apr 10 15:31:40 2024\n"
+"POT-Creation-Date: Mon Jun  9 23:55:01 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -20,55 +20,77 @@ msgstr ""
 msgid "intermediate goal solved! 🎉"
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "Hello World"
+#: Game.Levels.Propositional.L01_ModusPonens
+msgid "Modus Ponens"
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+#: Game.Levels.Propositional.L01_ModusPonens
+msgid "From P → Q and P, we can conclude Q. This is known as Modus Ponens."
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "You can either start using `«{h}»` or `«{g}»`."
+#: Game.Levels.Propositional.L01_ModusPonens
+msgid "Modus Ponens: from P → Q and P, we can conclude Q."
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "You should use `«{h}»` now."
+#: Game.Levels.Propositional.L01_ModusPonens
+msgid "You've proven Modus Ponens: from P → Q and P, you can conclude Q."
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "You should use `«{g}»` now."
+#: Game.Levels.Propositional.L02_AndComm
+msgid "And Commutativity"
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "This last message appears if the level is solved."
+#: Game.Levels.Propositional.L02_AndComm
+msgid "And Commutativity: from P ∧ Q, we can conclude Q ∧ P."
 msgstr ""
 
-#: Game.Levels.DemoWorld
-msgid "Demo World"
+#: Game.Levels.Propositional.L02_AndComm
+msgid "Conjunction is commutative. You can always flip the two parts of a logical AND."
 msgstr ""
 
-#: Game.Levels.DemoWorld
-msgid "This introduction is shown before one enters level 1 of the demo world. Use markdown."
+#: Game.Levels.Propositional.L03_ModusTollens
+msgid "Modus Tollens"
+msgstr ""
+
+#: Game.Levels.Propositional.L03_ModusTollens
+msgid "From P → Q and ¬Q, we can conclude ¬P. This is known as Modus Tollens."
+msgstr ""
+
+#: Game.Levels.Propositional.L03_ModusTollens
+msgid "Modus Tollens: from P → Q and ¬Q, we can conclude ¬P."
+msgstr ""
+
+#: Game.Levels.Propositional.L03_ModusTollens
+msgid "You've proven Modus Tollens: from P → Q and ¬Q, you can conclude ¬P."
+msgstr ""
+
+#: Game.Levels.Propositional.Propositional
+msgid "Propositional Logic"
+msgstr ""
+
+#: Game.Levels.Propositional.Propositional
+msgid "In this world, you'll explore the foundations of propositional logic.\n"
+"\n"
+"Each level presents a new fundamental theorem or principle."
 msgstr ""
 
 #: Game
-msgid "Hello World Game"
+msgid "Discrete Math with Lean4"
 msgstr ""
 
 #: Game
-msgid "This text appears on the starting page where one selects the world/level to play.\n"
-"You can use markdown."
+msgid "Welcome to **Discrete Math with Lean4**, a fun and interactive game that will help you in proving several theorems **MH1812 - Discrete Mathematics**\n"
+"\n"
+"There are several levels that you can try out. Each level essentially covers the content taught in each topic. For instance,\n"
+"Level 2 would cover content taught in Topic 2."
 msgstr ""
 
 #: Game
-msgid "Here you can put additional information about the game. It is accessible\n"
-"from the starting through the drop-down menu.\n"
-"\n"
-"For example: Game version, Credits, Link to Github and Zulip, etc.\n"
-"\n"
+msgid "Here you can put additional information about the game. It is accessible\n"
+"from the starting through the drop-down menu.\n"
+"\n"
+"For example: Game version, Credits, Link to Github and Zulip, etc.\n"
+"\n"
 "Use markdown."
 msgstr ""
 
@@ -77,5 +99,5 @@ msgid "Game Template"
 msgstr ""
 
 #: Game
-msgid "You should use this game as a template for your own game and add your own levels."
+msgid "You should use this game as a template for your own game and add your own levels, if you are keen to learn more about Lean4."
 msgstr ""
