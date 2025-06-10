@@ -8,6 +8,9 @@ USER node
 
 WORKDIR /home/node
 
+# RUN export LEAN_VERSION="$(cat /lean-toolchain | grep -oE '[^:]+$' | tr -d '\r\n[:cntrl:]')" && \
+#     echo "Using LEAN_VERSION=$LEAN_VERSION" && \
+#     git clone --depth 1 --branch $LEAN_VERSION https://github.com/leanprover-community/lean4game.git
 RUN export LEAN_VERSION="$(cat /lean-toolchain | grep -oE '[^:]+$')" && git clone --depth 1 --branch $LEAN_VERSION https://github.com/leanprover-community/lean4game.git
 
 WORKDIR /
