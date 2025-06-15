@@ -2,6 +2,10 @@
 import GameServer.Commands
 
 import Game.Levels.Propositional.Propositional
+import Game.Levels.Propositional.L01_ModusPonens
+import Game.Levels.Propositional.L02_AndComm
+import Game.Levels.Propositional.L03_ModusTollens
+
 -- Here's what we'll put on the title screen
 Title "Discrete Math with Lean4"
 Introduction

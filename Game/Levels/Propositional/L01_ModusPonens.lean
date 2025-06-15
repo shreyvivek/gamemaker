@@ -31,7 +31,6 @@ Statement modus_ponens_statement (P Q : Prop) (h₁ : P → Q) (h₂ : P) : Q :=
   apply h₁
   exact h₂
 
-
 NewTactic apply exact
 NewTheorem Propositional.modus_ponens_statement
 Conclusion "

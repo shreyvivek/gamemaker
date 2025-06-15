@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Sun Jun 15 15:16:31 2025\n"
+"POT-Creation-Date: Sun Jun 15 16:57:42 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -29,6 +29,19 @@ msgid "From P → Q and P, we can conclude Q. This is known as Modus Ponens."
 msgstr ""
 
 #: Game.Levels.Propositional.L01_ModusPonens
+msgid "Solves the current goal by using a function or theorem.\n"
+"\n"
+"If your goal is `Q` and you have `P → Q`, then `apply` turns the goal into proving `P`.\n"
+"It's like saying: “To prove `Q`, it's enough to prove `P`.”"
+msgstr ""
+
+#: Game.Levels.Propositional.L01_ModusPonens
+msgid "Closes the current goal using the term you provide — the term must exactly match the goal.\n"
+"\n"
+"For example, if your goal is `P` and you have a proof of `P` (say, `h : P`), then `exact h` solves the goal."
+msgstr ""
+
+#: Game.Levels.Propositional.L01_ModusPonens
 msgid "Modus Ponens: from P → Q and P, we can conclude Q."
 msgstr ""
 
@@ -38,6 +51,29 @@ msgstr ""
 
 #: Game.Levels.Propositional.L02_AndComm
 msgid "And Commutativity"
+msgstr ""
+
+#: Game.Levels.Propositional.L02_AndComm
+msgid "In this level, you will prove the commutativity of the logical operator AND"
+msgstr ""
+
+#: Game.Levels.Propositional.L02_AndComm
+msgid "Solves the current goal by using a function or theorem.\n"
+"\n"
+"If your goal is `Q` and you have `P → Q`, then `apply` turns the goal into proving `P`.\n"
+"It's like saying: “To prove `Q`, it's enough to prove `P`.”"
+msgstr ""
+
+#: Game.Levels.Propositional.L02_AndComm
+msgid "Closes the goal by providing a term that exactly matches the goal.\n"
+"\n"
+"If your goal is `P` and you already have `h : P`, then `exact h` finishes the proof."
+msgstr ""
+
+#: Game.Levels.Propositional.L02_AndComm
+msgid "To prove `P ∧ Q`, it suffices to prove both `P` and `Q` separately.\n"
+"\n"
+"This constructor builds a conjunction from two proofs."
 msgstr ""
 
 #: Game.Levels.Propositional.L02_AndComm
@@ -54,6 +90,22 @@ msgstr ""
 
 #: Game.Levels.Propositional.L03_ModusTollens
 msgid "From P → Q and ¬Q, we can conclude ¬P. This is known as Modus Tollens."
+msgstr ""
+
+#: Game.Levels.Propositional.L03_ModusTollens
+msgid "The `intro` tactic is used when your goal is something like \"if P then Q\" (`P → Q`) or \"for all x, P(x)\" (`∀ x, P(x)`).\n"
+"\n"
+"Think of it like this: when you're trying to prove a statement that starts with “Assume that...”, you can use `intro` to take that assumption into your hands.\n"
+"\n"
+"For example, if your goal is: `P → Q`\n"
+"then doing: `intro h`\n"
+"says: “Let’s assume `P` is true, and call this assumption `h`.” Now your goal is just to prove `Q`, using the fact that you have `h : P`.\n"
+"\n"
+"In the case of a universal quantifier: `∀ x, P(x)`\n"
+"then doing: `intro x`\n"
+"means: “Let `x` be an arbitrary value,” and now the goal becomes `P(x)`.\n"
+"\n"
+"It’s one of the most basic and useful tactics in Lean, especially at the beginning of a proof. Use it to introduce assumptions or variables from the goal into your working context."
 msgstr ""
 
 #: Game.Levels.Propositional.L03_ModusTollens

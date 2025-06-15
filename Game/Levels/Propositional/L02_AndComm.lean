@@ -7,6 +7,8 @@ Level 2
 Title "And Commutativity"
 
 Introduction "In this level, you will prove the commutativity of the logical operator AND"
+
+
 /--
 Solves the current goal by using a function or theorem.
 
@@ -36,6 +38,8 @@ Statement and_comm_statement (P Q : Prop) (h : P ∧ Q) : Q ∧ P := by
   exact h.right
   exact h.left
 
+NewTactic apply exact
+NewTheorem And.intro Propositional.and_comm_statement
 Conclusion "
 Conjunction is commutative. You can always flip the two parts of a logical AND.
 "

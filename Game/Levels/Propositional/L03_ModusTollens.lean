@@ -26,22 +26,6 @@ It’s one of the most basic and useful tactics in Lean, especially at the begin
 TacticDoc intro
 
 
-/--
-Solves the current goal by using a function or theorem.
-
-If your goal is `Q` and you have `P → Q`, then `apply` turns the goal into proving `P`.
-It's like saying: “To prove `Q`, it's enough to prove `P`.”
--/
-TacticDoc apply
-
-/--
-Closes the goal by providing a term that exactly matches the goal.
-
-If your goal is `P` and you already have `h : P`, then `exact h` finishes the proof.
--/
-TacticDoc exact
-
-
 /-- Modus Tollens: from P → Q and ¬Q, we can conclude ¬P. -/
 TheoremDoc Propositional.modus_tollens_statement as "ModusTollens" in "Propositional"
 
@@ -50,6 +34,7 @@ Statement modus_tollens_statement (P Q : Prop) (h₁ : P → Q) (h₂ : ¬Q) : �
   apply h₂
   exact h₁ hP
 
+NewTactic intro
 Conclusion "
 You've proven Modus Tollens: from P → Q and ¬Q, you can conclude ¬P.
 "
