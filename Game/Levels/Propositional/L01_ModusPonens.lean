@@ -31,6 +31,9 @@ Statement modus_ponens_statement (P Q : Prop) (h₁ : P → Q) (h₂ : P) : Q :=
   apply h₁
   exact h₂
 
+
+NewTactic apply exact
+NewTheorem Propositional.modus_ponens_statement
 Conclusion "
 You've proven Modus Ponens: from P → Q and P, you can conclude Q.
 "
