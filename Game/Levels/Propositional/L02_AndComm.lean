@@ -25,6 +25,13 @@ If your goal is `P` and you already have `h : P`, then `exact h` finishes the pr
 TacticDoc exact
 
 /--
+Rewrites a term in the goal or hypothesis.
+If your goal is `P ∧ Q` and you have `h : P`, then `rw h` replaces `P` in the goal with `h`.
+This is useful for simplifying or transforming expressions in your proof.
+-/
+TacticDoc rw
+
+/--
 To prove `P ∧ Q`, it suffices to prove both `P` and `Q` separately.
 
 This constructor builds a conjunction from two proofs.
@@ -38,8 +45,8 @@ Statement and_comm_statement (P Q : Prop) (h : P ∧ Q) : Q ∧ P := by
   exact h.right
   exact h.left
 
-NewTactic apply exact
-NewTheorem And.intro Propositional.and_comm_statement
+NewTactic apply exact rw
+NewTheorem And.intro
 Conclusion "
 Conjunction is commutative. You can always flip the two parts of a logical AND.
 "
