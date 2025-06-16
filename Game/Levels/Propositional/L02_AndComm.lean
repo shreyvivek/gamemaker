@@ -8,8 +8,6 @@ Title "And Commutativity"
 
 Introduction "In this level, you will prove the commutativity of the logical operator AND"
 
-
-
 /--
 Rewrites a term in the goal or hypothesis.
 If your goal is `P ∧ Q` and you have `h : P`, then `rw h` replaces `P` in the goal with `h`.
@@ -18,7 +16,7 @@ This is useful for simplifying or transforming expressions in your proof.
 TacticDoc rw
 
 /--
-To prove `P ∧ Q`, it suffices to prove bkl;kl;oth `P` and `Q` separately.
+To prove `P ∧ Q`, it suffices to prove `P` and `Q` separately.
 
 This constructor builds a conjunction from two proofs.
 -/
@@ -32,7 +30,7 @@ Statement and_comm_statement (P Q : Prop) (h : P ∧ Q) : Q ∧ P := by
   exact h.left
 
 NewTactic rw
-NewTheorem And.intro Propositional.and_comm_statement
+NewTheorem And.intro
 Conclusion "
 Conjunction is commutative. You can always flip the two parts of a logical AND.
 "
