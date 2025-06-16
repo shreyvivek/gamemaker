@@ -25,7 +25,7 @@ If your goal is `P` and you already have `h : P`, then `exact h` finishes the pr
 TacticDoc exact
 
 /--
-rw tactic
+rw tactic introduced
 -/
 TacticDoc rw
 
