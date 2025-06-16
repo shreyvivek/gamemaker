@@ -1,27 +1,29 @@
-name: Deploy Lean 4 Game to GitHub Pages
+name: Deploy Lean Game Frontend
+
 on:
   push:
     branches: [main]
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ojwatson/setup-leantools@v2
-        with:
-          lean-version: latest
-      - name: Build Lean game
-        run: lake build
-      - name: Setup Node.js
+
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
-      - name: Install & build web
+          node-version: 18
+
+      - name: Install dependencies
         working-directory: web
-        run: |
-          npm install
-          npm run build
-      - name: Deploy to Pages
+        run: npm install
+
+      - name: Build site
+        working-directory: web
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           publish_dir: ./dist
