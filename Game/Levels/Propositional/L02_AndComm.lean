@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L01_ModusPonens
 namespace Propositional
 
 World "Propositional"
@@ -9,11 +9,13 @@ Title "And Commutativity"
 Introduction "In this level, you will prove the commutativity of the logical operator AND"
 
 /--
-Rewrites a term in the goal or hypothesis.
-If your goal is `P ∧ Q` and you have `h : P`, then `rw h` replaces `P` in the goal with `h`.
-This is useful for simplifying or transforming expressions in your proof.
+jffdsj
 -/
-TacticDoc rw
+TacticDoc cases
+/--
+jffdsj
+-/
+TacticDoc split
 
 /--
 To prove `P ∧ Q`, it suffices to prove `P` and `Q` separately.
@@ -29,8 +31,8 @@ Statement and_comm_statement (P Q : Prop) (h : P ∧ Q) : Q ∧ P := by
   exact h.right
   exact h.left
 
-NewTactic rw
-NewTheorem And.intro
+NewTactic split cases
+NewTheorem And.intro Propositional.modus_ponens_statement
 Conclusion "
 Conjunction is commutative. You can always flip the two parts of a logical AND.
 "
