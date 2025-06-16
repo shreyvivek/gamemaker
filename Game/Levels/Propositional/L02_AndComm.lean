@@ -32,7 +32,7 @@ This is useful for simplifying or transforming expressions in your proof.
 TacticDoc rw
 
 /--
-To prove `P ∧ Q`, it suffices to prove both `P` and `Q` separately.
+To prove `P ∧ Q`, it suffices to prove bkl;kl;oth `P` and `Q` separately.
 
 This constructor builds a conjunction from two proofs.
 -/
