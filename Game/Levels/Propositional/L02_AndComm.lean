@@ -34,3 +34,4 @@ NewTheorem And.intro
 Conclusion "
 Conjunction is commutative. You can always flip the two parts of a logical AND.
 "
+end Propositional

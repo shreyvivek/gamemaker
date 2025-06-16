@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jun 16 05:37:28 2025\n"
+"POT-Creation-Date: Mon Jun 16 06:41:14 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -58,20 +58,13 @@ msgid "In this level, you will prove the commutativity of the logical operator A
 msgstr ""
 
 #: Game.Levels.Propositional.L02_AndComm
-msgid "Solves the current goal by using a function or theorem.\n"
-"\n"
-"If your goal is `Q` and you have `P → Q`, then `apply` turns the goal into proving `P`.\n"
-"It's like saying: “To prove `Q`, it's enough to prove `P`.”"
+msgid "Rewrites a term in the goal or hypothesis.\n"
+"If your goal is `P ∧ Q` and you have `h : P`, then `rw h` replaces `P` in the goal with `h`.\n"
+"This is useful for simplifying or transforming expressions in your proof."
 msgstr ""
 
 #: Game.Levels.Propositional.L02_AndComm
-msgid "Closes the goal by providing a term that exactly matches the goal.\n"
-"\n"
-"If your goal is `P` and you already have `h : P`, then `exact h` finishes the proof."
-msgstr ""
-
-#: Game.Levels.Propositional.L02_AndComm
-msgid "To prove `P ∧ Q`, it suffices to prove both `P` and `Q` separately.\n"
+msgid "To prove `P ∧ Q`, it suffices to prove `P` and `Q` separately.\n"
 "\n"
 "This constructor builds a conjunction from two proofs."
 msgstr ""
