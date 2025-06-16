@@ -45,7 +45,7 @@ Statement and_comm_statement (P Q : Prop) (h : P ∧ Q) : Q ∧ P := by
   exact h.right
   exact h.left
 
-NewTactic apply exact rw
+NewTactic rw
 NewTheorem And.intro
 Conclusion "
 Conjunction is commutative. You can always flip the two parts of a logical AND.
