@@ -26,8 +26,6 @@ TacticDoc exact
 
 /--
 Closes the goal by providing a term that exactly matches the goal.
-
-If your goal is `P` and you already have `h : P`, then `exact h` finishes the proof.
 -/
 TacticDoc rw
 
