@@ -8,22 +8,6 @@ Title "And Commutativity"
 
 Introduction "In this level, you will prove the commutativity of the logical operator AND"
 
-
-/--
-Solves the current goal by using a function or theorem.
-
-If your goal is `Q` and you have `P → Q`, then `apply` turns the goal into proving `P`.
-It's like saying: “To prove `Q`, it's enough to prove `P`.”
--/
-TacticDoc apply
-
-/--
-Closes the goal by providing a term that exactly matches the goal.
-
-If your goal is `P` and you already have `h : P`, then `exact h` finishes the proof.
--/
-TacticDoc exact
-
 /--
 Rewrites a term in the goal or hypothesis.
 If your goal is `P ∧ Q` and you have `h : P`, then `rw h` replaces `P` in the goal with `h`.
@@ -32,7 +16,7 @@ This is useful for simplifying or transforming expressions in your proof.
 TacticDoc rw
 
 /--
-To prove `P ∧ Q`, it suffices to prove bkl;kl;oth `P` and `Q` separately.
+To prove `P ∧ Q`, it suffices to prove `P` and `Q` separately.
 
 This constructor builds a conjunction from two proofs.
 -/
@@ -45,8 +29,8 @@ Statement and_comm_statement (P Q : Prop) (h : P ∧ Q) : Q ∧ P := by
   exact h.right
   exact h.left
 
-NewTactic apply exact rw
-NewTheorem And.intro Propositional.and_comm_statement
+NewTactic rw
+NewTheorem And.intro
 Conclusion "
 Conjunction is commutative. You can always flip the two parts of a logical AND.
 "
