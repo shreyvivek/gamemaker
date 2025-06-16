@@ -1,0 +1,16 @@
+{
+  "name": "lean4-game-web",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 8080",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@leanprover/lean4-game": "^0.2.0"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
+  }
+}
