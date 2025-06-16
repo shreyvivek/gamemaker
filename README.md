@@ -1,6 +1,6 @@
-# Game Skeleton
+# Discrete Mathematics with Lean 4
 
-This is a template for creating a game with [lean4game](https://github.com/leanprover-community/lean4game/). It contains a single Level plus the files needed for a local development setup.
+This is a template for creating a game with [lean4game](https://github.com/leanprover-community/lean4game/). It contains many levels plus the files needed for a local development setup.
 
 The documentation about how to use this template are at the [lean4game repository](https://github.com/leanprover-community/lean4game/):
 

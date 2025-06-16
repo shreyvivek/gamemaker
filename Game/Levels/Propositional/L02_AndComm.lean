@@ -25,12 +25,14 @@ If your goal is `P` and you already have `h : P`, then `exact h` finishes the pr
 TacticDoc exact
 
 /--
-rw tactic introduced to help rewrite what you see
+Rewrites a term in the goal or hypothesis.
+If your goal is `P ∧ Q` and you have `h : P`, then `rw h` replaces `P` in the goal with `h`.
+This is useful for simplifying or transforming expressions in your proof.
 -/
 TacticDoc rw
 
 /--
-To prove `P ∧ Q`, it suffices to prove both `P` and `Q` separately.
+To prove `P ∧ Q`, it suffices to prove bkl;kl;oth `P` and `Q` separately.
 
 This constructor builds a conjunction from two proofs.
 -/
