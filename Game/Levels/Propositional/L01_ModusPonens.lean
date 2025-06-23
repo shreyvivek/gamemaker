@@ -20,6 +20,11 @@ It's like saying: “To prove `Q`, it's enough to prove `P`.”
 TacticDoc apply
 
 /--
+rewrites stuff
+-/
+TacticDoc rw
+
+/--
 Closes the current goal using the term you provide — the term must exactly match the goal.
 
 For example, if your goal is `P` and you have a proof of `P` (say, `h : P`), then `exact h` solves the goal.
@@ -35,7 +40,7 @@ Statement modus_ponens_statement (P Q : Prop) (h₁ : P → Q) (h₂ : P) : Q :=
   Hint "Now you have a goal `P`, and you already have `{h₂} : P` — use `exact` to finish."
   exact h₂
 
-NewTactic apply exact
+NewTactic apply exact rw
 NewTheorem Propositional.modus_ponens_statement
 
 Conclusion "
