@@ -8,7 +8,7 @@ Level 3
 Title "Modus Tollens"
 
 Introduction "
-From `P → Q` and `¬Q`, we can conclude `¬P`.
+From `P → Q` and `¬Q`, we can conclude `¬P` easily.
 This classic form of reasoning is called **Modus Tollens**.
 "
 
