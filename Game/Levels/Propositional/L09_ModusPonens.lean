@@ -10,6 +10,8 @@ Introduction "
 From `P → Q` and `P`, we can conclude `Q`.
 
 This rule of inference is known as **Modus Ponens**. Let’s practice using `apply`.
+
+After completing Level 7 and 8, this should be cake walk!
 "
 
 /--

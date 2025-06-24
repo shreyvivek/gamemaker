@@ -30,7 +30,7 @@ Statement or_elim (P Q R : Prop) (h : P ∨ Q) (h₁ : P → R) (h₂ : Q → R)
   Hint "Use the `cases` tactic to break the disjunction `{h}` into two possible cases."
   cases h with
   | inl hp =>
-    Hint "You are now in the case where `P` holds. Use `{h₁}` to get `R`."
+    Hint "You are now in the case where `P` holds. Use `{h₁}` to get `R`. Try using `exact` with a combination of assumptions."
     exact h₁ hp
   | inr hq =>
     Hint "Now `Q` holds. Use `{h₂}` to conclude `R`."

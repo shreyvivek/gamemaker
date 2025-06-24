@@ -32,7 +32,7 @@ NewTactic contradiction
 NewTheorem Propositional.negation_intro
 
 Conclusion "
-You’ve introduced negation: `¬P` is proven by showing `P` leads to absurdity.
+You’ve introduced negation: `¬P` is proven by making use of `P` itself. A bit absurd, but that's what make Math so special!
 "
 
 end Propositional

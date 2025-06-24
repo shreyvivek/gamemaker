@@ -15,6 +15,8 @@ Suppose you know two implications:
 Then it logically follows that `P → R`.
 
 Let’s practice chaining these implications directly.
+
+**Note:** This level can be solved like the previous one, but it can also be done using a new tactic. Follow the hints accordingly.
 "
 
 /--

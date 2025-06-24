@@ -39,14 +39,17 @@ TacticDoc False.elim
 TheoremDoc Propositional.disjunctive_syllogism as "DisjunctiveSyllogism" in "Propositional"
 
 Statement disjunctive_syllogism (P Q : Prop) (h : P ∨ Q) (hnp : ¬P) : Q := by
-  Hint "Use `cases` to split `{h}` into two cases: either `P` holds, or `Q` does."
+  Hint "Use `cases` on `{h}` to handle both possibilities: `P` or `Q`."
   cases h with
-  | inl hp =>
-    Hint "`P` leads to a contradiction with `{hnp}` — use `False.elim` to conclude."
-    exact False.elim (hnp hp)
-  | inr hq =>
-    Hint "`Q` is true here. Use `exact`."
-    exact hq
+  | inl h₁ =>
+    Hint "You now have `P`, but `{hnp}` says `¬P`. Apply `hnp` to get a contradiction."
+    apply False.elim
+    Hint "`hnp` is a function from `P → False`, and you have `P` as `h₁`. Use `exact h₁` to supply the input."
+    apply hnp
+    exact h₁
+  | inr h₂ =>
+    Hint "`Q` holds directly here. Use `exact` to finish the proof."
+    exact h₂
 
 NewTactic False.elim
 NewTheorem Propositional.disjunctive_syllogism

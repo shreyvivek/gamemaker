@@ -28,6 +28,7 @@ TheoremDoc Propositional.or_intro_left as "OrIntroLeft" in "Propositional"
 Statement or_intro_left (P Q : Prop) (h : P) : P ∨ Q := by
   Hint "Use the `left` tactic to say `P ∨ Q` is true because `P` is true."
   left
+  Hint "Now you can finish the level yourself."
   exact h
 
 NewTactic left
