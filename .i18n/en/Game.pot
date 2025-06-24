@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jun 23 20:34:20 2025\n"
+"POT-Creation-Date: Tue Jun 24 15:19:29 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -143,33 +143,30 @@ msgstr ""
 #: Game.Levels.Propositional.Propositional
 msgid "In this world, you'll explore the foundations of propositional logic.\n"
 "\n"
-"Each level presents a new fundamental theorem or principle."
+"Each level presents a new fundamental theorem or principle.\n"
+"\n"
+"Click on the button at the bottom left to continue."
 msgstr ""
 
 #: Game
-msgid "Discrete Math with Lean4"
+msgid "Discrete Mathematics with Lean4"
 msgstr ""
 
 #: Game
 msgid "Welcome to **Discrete Math with Lean4**, a fun and interactive game that will help you in proving several theorems **MH1812 - Discrete Mathematics**\n"
 "\n"
-"There are several levels that you can try out. Each level essentially covers the content taught in each topic. For instance,\n"
-"Level 2 would cover content taught in Topic 2."
+"There are several levels that you can try out in each world. Each level essentially covers a theorem taught in the lecture. And you have many such levels queued up in a world.\n"
+"Start by clicking on **Propositional** on the right."
 msgstr ""
 
 #: Game
-msgid "Here you can put additional information about the game. It is accessible\n"
-"from the starting through the drop-down menu.\n"
-"\n"
-"For example: Game version, Credits, Link to Github and Zulip, etc.\n"
-"\n"
-"Use markdown."
+msgid "This is the first iteration of this game. You can find the source code at [GitHub Repository – gamemaker](https://github.com/shreyvivek/gamemaker)."
 msgstr ""
 
 #: Game
-msgid "Game Template"
+msgid "MH1812"
 msgstr ""
 
 #: Game
-msgid "You should use this game as a template for your own game and add your own levels, if you are keen to learn more about Lean4."
+msgid "You can use this game as a template for your own game and add your own levels, if you are keen to learn more about Lean4."
 msgstr ""

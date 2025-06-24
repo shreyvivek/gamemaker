@@ -10,4 +10,6 @@ Introduction "
 In this world, you'll explore the foundations of propositional logic.
 
 Each level presents a new fundamental theorem or principle.
+
+Click on the button at the bottom left to continue.
 "
