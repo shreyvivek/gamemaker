@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jun 25 01:40:06 2025\n"
+"POT-Creation-Date: Wed Jun 25 01:40:55 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -551,6 +551,18 @@ msgstr ""
 
 #: Game.Levels.Propositional.L15_Dilemma
 msgid "Excellent! You've completed the Constructive Dilemma — a powerful inference rule using `∨`."
+msgstr ""
+
+#: Game.Levels.Propositional.Propositional
+msgid "Propositional Logic"
+msgstr ""
+
+#: Game.Levels.Propositional.Propositional
+msgid "In this world, you'll explore the foundations of propositional logic.\n"
+"\n"
+"Each level presents a new fundamental theorem or principle.\n"
+"\n"
+"Click on the button at the bottom left to continue."
 msgstr ""
 
 #: Game
