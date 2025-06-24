@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Tue Jun 24 16:54:47 2025\n"
+"POT-Creation-Date: Wed Jun 25 01:39:21 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -221,16 +221,336 @@ msgstr ""
 msgid "Great! You've mastered both left and right disjunction introduction."
 msgstr ""
 
-#: Game.Levels.Propositional.Propositional
-msgid "Propositional Logic"
+#: Game.Levels.Propositional.L07_OrElimination
+msgid "Or Elimination"
 msgstr ""
 
-#: Game.Levels.Propositional.Propositional
-msgid "In this world, you'll explore the foundations of propositional logic.\n"
-"\n"
-"Each level presents a new fundamental theorem or principle.\n"
-"\n"
-"Click on the button at the bottom left to continue."
+#: Game.Levels.Propositional.L07_OrElimination
+msgid "If you know `P ∨ Q`, and you can show `R` follows from each of them individually, then you can conclude `R`.\n"
+"\n"
+"This is a form of case analysis — we’ll use the `cases` tactic."
+msgstr ""
+
+#: Game.Levels.Propositional.L07_OrElimination
+msgid "The `cases` tactic lets you do case analysis on a disjunction.\n"
+"\n"
+"If you have `h : P ∨ Q`, then `cases h with | inl hp => ... | inr hq => ...` creates two branches:\n"
+"- One where `P` is assumed true (`hp`)\n"
+"- One where `Q` is assumed true (`hq`)\n"
+"\n"
+"You must prove the goal in both branches."
+msgstr ""
+
+#: Game.Levels.Propositional.L07_OrElimination
+msgid "From `P ∨ Q`, and knowing both imply `R`, conclude `R`."
+msgstr ""
+
+#: Game.Levels.Propositional.L07_OrElimination
+msgid "Use the `cases` tactic to break the disjunction `«{h}»` into two possible cases."
+msgstr ""
+
+#: Game.Levels.Propositional.L07_OrElimination
+msgid "You are now in the case where `P` holds. Use `«{h₁}»` to get `R`."
+msgstr ""
+
+#: Game.Levels.Propositional.L07_OrElimination
+msgid "Now `Q` holds. Use `«{h₂}»` to conclude `R`."
+msgstr ""
+
+#: Game.Levels.Propositional.L07_OrElimination
+msgid "You've learned **disjunction elimination** — case-by-case reasoning using `∨`."
+msgstr ""
+
+#: Game.Levels.Propositional.L08_ImplicationChain
+msgid "Implication Chain"
+msgstr ""
+
+#: Game.Levels.Propositional.L08_ImplicationChain
+msgid "Suppose you know two implications:\n"
+"\n"
+"- If `P`, then `Q`. (i.e., `P → Q`)\n"
+"- If `Q`, then `R`. (i.e., `Q → R`)\n"
+"\n"
+"Then it logically follows that `P → R`.\n"
+"\n"
+"Let’s practice chaining these implications directly."
+msgstr ""
+
+#: Game.Levels.Propositional.L08_ImplicationChain
+msgid "The `intro` tactic assumes the premise of an implication.\n"
+"\n"
+"Then you can either:\n"
+"- Use `apply` with a function, or\n"
+"- Call implication functions directly (e.g., `exact h₂ (h₁ hp)`)."
+msgstr ""
+
+#: Game.Levels.Propositional.L08_ImplicationChain
+msgid "Solves the current goal by using a function or theorem.\n"
+"\n"
+"If your goal is `Q` and you have `P → Q`, then `apply` turns the goal into proving `P`.\n"
+"It's like saying: “To prove `Q`, it's enough to prove `P`.”"
+msgstr ""
+
+#: Game.Levels.Propositional.L08_ImplicationChain
+msgid "From `P → Q` and `Q → R`, derive `P → R`."
+msgstr ""
+
+#: Game.Levels.Propositional.L08_ImplicationChain
+msgid "Start with `intro` to assume that `P` is true."
+msgstr ""
+
+#: Game.Levels.Propositional.L08_ImplicationChain
+msgid "Now finish the level off using `«{h₁}»` and `«{h₂}»`. Make use of apply and exact."
+msgstr ""
+
+#: Game.Levels.Propositional.L08_ImplicationChain
+msgid "Perfect! You directly chained together `P → Q → R` into `P → R`."
+msgstr ""
+
+#: Game.Levels.Propositional.L09_ModusPonens
+msgid "Modus Ponens"
+msgstr ""
+
+#: Game.Levels.Propositional.L09_ModusPonens
+msgid "From `P → Q` and `P`, we can conclude `Q`.\n"
+"\n"
+"This rule of inference is known as **Modus Ponens**. Let’s practice using `apply`."
+msgstr ""
+
+#: Game.Levels.Propositional.L09_ModusPonens
+msgid "Solves the current goal by using a function or implication.\n"
+"\n"
+"If your goal is `Q` and you have `h : P → Q`, then `apply h` turns the goal into proving `P`.\n"
+"\n"
+"It’s like saying: “To prove `Q`, it’s enough to prove `P`.”"
+msgstr ""
+
+#: Game.Levels.Propositional.L09_ModusPonens
+msgid "Modus Ponens: from `P → Q` and `P`, conclude `Q`."
+msgstr ""
+
+#: Game.Levels.Propositional.L09_ModusPonens
+msgid "Use the `apply` tactic with the implication `«{h₁}»` to reduce the goal `Q` to `P`."
+msgstr ""
+
+#: Game.Levels.Propositional.L09_ModusPonens
+msgid "Now you have a new goal `P`, and `«{h₂}» : P` is already available."
+msgstr ""
+
+#: Game.Levels.Propositional.L09_ModusPonens
+msgid "Classic and powerful — you’ve just used **Modus Ponens** correctly."
+msgstr ""
+
+#: Game.Levels.Propositional.L10_NegationIntroduction
+msgid "Negation Introduction"
+msgstr ""
+
+#: Game.Levels.Propositional.L10_NegationIntroduction
+msgid "To prove `¬P`, assume `P` and derive a contradiction.\n"
+"\n"
+"This is called *proof by contradiction*."
+msgstr ""
+
+#: Game.Levels.Propositional.L10_NegationIntroduction
+msgid "To prove `¬P`, use `intro h` to assume `P`.\n"
+"\n"
+"Then derive a contradiction (such as `False`), and use `exact` or `contradiction` to finish."
+msgstr ""
+
+#: Game.Levels.Propositional.L10_NegationIntroduction
+msgid "If `P` leads to a contradiction, then `¬P`."
+msgstr ""
+
+#: Game.Levels.Propositional.L10_NegationIntroduction
+msgid "To prove `¬P`, use `intro` to assume `P` is true."
+msgstr ""
+
+#: Game.Levels.Propositional.L10_NegationIntroduction
+msgid "Now you have `«{hp}» : P`, and `«{h}» : P → False`. Apply `«{h}»` to get a contradiction."
+msgstr ""
+
+#: Game.Levels.Propositional.L10_NegationIntroduction
+msgid "You’ve introduced negation: `¬P` is proven by showing `P` leads to absurdity."
+msgstr ""
+
+#: Game.Levels.Propositional.L11_ModusTollens
+msgid "Modus Tollens"
+msgstr ""
+
+#: Game.Levels.Propositional.L11_ModusTollens
+msgid "Suppose:\n"
+"\n"
+"- If `P` is true, then `Q` is true. (`P → Q`)\n"
+"- But actually, `Q` is false. (`¬Q`)\n"
+"\n"
+"Then `P` must also be false. This is known as **Modus Tollens**."
+msgstr ""
+
+#: Game.Levels.Propositional.L11_ModusTollens
+msgid "Use `intro` to assume `P` and then apply the implication `P → Q`.\n"
+"\n"
+"Finish by applying the negation `¬Q` to get a contradiction and conclude `¬P`."
+msgstr ""
+
+#: Game.Levels.Propositional.L11_ModusTollens
+msgid "Modus Tollens: from `P → Q` and `¬Q`, conclude `¬P`."
+msgstr ""
+
+#: Game.Levels.Propositional.L11_ModusTollens
+msgid "Use `intro` to assume `P` is true."
+msgstr ""
+
+#: Game.Levels.Propositional.L11_ModusTollens
+msgid "Now finish the level off using `«{h₁}»` and `«{h₂}»` to derive a contradiction."
+msgstr ""
+
+#: Game.Levels.Propositional.L11_ModusTollens
+msgid "Well done! You've applied **Modus Tollens** to conclude that `P` must be false since `Q` is false."
+msgstr ""
+
+#: Game.Levels.Propositional.L12_Contrapositive
+msgid "Contrapositive"
+msgstr ""
+
+#: Game.Levels.Propositional.L12_Contrapositive
+msgid "The **contrapositive** of an implication `P → Q` is `¬Q → ¬P`.\n"
+"\n"
+"In fact, both are logically equivalent!"
+msgstr ""
+
+#: Game.Levels.Propositional.L12_Contrapositive
+msgid "You’ll use `intro`, apply implications, and reason using negation and contradiction."
+msgstr ""
+
+#: Game.Levels.Propositional.L12_Contrapositive
+msgid "From `P → Q`, derive `¬Q → ¬P`."
+msgstr ""
+
+#: Game.Levels.Propositional.L12_Contrapositive
+msgid "To prove `¬Q → ¬P`, use `intro` twice."
+msgstr ""
+
+#: Game.Levels.Propositional.L12_Contrapositive
+msgid "Use `«{h}»` to derive `Q` from `P`, then contradict `«{hnq}»`."
+msgstr ""
+
+#: Game.Levels.Propositional.L12_Contrapositive
+msgid "You’ve shown that an implication and its contrapositive are logically equivalent!"
+msgstr ""
+
+#: Game.Levels.Propositional.L13_DisjunctiveSyllogism
+msgid "Disjunctive Syllogism"
+msgstr ""
+
+#: Game.Levels.Propositional.L13_DisjunctiveSyllogism
+msgid "Suppose:\n"
+"\n"
+"- `P ∨ Q` is true (at least one must hold), and\n"
+"- `P` is false (i.e., `¬P` is true)\n"
+"\n"
+"Then we can conclude that `Q` must be true.\n"
+"\n"
+"This form of inference is called **Disjunctive Syllogism**."
+msgstr ""
+
+#: Game.Levels.Propositional.L13_DisjunctiveSyllogism
+msgid "The `cases` tactic lets you do case analysis on a disjunction (`P ∨ Q`).\n"
+"\n"
+"It splits the proof into two branches:\n"
+"- one where `P` holds\n"
+"- one where `Q` holds\n"
+"\n"
+"If one branch leads to a contradiction, use `False.elim` to derive your goal."
+msgstr ""
+
+#: Game.Levels.Propositional.L13_DisjunctiveSyllogism
+msgid "If you ever reach a contradiction (`False`), you can use the `False.elim` tactic to prove **any** goal.\n"
+"\n"
+"This is based on the logical principle that \"from falsehood, anything follows\" (ex falso quodlibet)."
+msgstr ""
+
+#: Game.Levels.Propositional.L13_DisjunctiveSyllogism
+msgid "From `P ∨ Q` and `¬P`, conclude `Q`."
+msgstr ""
+
+#: Game.Levels.Propositional.L13_DisjunctiveSyllogism
+msgid "Use `cases` to split `«{h}»` into two cases: either `P` holds, or `Q` does."
+msgstr ""
+
+#: Game.Levels.Propositional.L13_DisjunctiveSyllogism
+msgid "`P` leads to a contradiction with `«{hnp}»` — use `False.elim` to conclude."
+msgstr ""
+
+#: Game.Levels.Propositional.L13_DisjunctiveSyllogism
+msgid "`Q` is true here. Use `exact`."
+msgstr ""
+
+#: Game.Levels.Propositional.L13_DisjunctiveSyllogism
+msgid "Nicely done! You've applied **Disjunctive Syllogism** — eliminating one side of a disjunction using negation."
+msgstr ""
+
+#: Game.Levels.Propositional.L14_DoubleNegation
+msgid "Double Negation Elimination"
+msgstr ""
+
+#: Game.Levels.Propositional.L14_DoubleNegation
+msgid "In classical logic, we can remove double negation: from `¬¬P`, conclude `P`.\n"
+"\n"
+"This principle doesn’t hold in constructive logic, which makes it an interesting tool to examine."
+msgstr ""
+
+#: Game.Levels.Propositional.L14_DoubleNegation
+msgid "To eliminate `¬¬P`, we assume `¬P`, derive a contradiction using `h : ¬¬P`, and conclude `P`.\n"
+"\n"
+"This requires classical logic."
+msgstr ""
+
+#: Game.Levels.Propositional.L14_DoubleNegation
+msgid "In classical logic, `¬¬P` implies `P`."
+msgstr ""
+
+#: Game.Levels.Propositional.L14_DoubleNegation
+msgid "Use `Classical.byContradiction` to assume `¬P` and derive a contradiction."
+msgstr ""
+
+#: Game.Levels.Propositional.L14_DoubleNegation
+msgid "You’ve applied **Double Negation Elimination** — valid in classical logic but not in constructive logic."
+msgstr ""
+
+#: Game.Levels.Propositional.L15_Dilemma
+msgid "Dilemma"
+msgstr ""
+
+#: Game.Levels.Propositional.L15_Dilemma
+msgid "This is the **Constructive Dilemma**:\n"
+"\n"
+"From `P ∨ Q`, `P → R`, and `Q → R`, you can conclude `R`.\n"
+"\n"
+"It's case-based reasoning again."
+msgstr ""
+
+#: Game.Levels.Propositional.L15_Dilemma
+msgid "Use `cases` on the disjunction `P ∨ Q`, then use `apply` or `exact` in each branch with the given implications."
+msgstr ""
+
+#: Game.Levels.Propositional.L15_Dilemma
+msgid "From `P ∨ Q`, `P → R`, and `Q → R`, derive `R`."
+msgstr ""
+
+#: Game.Levels.Propositional.L15_Dilemma
+msgid "Use `cases` on `«{hpq}»` to consider each possibility."
+msgstr ""
+
+#: Game.Levels.Propositional.L15_Dilemma
+msgid "`P` holds. Use `«{hpr}»` to conclude `R`."
+msgstr ""
+
+#: Game.Levels.Propositional.L15_Dilemma
+msgid "`Q` holds. Use `«{hqr}»` to conclude `R`."
+msgstr ""
+
+#: Game.Levels.Propositional.L15_Dilemma
+msgid "Excellent! You've completed the Constructive Dilemma — a powerful inference rule using `∨`."
 msgstr ""
 
 #: Game

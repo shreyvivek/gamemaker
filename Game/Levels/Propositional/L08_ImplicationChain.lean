@@ -46,6 +46,7 @@ Statement implication_chain (P Q R : Prop) (h₁ : P → Q) (h₂ : Q → R) : P
   apply h₁
   exact hp
 
+NewTactic apply
 NewTheorem Propositional.implication_chain
 
 Conclusion "
