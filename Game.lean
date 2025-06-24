@@ -8,7 +8,15 @@ import Game.Levels.Propositional.L03_AndIntroduction
 import Game.Levels.Propositional.L04_AndEliminationLeft
 import Game.Levels.Propositional.L05_OrIntroductionLeft
 import Game.Levels.Propositional.L06_OrIntroductionRight
-
+import Game.Levels.Propositional.L07_OrElimination
+import Game.Levels.Propositional.L08_ImplicationChain
+import Game.Levels.Propositional.L09_ModusPonens
+import Game.Levels.Propositional.L10_NegationIntroduction
+import Game.Levels.Propositional.L11_ModusTollens.lean
+import Game.Levels.Propositional.L12_Contrapositive.lean
+import Game.Levels.Propositional.L13_DisjunctiveSyllogism
+import Game.Levels.Propositional.L14_ProofByContradiction
+import Game.Levels.Propositional.L15_Dilemma
 
 -- Here's what we'll put on the title screen
 Title "Discrete Mathematics with Lean4"
