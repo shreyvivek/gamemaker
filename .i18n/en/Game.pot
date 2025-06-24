@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Tue Jun 24 15:21:11 2025\n"
+"POT-Creation-Date: Tue Jun 24 16:16:58 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -20,120 +20,205 @@ msgstr ""
 msgid "intermediate goal solved! 🎉"
 msgstr ""
 
-#: Game.Levels.Propositional.L01_ModusPonens
-msgid "Modus Ponens"
+#: Game.Levels.Propositional.L01_AssumeAndFinish
+msgid "Assume and Finish"
 msgstr ""
 
-#: Game.Levels.Propositional.L01_ModusPonens
-msgid "From $P ightarrow Q$ and $P$, we can conclude $Q$.\n"
-"This rule of inference is known as **Modus Ponens**."
-msgstr ""
-
-#: Game.Levels.Propositional.L01_ModusPonens
-msgid "Solves the current goal by using a function or theorem.\n"
+#: Game.Levels.Propositional.L01_AssumeAndFinish
+msgid "Let’s begin with the simplest task. If you're told `P` is true, then you can conclude `P`.\n"
 "\n"
-"If your goal is `Q` and you have `P → Q`, then `apply` turns the goal into proving `P`.\n"
-"It's like saying: “To prove `Q`, it's enough to prove `P`.”"
+"This teaches you how to use assumptions to finish a goal."
 msgstr ""
 
-#: Game.Levels.Propositional.L01_ModusPonens
-msgid "rewrites stuff"
-msgstr ""
-
-#: Game.Levels.Propositional.L01_ModusPonens
-msgid "Closes the current goal using the term you provide — the term must exactly match the goal.\n"
+#: Game.Levels.Propositional.L01_AssumeAndFinish
+msgid "Closes the current goal using the exact term you provide.\n"
 "\n"
-"For example, if your goal is `P` and you have a proof of `P` (say, `h : P`), then `exact h` solves the goal."
+"If your goal is `P` and you have a proof of `P` (say `h : P`), then `exact h` completes the proof.\n"
+"\n"
+"It’s like saying: “Here’s exactly what you asked for.”"
 msgstr ""
 
-#: Game.Levels.Propositional.L01_ModusPonens
-msgid "Modus Ponens: from `P → Q` and `P`, we can conclude `Q`."
+#: Game.Levels.Propositional.L01_AssumeAndFinish
+msgid "If you know `P`, then you can conclude `P`."
 msgstr ""
 
-#: Game.Levels.Propositional.L01_ModusPonens
-msgid "Use the `apply` tactic with the implication `«{h₁}»` to turn your goal `Q` into `P`."
+#: Game.Levels.Propositional.L01_AssumeAndFinish
+msgid "Use the `exact` tactic with `«{h}»` to directly prove the goal `P`."
 msgstr ""
 
-#: Game.Levels.Propositional.L01_ModusPonens
-msgid "Now you have a goal `P`, and you already have `«{h₂}» : P` — use `exact` to finish."
+#: Game.Levels.Propositional.L01_AssumeAndFinish
+msgid "You’ve completed your first proof — and yes, it really was that simple!"
 msgstr ""
 
-#: Game.Levels.Propositional.L01_ModusPonens
-msgid "You've successfully proven **Modus Ponens**: from $P ightarrow Q$ and $P$, you can conclude $Q$."
+#: Game.Levels.Propositional.L02_IntroduceAssumption
+msgid "Introduce Assumption"
 msgstr ""
 
-#: Game.Levels.Propositional.L02_AndComm
-msgid "And Commutativity"
-msgstr ""
-
-#: Game.Levels.Propositional.L02_AndComm
-msgid "In this level, you will prove the **commutativity** of the logical AND operator:\n"
-"If you know `P ∧ Q`, then you can conclude `Q ∧ P`."
-msgstr ""
-
-#: Game.Levels.Propositional.L02_AndComm
-msgid "To prove `P ∧ Q`, it suffices to prove both `P` and `Q` separately.\n"
+#: Game.Levels.Propositional.L02_IntroduceAssumption
+msgid "Let’s prove an implication: `P → P`. That is, if `P` holds, then `P` holds (trivially).\n"
 "\n"
-"This constructor builds a conjunction from two proofs."
+"This level introduces the `intro` tactic."
 msgstr ""
 
-#: Game.Levels.Propositional.L02_AndComm
-msgid "And Commutativity: from `P ∧ Q`, we can conclude `Q ∧ P`."
-msgstr ""
-
-#: Game.Levels.Propositional.L02_AndComm
-msgid "You want to prove a conjunction — use `apply And.intro`."
-msgstr ""
-
-#: Game.Levels.Propositional.L02_AndComm
-msgid "Now prove the right side of the original conjunction, which is `Q`. Use `exact h.right`."
-msgstr ""
-
-#: Game.Levels.Propositional.L02_AndComm
-msgid "Now finish by proving `P` using `h.left`."
-msgstr ""
-
-#: Game.Levels.Propositional.L02_AndComm
-msgid "You've proven that logical AND is **commutative** — from `P ∧ Q`, you can always derive `Q ∧ P`."
-msgstr ""
-
-#: Game.Levels.Propositional.L03_ModusTollens
-msgid "Modus Tollens"
-msgstr ""
-
-#: Game.Levels.Propositional.L03_ModusTollens
-msgid "From `P → Q` and `¬Q`, we can conclude `¬P` easily.\n"
-"This classic form of reasoning is called **Modus Tollens**."
-msgstr ""
-
-#: Game.Levels.Propositional.L03_ModusTollens
-msgid "The `intro` tactic is used when your goal is something like an implication (`P → Q`) or a universal quantifier (`∀ x, P(x)`).\n"
+#: Game.Levels.Propositional.L02_IntroduceAssumption
+msgid "Opens up an implication goal by introducing its assumption.\n"
 "\n"
-"- Use `intro h` to assume `P` when trying to prove `P → Q`.\n"
-"- Use `intro x` to assume an arbitrary value when trying to prove `∀ x, P(x)`.\n"
+"If your goal is `P → Q`, `intro h` changes the goal to `Q` and gives you `h : P` as a local assumption.\n"
 "\n"
-"It’s like saying “Assume this is true...” and using it in the proof."
+"Think of it like: “Let’s suppose `P` is true.”"
 msgstr ""
 
-#: Game.Levels.Propositional.L03_ModusTollens
-msgid "Modus Tollens: From `P → Q` and `¬Q`, we can conclude `¬P`."
+#: Game.Levels.Propositional.L02_IntroduceAssumption
+msgid "From the assumption `P`, conclude `P`."
 msgstr ""
 
-#: Game.Levels.Propositional.L03_ModusTollens
-msgid "You want to prove `¬P`. That means: assume `P` and show a contradiction. Try `intro`."
+#: Game.Levels.Propositional.L02_IntroduceAssumption
+msgid "Use the `intro` tactic to assume `P` is true."
 msgstr ""
 
-#: Game.Levels.Propositional.L03_ModusTollens
-msgid "Now apply the implication `h₁ : P → Q` to your assumption `hP`."
+#: Game.Levels.Propositional.L02_IntroduceAssumption
+msgid "Now you have `«{h}» : P`, and your goal is `P`. Use `exact` to finish."
 msgstr ""
 
-#: Game.Levels.Propositional.L03_ModusTollens
-msgid "Use `exact` to supply `Q`, which you got from applying the implication."
+#: Game.Levels.Propositional.L02_IntroduceAssumption
+msgid "That was a basic implication! The `intro` tactic is your go-to tool for these."
 msgstr ""
 
-#: Game.Levels.Propositional.L03_ModusTollens
-msgid "You've proven **Modus Tollens**:\n"
-"Given `P → Q` and `¬Q`, it must follow that `¬P`."
+#: Game.Levels.Propositional.L03_AndIntroduction
+msgid "And Introduction"
+msgstr ""
+
+#: Game.Levels.Propositional.L03_AndIntroduction
+msgid "From `P` and `Q`, we can conclude `P ∧ Q`. That’s how conjunction works!\n"
+"\n"
+"You’ll learn the `constructor` tactic in this level."
+msgstr ""
+
+#: Game.Levels.Propositional.L03_AndIntroduction
+msgid "Used when the goal is a compound proposition like `P ∧ Q`.\n"
+"\n"
+"It splits the goal into proving both components separately.\n"
+"\n"
+"For example: `constructor` on `P ∧ Q` gives you two goals — one for `P` and one for `Q`."
+msgstr ""
+
+#: Game.Levels.Propositional.L03_AndIntroduction
+msgid "From `P` and `Q`, derive `P ∧ Q`."
+msgstr ""
+
+#: Game.Levels.Propositional.L03_AndIntroduction
+msgid "Use the `constructor` tactic to split the goal `P ∧ Q` into two parts."
+msgstr ""
+
+#: Game.Levels.Propositional.L03_AndIntroduction
+msgid "Now prove `P` using `«{hp}»`."
+msgstr ""
+
+#: Game.Levels.Propositional.L03_AndIntroduction
+msgid "Now prove `Q` using `«{hq}»`."
+msgstr ""
+
+#: Game.Levels.Propositional.L03_AndIntroduction
+msgid "Nice work! You combined two truths into one solid conjunction."
+msgstr ""
+
+#: Game.Levels.Propositional.L04_AndEliminationLeft
+msgid "And Elimination (Left)"
+msgstr ""
+
+#: Game.Levels.Propositional.L04_AndEliminationLeft
+msgid "If you know `P ∧ Q`, then you can extract `P` from it.\n"
+"\n"
+"Let’s see how to do that with `.left`."
+msgstr ""
+
+#: Game.Levels.Propositional.L04_AndEliminationLeft
+msgid "If you have `h : P ∧ Q`, then:\n"
+"\n"
+"- `h.left` gives you a proof of `P`.\n"
+"- `h.right` gives you a proof of `Q`.\n"
+"\n"
+"They’re used to “unpack” conjunctions."
+msgstr ""
+
+#: Game.Levels.Propositional.L04_AndEliminationLeft
+msgid "From `P ∧ Q`, derive `P`."
+msgstr ""
+
+#: Game.Levels.Propositional.L04_AndEliminationLeft
+msgid "Use `h.left` to extract the left part `P` from `P ∧ Q`."
+msgstr ""
+
+#: Game.Levels.Propositional.L04_AndEliminationLeft
+msgid "Nicely done! You extracted the left side of a conjunction. A similar procedure can be followed to extract the right half of a conjunction."
+msgstr ""
+
+#: Game.Levels.Propositional.L05_OrIntroductionLeft
+msgid "Or Introduction (Left)"
+msgstr ""
+
+#: Game.Levels.Propositional.L05_OrIntroductionLeft
+msgid "If you know `P`, then you can conclude `P ∨ Q`.\n"
+"\n"
+"Let’s introduce disjunction using the `left` tactic."
+msgstr ""
+
+#: Game.Levels.Propositional.L05_OrIntroductionLeft
+msgid "For disjunctions (`P ∨ Q`):\n"
+"\n"
+"- `left` means: “I’ll prove `P`, and that’s enough.”\n"
+"- `right` means: “I’ll prove `Q`, and that’s enough.”\n"
+"\n"
+"Use `left` when you have a proof of `P`, and `right` when you have a proof of `Q`."
+msgstr ""
+
+#: Game.Levels.Propositional.L05_OrIntroductionLeft
+msgid "From `P`, derive `P ∨ Q`."
+msgstr ""
+
+#: Game.Levels.Propositional.L05_OrIntroductionLeft
+msgid "Use the `left` tactic to say `P ∨ Q` is true because `P` is true."
+msgstr ""
+
+#: Game.Levels.Propositional.L05_OrIntroductionLeft
+msgid "Great! You’ve learned how to state that “at least one is true.”"
+msgstr ""
+
+#: Game.Levels.Propositional.L06_OrIntroductionRight
+msgid "Or Introduction (Right)"
+msgstr ""
+
+#: Game.Levels.Propositional.L06_OrIntroductionRight
+msgid "If `Q` is true, then `P ∨ Q` is also true — because *at least one* must hold.\n"
+"\n"
+"Now let’s learn how to use the `right` tactic."
+msgstr ""
+
+#: Game.Levels.Propositional.L06_OrIntroductionRight
+msgid "Repeated for clarity.\n"
+"\n"
+"For disjunctions (`P ∨ Q`):\n"
+"\n"
+"- `left` means: “I’ll prove `P`, and that’s enough.”\n"
+"- `right` means: “I’ll prove `Q`, and that’s enough.”\n"
+"\n"
+"Use `left` when you have a proof of `P`, and `right` when you have a proof of `Q`."
+msgstr ""
+
+#: Game.Levels.Propositional.L06_OrIntroductionRight
+msgid "From `Q`, derive `P ∨ Q`."
+msgstr ""
+
+#: Game.Levels.Propositional.L06_OrIntroductionRight
+msgid "Use the `right` tactic this time, to commit to proving `Q` instead of `P`."
+msgstr ""
+
+#: Game.Levels.Propositional.L06_OrIntroductionRight
+msgid "Now finish the proof by showing `Q` holds using `«{h}»`."
+msgstr ""
+
+#: Game.Levels.Propositional.L06_OrIntroductionRight
+msgid "Great! You've mastered both left and right disjunction introduction."
 msgstr ""
 
 #: Game.Levels.Propositional.Propositional

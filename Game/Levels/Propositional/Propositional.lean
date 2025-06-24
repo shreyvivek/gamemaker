@@ -1,6 +1,9 @@
-import Game.Levels.Propositional.L01_ModusPonens
-import Game.Levels.Propositional.L02_AndComm
-import Game.Levels.Propositional.L03_ModusTollens
+import Game.Levels.Propositional.L01_AssumeAndFinish
+import Game.Levels.Propositional.L02_IntroduceAssumption
+import Game.Levels.Propositional.L03_AndIntroduction
+import Game.Levels.Propositional.L04_AndEliminationLeft
+import Game.Levels.Propositional.L05_OrIntroductionLeft
+import Game.Levels.Propositional.L06_OrIntroductionRight
 
 World "Propositional"
 
