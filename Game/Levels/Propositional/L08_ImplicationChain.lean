@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L07_OrElimination
 namespace Propositional
 
 World "Propositional"
@@ -49,8 +49,8 @@ Statement implication_chain (P Q R : Prop) (h₁ : P → Q) (h₂ : Q → R) : P
   exact hp
 
 NewTactic apply
-NewTheorem Propositional.implication_chain
 
+NewTheorem Propositional.or_elim
 Conclusion "
 Perfect! You directly chained together `P → Q → R` into `P → R`.
 "

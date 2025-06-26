@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L10_NegationIntroduction
 namespace Propositional
 
 World "Propositional"
@@ -33,8 +33,8 @@ Statement modus_tollens (P Q : Prop) (h₁ : P → Q) (h₂ : ¬Q) : ¬P := by
   apply h₁
   exact hp
 
-NewTheorem Propositional.modus_tollens
 
+NewTheorem Propositional.negation_intro
 Conclusion "
 Well done! You've applied **Modus Tollens** to conclude that `P` must be false since `Q` is false.
 "

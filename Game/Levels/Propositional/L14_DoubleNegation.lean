@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L13_DisjunctiveSyllogism
 namespace Propositional
 
 
@@ -23,8 +23,8 @@ Statement swap_implication (P Q : Prop) (h : P → Q) (hp : P) : Q := by
   exact h hp
 
 
-NewTheorem Propositional.swap_implication
 
+NewTheorem Propositional.disjunctive_syllogism
 Conclusion
 "
 Nice! You just applied a function — that's really all an implication is.

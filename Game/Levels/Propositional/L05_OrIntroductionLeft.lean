@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L04_AndEliminationLeft
 namespace Propositional
 
 World "Propositional"
@@ -32,8 +32,8 @@ Statement or_intro_left (P Q : Prop) (h : P) : P ∨ Q := by
   exact h
 
 NewTactic left
-NewTheorem Propositional.or_intro_left
 
+NewTheorem Propositional.and_elim_left
 Conclusion "
 Great! You’ve learned how to state that “at least one is true.”
 "

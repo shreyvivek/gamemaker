@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L12_Contrapositive
 namespace Propositional
 
 World "Propositional"
@@ -52,8 +52,8 @@ Statement disjunctive_syllogism (P Q : Prop) (h : P ∨ Q) (hnp : ¬P) : Q := by
     exact h₂
 
 NewTactic False.elim
-NewTheorem Propositional.disjunctive_syllogism
 
+NewTheorem Propositional.contrapositive_equiv
 Conclusion "
 Nicely done! You've applied **Disjunctive Syllogism** — eliminating one side of a disjunction using negation.
 "

@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L06_OrIntroductionRight
 namespace Propositional
 
 World "Propositional"
@@ -37,8 +37,8 @@ Statement or_elim (P Q R : Prop) (h : P ∨ Q) (h₁ : P → R) (h₂ : Q → R)
     exact h₂ hq
 
 NewTactic cases
-NewTheorem Propositional.or_elim
 
+NewTheorem Propositional.or_intro_right
 Conclusion "
 You've learned **disjunction elimination** — case-by-case reasoning using `∨`.
 "

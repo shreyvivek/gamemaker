@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L09_ModusPonens
 namespace Propositional
 
 World "Propositional"
@@ -29,8 +29,8 @@ Statement negation_intro (P : Prop) (h : P → False) : ¬P := by
   exact h hp
 
 NewTactic contradiction
-NewTheorem Propositional.negation_intro
 
+NewTheorem Propositional.modus_ponens_statement
 Conclusion "
 You’ve introduced negation: `¬P` is proven by making use of `P` itself. A bit absurd, but that's what make Math so special!
 "

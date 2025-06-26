@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L05_OrIntroductionLeft
 namespace Propositional
 
 World "Propositional"
@@ -33,8 +33,8 @@ Statement or_intro_right (P Q : Prop) (h : Q) : P ∨ Q := by
   exact h
 
 NewTactic right
-NewTheorem Propositional.or_intro_right
 
+NewTheorem Propositional.or_intro_left
 Conclusion "
 Great! You've mastered both left and right disjunction introduction.
 "

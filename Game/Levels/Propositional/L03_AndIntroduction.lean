@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L02_IntroduceAssumption
 namespace Propositional
 
 World "Propositional"
@@ -33,7 +33,8 @@ Statement and_intro (P Q : Prop) (hp : P) (hq : Q) : P ∧ Q := by
   exact hq
 
 NewTactic constructor
-NewTheorem Propositional.and_intro
+NewTheorem Propositional.intro_self
+
 
 Conclusion "
 Nice work! You combined two truths into one solid conjunction.

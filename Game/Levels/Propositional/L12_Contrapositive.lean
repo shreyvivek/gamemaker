@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L11_ModusTollens
 namespace Propositional
 
 World "Propositional"
@@ -27,8 +27,8 @@ Statement contrapositive_equiv (P Q : Prop) (h : P → Q) : ¬Q → ¬P := by
   Hint "Use `{h}` to derive `Q` from `P`, then contradict `{hnq}`."
   exact hnq (h hp)
 
-NewTheorem Propositional.contrapositive_equiv
 
+NewTheorem Propositional.modus_tollens
 Conclusion "
 You’ve shown that an implication and its contrapositive are logically equivalent!
 "

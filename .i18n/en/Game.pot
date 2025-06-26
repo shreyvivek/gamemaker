@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Tue Jun 24 17:46:03 2025\n"
+"POT-Creation-Date: Thu Jun 26 21:34:46 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -73,7 +73,7 @@ msgid "From the assumption `P`, conclude `P`."
 msgstr ""
 
 #: Game.Levels.Propositional.L02_IntroduceAssumption
-msgid "Use the `intro` tactic to assume `P` is true."
+msgid "Use the `intro` tactic to assume `P` is true. Try `intro h`."
 msgstr ""
 
 #: Game.Levels.Propositional.L02_IntroduceAssumption
@@ -181,6 +181,10 @@ msgid "Use the `left` tactic to say `P ∨ Q` is true because `P` is true."
 msgstr ""
 
 #: Game.Levels.Propositional.L05_OrIntroductionLeft
+msgid "Now you can finish the level yourself."
+msgstr ""
+
+#: Game.Levels.Propositional.L05_OrIntroductionLeft
 msgid "Great! You’ve learned how to state that “at least one is true.”"
 msgstr ""
 
@@ -250,7 +254,7 @@ msgid "Use the `cases` tactic to break the disjunction `«{h}»` into two possib
 msgstr ""
 
 #: Game.Levels.Propositional.L07_OrElimination
-msgid "You are now in the case where `P` holds. Use `«{h₁}»` to get `R`."
+msgid "You are now in the case where `P` holds. Use `«{h₁}»` to get `R`. Try using `exact` with a combination of assumptions."
 msgstr ""
 
 #: Game.Levels.Propositional.L07_OrElimination
@@ -273,7 +277,9 @@ msgid "Suppose you know two implications:\n"
 "\n"
 "Then it logically follows that `P → R`.\n"
 "\n"
-"Let’s practice chaining these implications directly."
+"Let’s practice chaining these implications directly.\n"
+"\n"
+"**Note:** This level can be solved like the previous one, but it can also be done using a new tactic. Follow the hints accordingly."
 msgstr ""
 
 #: Game.Levels.Propositional.L08_ImplicationChain
@@ -314,7 +320,9 @@ msgstr ""
 #: Game.Levels.Propositional.L09_ModusPonens
 msgid "From `P → Q` and `P`, we can conclude `Q`.\n"
 "\n"
-"This rule of inference is known as **Modus Ponens**. Let’s practice using `apply`."
+"This rule of inference is known as **Modus Ponens**. Let’s practice using `apply`.\n"
+"\n"
+"After completing Level 7 and 8, this should be cake walk!"
 msgstr ""
 
 #: Game.Levels.Propositional.L09_ModusPonens
@@ -370,7 +378,7 @@ msgid "Now you have `«{hp}» : P`, and `«{h}» : P → False`. Apply `«{h}»`
 msgstr ""
 
 #: Game.Levels.Propositional.L10_NegationIntroduction
-msgid "You’ve introduced negation: `¬P` is proven by showing `P` leads to absurdity."
+msgid "You’ve introduced negation: `¬P` is proven by making use of `P` itself. A bit absurd, but that's what make Math so special!"
 msgstr ""
 
 #: Game.Levels.Propositional.L11_ModusTollens
@@ -474,15 +482,19 @@ msgid "From `P ∨ Q` and `¬P`, conclude `Q`."
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
-msgid "Use `cases` to split `«{h}»` into two cases: either `P` holds, or `Q` does."
+msgid "Use `cases` on `«{h}»` to handle both possibilities: `P` or `Q`."
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
-msgid "`P` leads to a contradiction with `«{hnp}»` — use `False.elim` to conclude."
+msgid "You now have `P`, but `«{hnp}»` says `¬P`. Apply `hnp` to get a contradiction."
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
-msgid "`Q` is true here. Use `exact`."
+msgid "`hnp` is a function from `P → False`, and you have `P` as `h₁`. Use `exact h₁` to supply the input."
+msgstr ""
+
+#: Game.Levels.Propositional.L13_DisjunctiveSyllogism
+msgid "`Q` holds directly here. Use `exact` to finish the proof."
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
@@ -490,31 +502,32 @@ msgid "Nicely done! You've applied **Disjunctive Syllogism** — eliminating one
 msgstr ""
 
 #: Game.Levels.Propositional.L14_DoubleNegation
-msgid "Double Negation Elimination"
+msgid "Implication Application"
 msgstr ""
 
 #: Game.Levels.Propositional.L14_DoubleNegation
-msgid "In classical logic, we can remove double negation: from `¬¬P`, conclude `P`.\n"
+msgid "This level introduces the idea that an implication `P → Q` is just like a function:\n"
+"if you know `P`, and you have a way to go from `P` to `Q`, then you can apply it.\n"
 "\n"
-"This principle doesn’t hold in constructive logic, which makes it an interesting tool to examine."
-msgstr ""
-
-#: Game.Levels.Propositional.L14_DoubleNegation
-msgid "To eliminate `¬¬P`, we assume `¬P`, derive a contradiction using `h : ¬¬P`, and conclude `P`.\n"
+"In Lean, this means using `exact h hp`, where `h : P → Q` and `hp : P`.\n"
 "\n"
-"This requires classical logic."
+"Simple and satisfying!"
 msgstr ""
 
 #: Game.Levels.Propositional.L14_DoubleNegation
-msgid "In classical logic, `¬¬P` implies `P`."
+msgid "If `P → Q` and `P` both hold, then `Q` must also hold. An extension of Modus Ponens"
 msgstr ""
 
 #: Game.Levels.Propositional.L14_DoubleNegation
-msgid "Use `Classical.byContradiction` to assume `¬P` and derive a contradiction."
+msgid "`h` is a function from `P` to `Q`, and `hp` gives you `P`. Just apply the function!"
 msgstr ""
 
 #: Game.Levels.Propositional.L14_DoubleNegation
-msgid "You’ve applied **Double Negation Elimination** — valid in classical logic but not in constructive logic."
+msgid "Nice! You just applied a function — that's really all an implication is.\n"
+"\n"
+"`P → Q` is the same as saying: “If I have `P`, I can give you `Q`.”\n"
+"\n"
+"You’ll see this pattern come up a lot in proofs."
 msgstr ""
 
 #: Game.Levels.Propositional.L15_Dilemma

@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L08_ImplicationChain
 namespace Propositional
 
 World "Propositional"
@@ -32,8 +32,8 @@ Statement modus_ponens_statement (P Q : Prop) (h₁ : P → Q) (h₂ : P) : Q :=
   Hint "Now you have a new goal `P`, and `{h₂} : P` is already available."
   exact h₂
 
-NewTheorem Propositional.modus_ponens_statement
 
+NewTheorem Propositional.implication_chain
 Conclusion "
 Classic and powerful — you’ve just used **Modus Ponens** correctly.
 "

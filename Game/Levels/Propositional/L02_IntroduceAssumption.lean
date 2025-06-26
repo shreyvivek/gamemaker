@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L01_AssumeAndFinish
 namespace Propositional
 
 World "Propositional"
@@ -31,7 +31,8 @@ Statement intro_self (P : Prop) : P → P := by
   exact h
 
 NewTactic intro
-NewTheorem Propositional.intro_self
+NewTheorem Propositional.assume_and_finish
+
 
 Conclusion "
 That was a basic implication! The `intro` tactic is your go-to tool for these.

@@ -11,15 +11,25 @@ Title "Assume and Finish"
 Introduction "
 Let’s begin with the simplest task. If you're told `P` is true, then you can conclude `P`.
 
-This teaches you how to use assumptions to finish a goal.
+Sounds trivial, but this teaches you how to use assumptions to finish a goal.
 "
 
 /--
-Closes the current goal using the exact term you provide.
+Purpose: Use exact when you already have a proof of exactly what the goal is asking for.
+
+It closes the goal immediately if the term matches the goal’s type.
+
+📌 Think of it as:
+
+“Here's exactly what you're asking for — done!”
 
 If your goal is `P` and you have a proof of `P` (say `h : P`), then `exact h` completes the proof.
 
-It’s like saying: “Here’s exactly what you asked for.”
+To summarize:
+
+You have : `h : P`
+Your goal : `P`
+`exact h` will complete the proof!
 -/
 TacticDoc exact
 
@@ -31,7 +41,7 @@ Statement assume_and_finish (P : Prop) (h : P) : P := by
   exact h
 
 NewTactic exact
-NewTheorem Propositional.assume_and_finish
+
 
 Conclusion "
 You’ve completed your first proof — and yes, it really was that simple!

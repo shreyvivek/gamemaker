@@ -12,6 +12,7 @@ Welcome to **Discrete Math with Lean4**, a fun and interactive game that will he
 
 There are several levels that you can try out in each world. Each level essentially covers a theorem taught in the lecture. And you have many such levels queued up in a world.
 Start by clicking on **Propositional** on the right.
+
 "
 
 Info "

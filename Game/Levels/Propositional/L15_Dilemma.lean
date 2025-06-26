@@ -1,5 +1,5 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L14_DoubleNegation
 namespace Propositional
 
 World "Propositional"
@@ -32,8 +32,7 @@ Statement dilemma (P Q R : Prop) (hpq : P ∨ Q) (hpr : P → R) (hqr : Q → R)
     Hint "`Q` holds. Use `{hqr}` to conclude `R`."
     exact hqr hq
 
-NewTheorem Propositional.dilemma
-
+NewTheorem Propositional.dilemma Propositional.swap_implication
 Conclusion "
 Excellent! You've completed the Constructive Dilemma — a powerful inference rule using `∨`.
 "
