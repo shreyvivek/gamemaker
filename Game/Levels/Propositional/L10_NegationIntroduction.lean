@@ -11,6 +11,24 @@ To prove `¬P`, assume `P` and derive a contradiction.
 
 This is called *proof by contradiction*.
 "
+/--
+Purpose: Use exact when you already have a proof of exactly what the goal is asking for.
+
+It closes the goal immediately if the term matches the goal’s type.
+
+📌 Think of it as:
+
+“Here's exactly what you're asking for — done!”
+
+If your goal is `P` and you have a proof of `P` (say `h : P`), then `exact h` completes the proof.
+
+To summarize:
+
+You have : `h : P`
+Your goal : `P`
+`exact h` will complete the proof!
+-/
+TacticDoc exact
 
 /--
 To prove `¬P`, use `intro h` to assume `P`.

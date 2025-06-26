@@ -14,6 +14,24 @@ Suppose:
 
 Then `P` must also be false. This is known as **Modus Tollens**.
 "
+/--
+Purpose: Use exact when you already have a proof of exactly what the goal is asking for.
+
+It closes the goal immediately if the term matches the goal’s type.
+
+📌 Think of it as:
+
+“Here's exactly what you're asking for — done!”
+
+If your goal is `P` and you have a proof of `P` (say `h : P`), then `exact h` completes the proof.
+
+To summarize:
+
+You have : `h : P`
+Your goal : `P`
+`exact h` will complete the proof!
+-/
+TacticDoc exact
 
 /--
 Use `intro` to assume `P` and then apply the implication `P → Q`.
