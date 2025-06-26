@@ -32,6 +32,27 @@ Your goal : `P`
 -/
 TacticDoc exact
 
+
+/--
+Purpose: Use intro to assume something — usually when proving an implication.
+
+If your goal is `P → Q`, `intro h` changes the goal to `Q` and gives you `h : P` as a local assumption.
+
+📌 Think of it as:
+
+“Let me assume `P` is true for now, and see if I can prove `Q`.”
+Opens up an implication goal by introducing its assumption.
+
+To summarize:
+
+Your goal : `h : P → P`
+After `intro h`,
+you get an assumption `h : P` and your goal will just be `P`.
+-/
+TacticDoc intro
+
+
+
 /--
 Solves the current goal by using a function or implication.
 

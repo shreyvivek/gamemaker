@@ -33,12 +33,27 @@ Your goal : `P`
 -/
 TacticDoc exact
 
-/--
-Use `intro` to assume `P` and then apply the implication `P → Q`.
 
-Finish by applying the negation `¬Q` to get a contradiction and conclude `¬P`.
+
+/--
+Purpose: Use intro to assume something — usually when proving an implication.
+
+If your goal is `P → Q`, `intro h` changes the goal to `Q` and gives you `h : P` as a local assumption.
+
+📌 Think of it as:
+
+“Let me assume `P` is true for now, and see if I can prove `Q`.”
+Opens up an implication goal by introducing its assumption.
+
+To summarize:
+
+Your goal : `h : P → P`
+After `intro h`,
+you get an assumption `h : P` and your goal will just be `P`.
 -/
 TacticDoc intro
+
+
 
 /-- Modus Tollens: from `P → Q` and `¬Q`, conclude `¬P`. -/
 TheoremDoc Propositional.modus_tollens as "ModusTollens" in "Propositional"
