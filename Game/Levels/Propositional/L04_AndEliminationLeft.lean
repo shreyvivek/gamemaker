@@ -9,7 +9,7 @@ Title "And Elimination (Left)"
 Introduction "
 If you know `P ∧ Q`, then you can extract `P` from it.
 
-Let’s see how to do that with `.left`.
+We’ll use the `exact` tactic, combined with `.left`, described further below.
 "
 /--
 Purpose: Use exact when you already have a proof of exactly what the goal is asking for.
@@ -63,24 +63,20 @@ To summarize:
 TacticDoc constructor
 
 
-/--
-If you have `h : P ∧ Q`, then:
-
-- `h.left` gives you a proof of `P`.
-- `h.right` gives you a proof of `Q`.
-
-They’re used to “unpack” conjunctions.
--/
-TacticDoc and.left
-
 /-- From `P ∧ Q`, derive `P`. -/
 TheoremDoc Propositional.and_elim_left as "AndElimLeft" in "Propositional"
 
 Statement and_elim_left (P Q : Prop) (h : P ∧ Q) : P := by
-  Hint "Use `h.left` to extract the left part `P` from `P ∧ Q`."
-  exact h.left
+  Hint "As you know, the `exact` tactic finishes the goal using a term that exactly matches the target.
 
-NewTactic and.left
+  If you have `h : P ∧ Q`, then:
+  - `h.left` gives you a term of type `P`
+  - `h.right` gives you a term of type `Q`
+
+  These are not tactics, but useful expressions to pass to `exact`.
+
+  Now you know what to do to extract the left part `P` from `P ∧ Q`."
+  exact h.left
 
 NewTheorem Propositional.and_intro
 
