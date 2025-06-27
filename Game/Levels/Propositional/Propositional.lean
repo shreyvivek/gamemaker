@@ -11,8 +11,8 @@ import Game.Levels.Propositional.L10_NegationIntroduction
 import Game.Levels.Propositional.L11_ModusTollens
 import Game.Levels.Propositional.L12_Contrapositive
 import Game.Levels.Propositional.L13_DisjunctiveSyllogism
-import Game.Levels.Propositional.L14_DoubleNegation
-import Game.Levels.Propositional.L15_Dilemma
+import Game.Levels.Propositional.L14_Dilemma
+import Game.Levels.Propositional.L15_HandsOn
 World "Propositional"
 
 Title "Propositional Logic"
