@@ -9,6 +9,8 @@ Level 1
 Title "Assume and Finish"
 
 Introduction "
+Welcome!
+
 Let’s begin with the simplest task. If you're told `P` is true, then you can conclude `P`.
 
 Sounds trivial, but this teaches you how to use assumptions to finish a goal.
