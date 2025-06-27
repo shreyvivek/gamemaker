@@ -11,43 +11,6 @@ From `P` and `Q`, we can conclude `P ∧ Q`. That’s how conjunction works!
 
 You’ll learn the `constructor` tactic in this level.
 "
-/--
-Purpose: Use exact when you already have a proof of exactly what the goal is asking for.
-
-It closes the goal immediately if the term matches the goal’s type.
-
-📌 Think of it as:
-
-“Here's exactly what you're asking for — done!”
-
-If your goal is `P` and you have a proof of `P` (say `h : P`), then `exact h` completes the proof.
-
-To summarize:
-
-You have : `h : P`
-Your goal : `P`
-`exact h` will complete the proof!
--/
-TacticDoc exact
-
-/--
-Purpose: Use intro to assume something — usually when proving an implication.
-
-If your goal is `P → Q`, `intro h` changes the goal to `Q` and gives you `h : P` as a local assumption.
-
-📌 Think of it as:
-
-“Let me assume `P` is true for now, and see if I can prove `Q`.”
-Opens up an implication goal by introducing its assumption.
-
-To summarize:
-
-Your goal : `h : P → P`
-After `intro h`,
-you get an assumption `h : P` and your goal will just be `P`.
--/
-TacticDoc intro
-
 
 /--
 Purpose: Use constructor when your goal is a conjunction (`P ∧ Q`).
@@ -69,9 +32,10 @@ TheoremDoc Propositional.and_intro as "AndIntro" in "Propositional"
 Statement and_intro (P Q : Prop) (hp : P) (hq : Q) : P ∧ Q := by
   Hint "Use the `constructor` tactic to split the goal `P ∧ Q` into two parts."
   constructor
-  Hint "Now prove `P` using `{hp}`."
+  Hint "Firstly, prove `P` using `{hp}` in the `Active Goal` to proceed to `Goal 2`
+
+  Then, in `Goal 2`, prove `Q` using `{hq}`."
   exact hp
-  Hint "Now prove `Q` using `{hq}`."
   exact hq
 
 NewTactic constructor

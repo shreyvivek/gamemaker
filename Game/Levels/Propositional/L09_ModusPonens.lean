@@ -7,107 +7,62 @@ Level 9
 Title "Modus Ponens"
 
 Introduction "
-From `P → Q` and `P`, we can conclude `Q`.
+Time to revisit one of the most fundamental rules of inference: **Modus Ponens**.
 
-This rule of inference is known as **Modus Ponens**. Let’s practice using `apply`.
+It says:
+> If `P → Q` and `P` are both true, then `Q` must also be true.
 
-After completing Level 7 and 8, this should be cake walk!
+In Lean, this means:
+- If you have `implication : P → Q`, and
+- `fact : P`,
+
+then you can apply the implication to the fact to get `Q`.
+
+This is what we’ll do in this level:
+You’re given `P → Q` and `P`, and your goal is to prove `Q`.
+
+You might have already proved this in previous levels, but you're now going to simplify it, by making use of `apply` tactic.
+Let’s break it down step by step.
 "
-/--
-Purpose: Use exact when you already have a proof of exactly what the goal is asking for.
 
-It closes the goal immediately if the term matches the goal’s type.
+/--
+Purpose: Use `apply` to reduce your current goal to an earlier implication.
+
+If your goal is `Q`, and you have `implication : P → Q`,
+then `apply implication` changes the goal to `P`.
 
 📌 Think of it as:
 
-“Here's exactly what you're asking for — done!”
-
-If your goal is `P` and you have a proof of `P` (say `h : P`), then `exact h` completes the proof.
-
-To summarize:
-
-You have : `h : P`
-Your goal : `P`
-`exact h` will complete the proof!
--/
-TacticDoc exact
-
-
-/--
-Purpose: Use intro to assume something — usually when proving an implication.
-
-If your goal is `P → Q`, `intro h` changes the goal to `Q` and gives you `h : P` as a local assumption.
-
-📌 Think of it as:
-
-“Let me assume `P` is true for now, and see if I can prove `Q`.”
-Opens up an implication goal by introducing its assumption.
-
-To summarize:
-
-Your goal : `h : P → P`
-After `intro h`,
-you get an assumption `h : P` and your goal will just be `P`.
--/
-TacticDoc intro
-
-
-/--
-Purpose: Use constructor when your goal is a conjunction (`P ∧ Q`).
-
-It splits the goal into two subgoals: one for `P`, and one for `Q`.
-
-📌 Think of it as:
-
-“To prove both `P` and `Q`, let’s do them one at a time.”
-
-To summarize:
-`constructor` on `P ∧ Q` gives you two sub goals — one for `P` and one for `Q`.
--/
-TacticDoc constructor
-
-
-/--
-Purpose: Use `left` when your goal is a disjunction (`P ∨ Q`) and you want to prove the **left** part.
-
-If your goal is `P ∨ Q`, then `left` changes the goal to proving `P`.
-
-📌 Think of it as:
-
-“I’ll prove the first part of the `or`, and that’s good enough.”
-
-To summarize:
-
-Your goal : `P ∨ Q`
-After `left`, your new goal is just `P`
--/
-TacticDoc left
-
-
-
-
-/--
-Solves the current goal by using a function or implication.
-
-If your goal is `Q` and you have `h : P → Q`, then `apply h` turns the goal into proving `P`.
-
-It’s like saying: “To prove `Q`, it’s enough to prove `P`.”
+“To prove `Q`, it’s enough to prove `P` — because I already have `P → Q`.”
 -/
 TacticDoc apply
+
 
 /-- Modus Ponens: from `P → Q` and `P`, conclude `Q`. -/
 TheoremDoc Propositional.modus_ponens_statement as "ModusPonens" in "Propositional"
 
 Statement modus_ponens_statement (P Q : Prop) (h₁ : P → Q) (h₂ : P) : Q := by
-  Hint "Use the `apply` tactic with the implication `{h₁}` to reduce the goal `Q` to `P`."
+  Hint "Your goal is `Q`, and you have an implication `h₁ : P → Q`.
+
+  Using `apply h₁ will tell Lean: 'I’ll prove `Q` by proving `P` instead.'
+
+  This works because `P → Q` is like a function — to get `Q`, you need to supply `P`.
+
+  Now put the `apply` tactic in action!"
   apply h₁
-  Hint "Now you have a new goal `P`, and `{h₂} : P` is already available."
+  Hint "Now the goal has changed to `P`. You're being asked to prove the condition of the implication.
+
+  Luckily, you already have `h₂ : P`. Use `exact` to finish!"
   exact h₂
 
-
+NewTactic apply
 NewTheorem Propositional.implication_chain
 Conclusion "
-Classic and powerful — you’ve just used **Modus Ponens** correctly.
+Nicely done! You’ve applied **Modus Ponens** by thinking backwards from your goal.
+
+You told Lean: “To prove `Q`, I’ll use `P → Q`, so just give me `P`.”
+
+That’s the core idea behind the `apply` tactic — a major tool in your proof toolkit.
 "
 
 end Propositional

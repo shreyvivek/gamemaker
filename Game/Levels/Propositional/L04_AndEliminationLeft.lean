@@ -11,57 +11,6 @@ If you know `P ∧ Q`, then you can extract `P` from it.
 
 We’ll use the `exact` tactic, combined with `.left`, described further below.
 "
-/--
-Purpose: Use exact when you already have a proof of exactly what the goal is asking for.
-
-It closes the goal immediately if the term matches the goal’s type.
-
-📌 Think of it as:
-
-“Here's exactly what you're asking for — done!”
-
-If your goal is `P` and you have a proof of `P` (say `h : P`), then `exact h` completes the proof.
-
-To summarize:
-
-You have : `h : P`
-Your goal : `P`
-`exact h` will complete the proof!
--/
-TacticDoc exact
-
-/--
-Purpose: Use intro to assume something — usually when proving an implication.
-
-If your goal is `P → Q`, `intro h` changes the goal to `Q` and gives you `h : P` as a local assumption.
-
-📌 Think of it as:
-
-“Let me assume `P` is true for now, and see if I can prove `Q`.”
-Opens up an implication goal by introducing its assumption.
-
-To summarize:
-
-Your goal : `h : P → P`
-After `intro h`,
-you get an assumption `h : P` and your goal will just be `P`.
--/
-TacticDoc intro
-
-/--
-Purpose: Use constructor when your goal is a conjunction (`P ∧ Q`).
-
-It splits the goal into two subgoals: one for `P`, and one for `Q`.
-
-📌 Think of it as:
-
-“To prove both `P` and `Q`, let’s do them one at a time.”
-
-To summarize:
-`constructor` on `P ∧ Q` gives you two sub goals — one for `P` and one for `Q`.
--/
-TacticDoc constructor
-
 
 /-- From `P ∧ Q`, derive `P`. -/
 TheoremDoc Propositional.and_elim_left as "AndElimLeft" in "Propositional"
@@ -75,7 +24,7 @@ Statement and_elim_left (P Q : Prop) (h : P ∧ Q) : P := by
 
   These are not tactics, but useful expressions to pass to `exact`.
 
-  Now you know what to do to extract the left part `P` from `P ∧ Q`."
+  Now you know what to do to extract the left part `P` from `P ∧ Q` using `exact`."
   exact h.left
 
 NewTheorem Propositional.and_intro

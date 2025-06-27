@@ -7,128 +7,57 @@ Level 13
 Title "Disjunctive Syllogism"
 
 Introduction "
-Suppose:
+In this level, you’ll prove a very common logical inference called **Disjunctive Syllogism**.
 
-- `P ∨ Q` is true (at least one must hold), and
-- `P` is false (i.e., `¬P` is true)
+It works like this:
 
-Then we can conclude that `Q` must be true.
+> If `P ∨ Q` is true, and `P` is false, then `Q` must be true.
 
-This form of inference is called **Disjunctive Syllogism**.
+This makes sense — `P ∨ Q` tells us that at least one of them is true.
+If we know that `P` is *not* true (`¬P`), then `Q` is the only possibility left.
+
+This combines what you did in earlier levels:
+- In Level 7, you used `cases` to break apart a disjunction
+- In Level 10, you learned that `¬P` means `P → False`
+- In Level 11, you used contradiction (`False`) to complete a proof
+
+Now you’ll combine all of those tools into one elegant move.
+You also make use of another theorem to achieve this. Read about `False.elim` on the right!
 "
-/--
-Purpose: Use exact when you already have a proof of exactly what the goal is asking for.
-
-It closes the goal immediately if the term matches the goal’s type.
-
-📌 Think of it as:
-
-“Here's exactly what you're asking for — done!”
-
-If your goal is `P` and you have a proof of `P` (say `h : P`), then `exact h` completes the proof.
-
-To summarize:
-
-You have : `h : P`
-Your goal : `P`
-`exact h` will complete the proof!
--/
-TacticDoc exact
-
 
 /--
-Purpose: Use intro to assume something — usually when proving an implication.
+Use `False.elim` when you have a contradiction (`False`) but need to prove something else.
 
-If your goal is `P → Q`, `intro h` changes the goal to `Q` and gives you `h : P` as a local assumption.
+If you’ve proven `False`, then `False.elim` lets you derive anything — even `Q`.
 
-📌 Think of it as:
-
-“Let me assume `P` is true for now, and see if I can prove `Q`.”
-Opens up an implication goal by introducing its assumption.
-
-To summarize:
-
-Your goal : `h : P → P`
-After `intro h`,
-you get an assumption `h : P` and your goal will just be `P`.
+You’ll use this in the branch where `P` is true, and `¬P` leads to a contradiction.
 -/
-TacticDoc intro
-
-
-/--
-Purpose: Use constructor when your goal is a conjunction (`P ∧ Q`).
-
-It splits the goal into two subgoals: one for `P`, and one for `Q`.
-
-📌 Think of it as:
-
-“To prove both `P` and `Q`, let’s do them one at a time.”
-
-To summarize:
-`constructor` on `P ∧ Q` gives you two sub goals — one for `P` and one for `Q`.
--/
-TacticDoc constructor
-
-
-
-/--
-Purpose: Use `left` when your goal is a disjunction (`P ∨ Q`) and you want to prove the **left** part.
-
-If your goal is `P ∨ Q`, then `left` changes the goal to proving `P`.
-
-📌 Think of it as:
-
-“I’ll prove the first part of the `or`, and that’s good enough.”
-
-To summarize:
-
-Your goal : `P ∨ Q`
-After `left`, your new goal is just `P`
--/
-TacticDoc left
-
-
-
-
-/--
-The `cases` tactic lets you do case analysis on a disjunction (`P ∨ Q`).
-
-It splits the proof into two branches:
-- one where `P` holds
-- one where `Q` holds
-
-If one branch leads to a contradiction, use `False.elim` to derive your goal.
--/
-TacticDoc cases
-
-/--
-If you ever reach a contradiction (`False`), you can use the `False.elim` tactic to prove **any** goal.
-
-This is based on the logical principle that "from falsehood, anything follows" (ex falso quodlibet).
--/
-TacticDoc False.elim
+TheoremDoc False.elim as "FalseElim" in "Propositional"
 
 /-- From `P ∨ Q` and `¬P`, conclude `Q`. -/
 TheoremDoc Propositional.disjunctive_syllogism as "DisjunctiveSyllogism" in "Propositional"
 
-Statement disjunctive_syllogism (P Q : Prop) (h : P ∨ Q) (hnp : ¬P) : Q := by
-  Hint "Use `cases` on `{h}` to handle both possibilities: `P` or `Q`."
-  cases h with
-  | inl h₁ =>
-    Hint "You now have `P`, but `{hnp}` says `¬P`. Apply `hnp` to get a contradiction."
-    apply False.elim
-    Hint "`hnp` is a function from `P → False`, and you have `P` as `h₁`. Use `exact h₁` to supply the input."
-    apply hnp
-    exact h₁
-  | inr h₂ =>
+Statement disjunctive_syllogism (P Q : Prop) (h : P ∨ Q) (not_p : ¬P) : Q := by
+ Hint "Use `cases h` to consider the two possible cases: `P` or `Q`."
+ cases h with
+  | inl hp =>
+    Hint "You are now in the case where `P` is true. But you also have `not_p : P → False`, so this leads to a contradiction."
+    Hint "A compound exact statement enclosed in `()` should help to get a contradiction (`False`)."
+    Hint "Then use `False.elim` to derive your goal `Q` from that contradiction using `exact False.elim (whatever you think the compound statement is)."
+    exact False.elim (not_p hp)
+  | inr hq =>
     Hint "`Q` holds directly here. Use `exact` to finish the proof."
-    exact h₂
+    exact hq
 
-NewTactic False.elim
 
-NewTheorem Propositional.contrapositive_equiv
+NewTheorem Propositional.contrapositive_equiv False.elim
 Conclusion "
-Nicely done! You've applied **Disjunctive Syllogism** — eliminating one side of a disjunction using negation.
+Nicely done! You've applied **Disjunctive Syllogism** in this level, showing you how to:
+- Split logical cases with `cases`
+- Detect contradictions using `¬P`
+- Escape contradictions using `False.elim`
+
+You’re now handling classical logic like a pro.
 "
 
 end Propositional
