@@ -1,11 +1,9 @@
 # Discrete Mathematics with Lean 4
 
-This is a template for creating a game with [lean4game](https://github.com/leanprover-community/lean4game/). It contains many levels plus the files needed for a local development setup.
+This is an interactive mathematics game covering essential concepts in Discrete Mathematics, with Lean4.
 
-The documentation about how to use this template are at the [lean4game repository](https://github.com/leanprover-community/lean4game/):
+You can [Play the game here](https://adam.math.hhu.de/#/g/shreyvivek/gamemaker). 
+You can [Read more about the Lean Community here](https://leanprover-community.github.io/).
 
-* [Creating a new game](https://github.com/leanprover-community/lean4game/blob/main/doc/create_game.md)
-  * [Updating an existing game](https://github.com/leanprover-community/lean4game/blob/main/doc/update_game.md)
-  * [Running a game locally](https://github.com/leanprover-community/lean4game/blob/main/doc/running_locally.md)
 
 
