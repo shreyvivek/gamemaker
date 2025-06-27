@@ -57,6 +57,23 @@ TacticDoc intro
 
 
 
+/--
+Purpose: Use constructor when your goal is a conjunction (`P ∧ Q`).
+
+It splits the goal into two subgoals: one for `P`, and one for `Q`.
+
+📌 Think of it as:
+
+“To prove both `P` and `Q`, let’s do them one at a time.”
+
+To summarize:
+`constructor` on `P ∧ Q` gives you two sub goals — one for `P` and one for `Q`.
+-/
+TacticDoc constructor
+
+
+
+
 /-- If `P → Q` and `P` both hold, then `Q` must also hold. An extension of Modus Ponens -/
 TheoremDoc Propositional.swap_implication as "SwapImplication" in "Propositional"
 Statement swap_implication (P Q : Prop) (h : P → Q) (hp : P) : Q := by

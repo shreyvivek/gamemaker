@@ -49,6 +49,23 @@ you get an assumption `h : P` and your goal will just be `P`.
 TacticDoc intro
 
 
+
+/--
+Purpose: Use constructor when your goal is a conjunction (`P ∧ Q`).
+
+It splits the goal into two subgoals: one for `P`, and one for `Q`.
+
+📌 Think of it as:
+
+“To prove both `P` and `Q`, let’s do them one at a time.”
+
+To summarize:
+`constructor` on `P ∧ Q` gives you two sub goals — one for `P` and one for `Q`.
+-/
+TacticDoc constructor
+
+
+
 /-- Repeated for clarity.
 
 For disjunctions (`P ∨ Q`):
