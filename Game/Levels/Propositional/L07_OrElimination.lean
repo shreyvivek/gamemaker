@@ -7,9 +7,19 @@ Level 7
 Title "Or Elimination"
 
 Introduction "
-If you know `P ∨ Q`, and you can show `R` follows from each of them individually, then you can conclude `R`.
+Suppose you want to prove a proposition `R`.
 
-This is a form of case analysis — we’ll use the `cases` tactic.
+You’re told that either `P` or `Q` is true (i.e., `P ∨ Q`).
+But you don’t know which one — Lean won’t let you just pick one randomly.
+
+You’re also told that:
+- If `P` is true, then `R` follows
+- If `Q` is true, then `R` follows
+
+This means: no matter *which* side of the disjunction holds, `R` will be true either way.
+To prove `R`, you need to split into two cases using the `cases` tactic — one where `P` is true, and one where `Q` is.
+
+Then, in each case, use the appropriate implication to show that `R` follows.
 "
 /--
 Purpose: Use exact when you already have a proof of exactly what the goal is asking for.
@@ -64,25 +74,74 @@ To summarize:
 TacticDoc constructor
 
 
+
 /--
-The `cases` tactic lets you do case analysis on a disjunction.
+Purpose: Use `left` when your goal is a disjunction (`P ∨ Q`) and you want to prove the **left** part.
 
-If you have `h : P ∨ Q`, then `cases h with | inl hp => ... | inr hq => ...` creates two branches:
-- One where `P` is assumed true (`hp`)
-- One where `Q` is assumed true (`hq`)
+If your goal is `P ∨ Q`, then `left` changes the goal to proving `P`.
 
-You must prove the goal in both branches.
+📌 Think of it as:
+
+“I’ll prove the first part of the `or`, and that’s good enough.”
+
+To summarize:
+
+Your goal : `P ∨ Q`
+After `left`, your new goal is just `P`
+-/
+TacticDoc left
+
+
+
+/--
+Purpose: Use `cases` on a disjunction (e.g. `P ∨ Q`) to split it into two separate cases.
+
+Each case creates a new assumption:
+- `inl assumed_p` means `P` is assumed true
+- `inr assumed_q` means `Q` is assumed true
+
+📌 Think of it as:
+
+“Let’s examine both possible scenarios and show that the goal works either way.”
+
+To summarize:
+
+Given: `h : P ∨ Q`
+After:
+- Case 1: `assumed_p : P`
+- Case 2: `assumed_q : Q`
 -/
 TacticDoc cases
 
-/-- From `P ∨ Q`, and knowing both imply `R`, conclude `R`. -/
+/-- From `P ∨ Q`, we can conclude that either `P` or `Q` has to be definitely true. Knowing that both of them imply `R`, we can conclude `R`.-/
 TheoremDoc Propositional.or_elim as "OrElim" in "Propositional"
 
 Statement or_elim (P Q R : Prop) (h : P ∨ Q) (h₁ : P → R) (h₂ : Q → R) : R := by
   Hint "Use the `cases` tactic to break the disjunction `{h}` into two possible cases."
   cases h with
   | inl hp =>
-    Hint "You are now in the case where `P` holds. Use `{h₁}` to get `R`. Try using `exact` with a combination of assumptions."
+    Hint "In this level, you will see how `exact` is used with a **function applied to an argument**.
+
+    💡 Example:
+
+    If you have:
+    - `h₁ : P → R` (an implication)
+    - `assumed_p : P` (from a case)
+
+    Then `h₁ assumed_p` is a proof of `R`.
+
+    So you write:
+
+    **exact h₁ assumed_p**
+    "
+    Hint"
+    Here, Lean will check that:
+
+    `h₁ : P → R`
+    `assumed_p : P`
+
+    Therefore `h₁ assumed_p : R` is concluded, which correctly matches what we want, `R`!
+    "
     exact h₁ hp
   | inr hq =>
     Hint "Now `Q` holds. Use `{h₂}` to conclude `R`."
@@ -92,7 +151,11 @@ NewTactic cases
 
 NewTheorem Propositional.or_intro_right
 Conclusion "
-You've learned **disjunction elimination** — case-by-case reasoning using `∨`.
+You’ve completed a textbook disjunction elimination!
+
+By showing the goal holds in **both** branches of the `or`, you’ve logically proven it no matter what.
+
+If you observed this level closely, you might see some similarity to Modus Ponens. A level ahead will prove Modus Ponens in another method, with yet another tactic.
 "
 
 end Propositional

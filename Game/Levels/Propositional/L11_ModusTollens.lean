@@ -69,6 +69,24 @@ TacticDoc constructor
 
 
 
+/--
+Purpose: Use `left` when your goal is a disjunction (`P ∨ Q`) and you want to prove the **left** part.
+
+If your goal is `P ∨ Q`, then `left` changes the goal to proving `P`.
+
+📌 Think of it as:
+
+“I’ll prove the first part of the `or`, and that’s good enough.”
+
+To summarize:
+
+Your goal : `P ∨ Q`
+After `left`, your new goal is just `P`
+-/
+TacticDoc left
+
+
+
 
 /-- Modus Tollens: from `P → Q` and `¬Q`, conclude `¬P`. -/
 TheoremDoc Propositional.modus_tollens as "ModusTollens" in "Propositional"

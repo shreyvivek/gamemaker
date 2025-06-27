@@ -65,17 +65,41 @@ To summarize:
 TacticDoc constructor
 
 
+/--
+Purpose: Use `left` when your goal is a disjunction (`P ∨ Q`) and you want to prove the **left** part.
 
-/-- Repeated for clarity.
+If your goal is `P ∨ Q`, then `left` changes the goal to proving `P`.
 
-For disjunctions (`P ∨ Q`):
+📌 Think of it as:
 
-- `left` means: “I’ll prove `P`, and that’s enough.”
-- `right` means: “I’ll prove `Q`, and that’s enough.”
+“I’ll prove the first part of the `or`, and that’s good enough.”
 
-Use `left` when you have a proof of `P`, and `right` when you have a proof of `Q`.
+To summarize:
+
+Your goal : `P ∨ Q`
+After `left`, your new goal is just `P`
+-/
+TacticDoc left
+
+
+
+/--
+Purpose: Use `right` when your goal is a disjunction (`P ∨ Q`) and you want to prove the **right** part.
+
+If your goal is `P ∨ Q`, then `right` changes the goal to proving `Q`.
+
+📌 Think of it as:
+
+“I’ll prove the second part of the `or`, and that’s good enough.”
+
+To summarize:
+
+Your goal : `P ∨ Q`
+After `right`, your new goal is just `Q`
 -/
 TacticDoc right
+
+
 
 /-- From `Q`, derive `P ∨ Q`. -/
 TheoremDoc Propositional.or_intro_right as "OrIntroRight" in "Propositional"

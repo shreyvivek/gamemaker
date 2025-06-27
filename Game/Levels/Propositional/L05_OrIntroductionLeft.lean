@@ -7,9 +7,13 @@ Level 5
 Title "Or Introduction (Left)"
 
 Introduction "
-If you know `P`, then you can conclude `P ∨ Q`.
+Let’s now turn to disjunctions — statements involving the word 'or'.
 
-Let’s introduce disjunction using the `left` tactic.
+In Lean, `P ∨ Q` means “either `P` is true, or `Q` is true (or both).”
+To prove something like `P ∨ Q`, it’s enough to prove just one side — because *at least one must be true*.
+
+In this level, you already have a proof of `P`, and your goal is `P ∨ Q`.
+So all you have to do is tell Lean: “I want to prove the left side of the disjunction”, as you can finish it off with your existing proof.
 "
 /--
 Purpose: Use exact when you already have a proof of exactly what the goal is asking for.
@@ -64,12 +68,18 @@ TacticDoc constructor
 
 
 /--
-For disjunctions (`P ∨ Q`):
+Purpose: Use `left` when your goal is a disjunction (`P ∨ Q`) and you want to prove the **left** part.
 
-- `left` means: “I’ll prove `P`, and that’s enough.”
-- `right` means: “I’ll prove `Q`, and that’s enough.”
+If your goal is `P ∨ Q`, then `left` changes the goal to proving `P`.
 
-Use `left` when you have a proof of `P`, and `right` when you have a proof of `Q`.
+📌 Think of it as:
+
+“I’ll prove the first part of the `or`, and that’s good enough.”
+
+To summarize:
+
+Your goal : `P ∨ Q`
+After `left`, your new goal is just `P`
 -/
 TacticDoc left
 
