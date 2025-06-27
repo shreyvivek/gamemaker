@@ -26,11 +26,36 @@ You also make use of another theorem to achieve this. Read about `False.elim` on
 "
 
 /--
-Use `False.elim` when you have a contradiction (`False`) but need to prove something else.
+`False.elim` — From Contradiction, Anything Follows
+it is of the type False.elim : False → α
 
-If you’ve proven `False`, then `False.elim` lets you derive anything — even `Q`.
+**Meaning:**
+If you have a contradiction (`False`), you can conclude *any* proposition — even something unrelated.
 
-You’ll use this in the branch where `P` is true, and `¬P` leads to a contradiction.
+This is based on a principle in classical logic called “**Explosion**”, which states:
+
+Once you reach False, your system has broken, and anything can be proven.
+
+**Intuition:**
+Think of False as a logical dead-end or crash.
+Once you've proven something impossible, the rules no longer restrict you.
+So Lean allows you to conclude any goal using False.elim.
+
+example (P Q : Prop) (h₁ : P) (h₂ : ¬P) : Q :=
+  False.elim (h₂ h₁)
+
+**Explanation:**
+`h₁ : P`
+`h₂ : ¬P`, i.e., `P → False`
+Applying `h₂ h₁` gives a `contradiction: False`
+
+Then `False.elim` produces a proof of `Q`, finishing the goal
+
+**When to use:**
+Your goal is `Q` (or anything)
+You have `f : False`
+Then you write:
+`exact False.elim f`
 -/
 TheoremDoc False.elim as "FalseElim" in "Propositional"
 
