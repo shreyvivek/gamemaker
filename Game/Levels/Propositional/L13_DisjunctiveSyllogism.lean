@@ -26,10 +26,13 @@ You also make use of another theorem to achieve this. Read about `False.elim` on
 "
 
 /--
+
+
 `False.elim` — From Contradiction, Anything Follows
 it is of the type False.elim : False → α
 
 **Meaning:**
+
 If you have a contradiction (`False`), you can conclude *any* proposition — even something unrelated.
 
 This is based on a principle in classical logic called “**Explosion**”, which states:
@@ -37,25 +40,37 @@ This is based on a principle in classical logic called “**Explosion**”, whic
 Once you reach False, your system has broken, and anything can be proven.
 
 **Intuition:**
+
 Think of False as a logical dead-end or crash.
+
 Once you've proven something impossible, the rules no longer restrict you.
+
 So Lean allows you to conclude any goal using False.elim.
 
 example (P Q : Prop) (h₁ : P) (h₂ : ¬P) : Q :=
+
   False.elim (h₂ h₁)
 
 **Explanation:**
+
 `h₁ : P`
+
 `h₂ : ¬P`, i.e., `P → False`
+
 Applying `h₂ h₁` gives a `contradiction: False`
 
 Then `False.elim` produces a proof of `Q`, finishing the goal
 
 **When to use:**
+
 Your goal is `Q` (or anything)
+
 You have `f : False`
+
 Then you write:
+
 `exact False.elim f`
+
 -/
 TheoremDoc False.elim as "FalseElim" in "Propositional"
 
