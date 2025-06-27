@@ -8,11 +8,19 @@ import Game.Levels.Propositional.Propositional
 Title "Discrete Mathematics with Lean4"
 Introduction
 "
-Welcome to **Discrete Math with Lean4**, a fun and interactive game that will help you in proving several theorems **MH1812 - Discrete Mathematics**
+Welcome to **Discrete Math with Lean4**, an interactive game that will help you in proving several theorems of **Discrete Mathematics**
 
-There are several levels that you can try out in each world. Each level essentially covers a theorem taught in the lecture. And you have many such levels queued up in a world.
-Start by clicking on **Propositional** on the right.
+**What is Lean?**
 
+Lean is a powerful tool used to write and verify mathematical proofs using code. It’s like a super-charged calculator for logic — you tell Lean the rules and what you want to prove, and it checks every single step for correctness. Unlike doing math on paper (which can be vague), Lean makes sure there are no gaps or mistakes. It’s used by mathematicians, computer scientists, and even students to write formal, checkable proofs.
+
+Lean 4 is the latest version of the Lean theorem prover. It introduces a faster engine, better syntax, and allows users to build interactive proof environments — like this game! Lean 4 also supports general-purpose programming, making it both a proof assistant and a full programming language. You can define logic, prove theorems, and even build applications — all in one system.
+
+**What is this game all about?**
+
+This is a proof-based puzzle game built with Lean 4. Each level is a logic challenge. You solve it by using _tactics_ — special instructions that Lean understands (just like any other programming language understanding its own syntax) — to complete proofs step by step.
+
+Click on the World `Propositional`, to get started!
 "
 
 Info "
