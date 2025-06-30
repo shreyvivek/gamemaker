@@ -35,6 +35,27 @@ Your goal : `P`
 -/
 TacticDoc exact
 
+/--
+have tactic yay!
+-/
+TacticDoc «have»
+
+/--
+let tactic yay!
+-/
+TacticDoc «let»
+
+/--
+assume tactic yay!
+-/
+TacticDoc assume
+
+/--
+show tactic yay!
+-/
+TacticDoc «show»
+
+
 /-- If you know `P`, then you can conclude `P`. -/
 TheoremDoc Propositional.assume_and_finish as "AssumeAndFinish" in "Propositional"
 
@@ -42,7 +63,7 @@ Statement assume_and_finish (P : Prop) (h : P) : P := by
   Hint "Use the `exact` tactic with `{h}` to directly prove the goal `P`."
   exact h
 
-NewTactic exact
+NewTactic exact «have» assume «let» «show»
 
 
 Conclusion "
