@@ -41,6 +41,15 @@ After:
 - Case 2: `hq : Q`
 -/
 TacticDoc cases
+/--
+have tactic yay!
+-/
+TacticDoc «have»
+
+/--
+rw tactic!
+-/
+TacticDoc rw
 
 /-- From `P ∨ Q`, we can conclude that either `P` or `Q` has to be definitely true. Knowing that both of them imply `R`, we can conclude `R`.-/
 TheoremDoc Propositional.or_elim as "OrElim" in "Propositional"
@@ -78,7 +87,7 @@ Statement or_elim (P Q R : Prop) (h : P ∨ Q) (h₁ : P → R) (h₂ : Q → R)
   | inr hq =>
     exact h₂ hq
 
-NewTactic cases
+NewTactic cases «have» rw
 
 NewTheorem Propositional.or_intro_right
 Conclusion "
