@@ -1,5 +1,6 @@
 import GameServer.Commands
 import Game.Levels.Propositional.L08_OrElimination
+
 namespace Propositional
 
 World "Propositional"
@@ -24,26 +25,49 @@ In this level, you’ll:
 - use it to get `Q` via the first implication,
 - and then use that `Q` to get `R` via the second implication.
 
-Let’s walk through this chain step by step.
+You’ll learn how to use the `have` tactic to break up and name intermediate steps — a powerful tool for writing clean, readable proofs.
 
-_**Note:** There can be many alternative ways to prove the same level, with tactics you may already know. If you are keen, try them out!
-PS: You will not be prompted with hints in that case :)_
+_**Note:** There can be many alternative ways to prove the same level, with tactics you may already know. If you are keen, try them out! PS: You will not be prompted with hints in that case :)_
 "
 
+/--
+Purpose: Use `have` to create and name an intermediate result in your proof.
+
+It lets you:
+- Break up long reasoning chains
+- Improve clarity and structure
+- Reuse partial results later
+
+### Example:
+
+If you have `h₁ : P → Q` and `hp : P`, and you want to reach `R`, you can write:
+
+`have hq : Q := modus_ponens _ _ h₁ hp`
+
+Now you have `hq : Q`, which you can use in the next line with `h₂ : Q → R`:
+
+`exact modus_ponens _ _ h₂ hq`
+
+This is useful when proofs grow longer or when you want to give names to intermediate steps to reason about them clearly.
+-/
+TacticDoc «have»
+
 Statement (P Q R : Prop) (h₁ : P → Q) (h₂ : Q → R) : P → R := by
-  Hint "Start with `intro` to assume that `P` is true."
-  intro hp
-  Hint "Now finish the level off using `{h₁}` and `{h₂}`. Make use of the exact tactic in a similar manner like you did in the last level.
+Hint "Quite obvious, you can start with `intro`."
+intro hp
+Hint "One way to go ahead is to use the exact statement by writing something like `exact modus_ponens Q R h₂ (modus_ponens P Q h₁ a)`
 
-  `exact (modus_ponens P Q h₁ a)` probably gives you `Q`, but the goal is `R`. But you also have `{h₂}`. So try giving an appropriate prefix/suffix to `(modus ponens P Q h₁ a)` with `h₂`, chaining the modus_ponens operation correctly.
+Looks complicated, and I hope you aren't too confused, because there's an amazing tactic to use here. Read about the `have` tactic on the right.
 
-  Note that binding with brackets here is very important for Lean to understand what you're proving. Else, it throws you a *type mismatch*."
-  exact h₂ (h₁ hp)
+**Note** that the `have` tactic is strict on syntax, but it simplifies your task in seconds!"
+have hq : Q := h₁ hp
+exact h₂ hq
 
+NewTactic «have»
 
 Conclusion "
-Perfect! You directly chained together `P → Q → R` into `P → R` with `exact` and `Modus Ponens`.
+Perfect! You used the have tactic to extract Q from P → Q, and then concluded R cleanly.
 
-By the way, you have crossed the half way mark! Congratulations, keep the momentum going!"
-
+This kind of structured chaining is essential in longer proofs — well done!
+"
 end Propositional

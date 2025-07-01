@@ -1,5 +1,6 @@
 import GameServer.Commands
-
+import Game.Levels.Propositional.L07_ModusPonens
+import Game.Levels.Propositional.L11_ModusTollens
 namespace Exercises_Propositional
 
 World "Exercises_Propositional"
@@ -188,13 +189,35 @@ While it may seem absurd, it follows the principle of *Explosion*, as mentioned 
 -/
 TheoremDoc False.elim as "False.elim" in "Exercises_Propositional"
 
+/--
+Purpose: Use `have` to create and name an intermediate result in your proof.
+
+It lets you:
+- Break up long reasoning chains
+- Improve clarity and structure
+- Reuse partial results later
+
+### Example:
+
+If you have `h₁ : P → Q` and `hp : P`, and you want to reach `R`, you can write:
+
+`have hq : Q := modus_ponens _ _ h₁ hp`
+
+Now you have `hq : Q`, which you can use in the next line with `h₂ : Q → R`:
+
+`exact modus_ponens _ _ h₂ hq`
+
+This is useful when proofs grow longer or when you want to give names to intermediate steps to reason about them clearly.
+-/
+TacticDoc «have»
+
 Statement (P Q R : Prop)
   (h₁ : P ∧ Q)
   (h₂ : P → R) : R := by
   apply h₂
   exact h₁.left
 
-NewTactic apply exact intro constructor left right cases
+NewTactic apply exact intro constructor left right cases «have»
 NewTheorem False.elim
 
 Conclusion "

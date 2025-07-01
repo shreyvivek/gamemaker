@@ -36,11 +36,6 @@ Your goal : `P`
 TacticDoc exact
 
 /--
-have tactic yay!
--/
-TacticDoc «have»
-
-/--
 let tactic yay!
 -/
 TacticDoc «let»
@@ -59,7 +54,7 @@ Statement (P : Prop) (h : P) : P := by
   Hint "Use the `exact` tactic with `{h}` to directly prove the goal `P`."
   exact h
 
-NewTactic exact «have» assume «let» «show»
+NewTactic exact «let» «show»
 
 
 Conclusion "
