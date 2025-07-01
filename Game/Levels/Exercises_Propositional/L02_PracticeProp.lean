@@ -1,4 +1,6 @@
 import GameServer.Commands
+import Game.Levels.Exercises_Propositional.L01_PracticeProp
+import Game.Levels.Exercises_Propositional.ProofHelpers
 
 namespace Exercises_Propositional
 
@@ -13,36 +15,20 @@ Apply both **Modus Tollens** and **Modus Ponens** in a clean logical chain.
 Hint: Make use of the `have` tactic wherever necessary, or a nested `exact` chain!
 "
 
--- Local definition of Modus Tollens
-Statement modus_tollens (P Q : Prop) (h₁ : Q → P) (h₂ : ¬P) : ¬Q := by
-  intro hq
-  apply h₂
-  exact h₁ hq
-
--- Local definition of Modus Ponens
-Statement modus_ponens (P Q : Prop) (h₁ : P → Q) (h₂ : P) : Q := by
-  apply h₁
-  exact h₂
+open Exercises_Propositional (modus_ponens modus_tollens)
 
 Statement (P Q R S T : Prop)
   (h₁ : ¬P ∧ Q)
   (h₂ : R → P)
   (h₃ : ¬R → S)
   (h₄ : S → T) : T := by
-  -- Step 1: extract ¬P from h₁
   have hnp : ¬P := h₁.left
-
-  -- Step 2: apply modus tollens: R → P, ¬P ⟹ ¬R
   have hnr : ¬R := modus_tollens P R h₂ hnp
-
-  -- Step 3: apply modus ponens: ¬R → S, ¬R ⟹ S
-  have hs : S := modus_ponens ¬R S h₃ hnr
-
-  -- Step 4: apply modus ponens: S → T, S ⟹ T
+  have hs : S := modus_ponens _ _ h₃ hnr
   exact modus_ponens S T h₄ hs
-
-NewTheorem modus_ponens modus_tollens
 
 Conclusion "
 Excellent. You combined two powerful rules — **Modus Tollens** and **Modus Ponens** — using structured steps.
 "
+
+end Exercises_Propositional
