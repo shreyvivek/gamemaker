@@ -40,7 +40,6 @@ Statement intro_self (P : Prop) : P → P := by
   exact h
 
 NewTactic intro
-NewTheorem Propositional.assume_and_finish
 
 
 Conclusion "

@@ -9,7 +9,7 @@ Title "Modus Tollens"
 Introduction "
 This level introduces another classic rule of inference: **Modus Tollens**.
 
-You may recall from Level 9 (**Modus Ponens**) that:
+You may recall from Level 7 (**Modus Ponens**) that:
 > If `P → Q` and `P` are true, then `Q` is true.
 Now imagine the opposite:
 > If `P → Q` and `Q` is **false**, then `P` must also be false.
@@ -50,7 +50,6 @@ Statement modus_tollens (P Q : Prop) (h₁ : P → Q) (h₂ : ¬Q) : ¬P := by
   exact hp
 
 
-NewTheorem Propositional.negation_intro
 Conclusion "
 Well done! You’ve just used **Modus Tollens** with a clean chain of `apply` steps.
 

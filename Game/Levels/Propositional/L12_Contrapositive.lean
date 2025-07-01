@@ -44,7 +44,6 @@ Statement contrapositive_equiv (P Q : Prop) (h : P → Q) : ¬Q → ¬P := by
   exact assumed_p
 
 
-NewTheorem Propositional.modus_tollens
 Conclusion "
 Awesome! You've just proven the **contrapositive** form of an implication — an essential logical equivalence.
 

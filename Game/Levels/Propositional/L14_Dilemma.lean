@@ -21,13 +21,13 @@ Statement dilemma (P Q R : Prop) (hpq : P ∨ Q) (hpr : P → R) (hqr : Q → R)
   Hint "Use `cases` on `{hpq}` to consider each possibility."
   cases hpq with
   | inl hp =>
-    Hint "`P` holds. Use `{hpr}` to conclude `R`."
+    Hint "Now, `P` holds. Use `{hpr}` to conclude `R`."
+    Hint "After that, `Goal 2` contains the scenario where `Q` holds. Use `{hqr}` to conclude `R`."
+    Hint "Also, Lean is really smart. The `exact` tactic is so versatile that both `exact modus_ponens a b` and `exact a b` mean the same."
     exact hpr hp
   | inr hq =>
-    Hint "`Q` holds. Use `{hqr}` to conclude `R`."
     exact hqr hq
 
-NewTheorem Propositional.disjunctive_syllogism
 Conclusion "
 Excellent! You've completed the Constructive Dilemma — a powerful inference rule using `∨`.
 "

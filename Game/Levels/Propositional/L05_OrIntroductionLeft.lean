@@ -45,7 +45,6 @@ Statement or_intro_left (P Q : Prop) (h : P) : P ∨ Q := by
 
 NewTactic left
 
-NewTheorem Propositional.and_elim_left
 Conclusion "
 Great! You’ve learned how to state that “at least one is true.”
 "

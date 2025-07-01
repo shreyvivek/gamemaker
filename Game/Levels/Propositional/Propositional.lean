@@ -4,9 +4,9 @@ import Game.Levels.Propositional.L03_AndIntroduction
 import Game.Levels.Propositional.L04_AndEliminationLeft
 import Game.Levels.Propositional.L05_OrIntroductionLeft
 import Game.Levels.Propositional.L06_OrIntroductionRight
-import Game.Levels.Propositional.L07_OrElimination
-import Game.Levels.Propositional.L08_ImplicationChain
-import Game.Levels.Propositional.L09_ModusPonens
+import Game.Levels.Propositional.L07_ModusPonens
+import Game.Levels.Propositional.L08_OrElimination
+import Game.Levels.Propositional.L09_ImplicationChain
 import Game.Levels.Propositional.L10_NegationIntroduction
 import Game.Levels.Propositional.L11_ModusTollens
 import Game.Levels.Propositional.L12_Contrapositive

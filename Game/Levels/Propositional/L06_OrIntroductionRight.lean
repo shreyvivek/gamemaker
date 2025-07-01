@@ -41,7 +41,6 @@ Statement or_intro_right (P Q : Prop) (h : Q) : P ∨ Q := by
 
 NewTactic right
 
-NewTheorem Propositional.or_intro_left
 Conclusion "
 Great! You've now mastered both `left` and `right` tactics, and how they can be useful in a disjunction.
 "

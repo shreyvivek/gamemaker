@@ -1,9 +1,9 @@
 import GameServer.Commands
-import Game.Levels.Propositional.L07_OrElimination
+import Game.Levels.Propositional.L08_OrElimination
 namespace Propositional
 
 World "Propositional"
-Level 8
+Level 9
 Title "Implication Chain"
 
 Introduction "
@@ -26,8 +26,8 @@ In this level, you’ll:
 
 Let’s walk through this chain step by step.
 
-_**Note:** There can be many alternative ways to prove the same level, with tactics you may not already know. If you are keen, come back to this level after unlocking them!
-PS: Do not follow the hints in that case :)_
+_**Note:** There can be many alternative ways to prove the same level, with tactics you may already know. If you are keen, try them out!
+PS: You will not be prompted with hints in that case :)_
 "
 
 /-- From `P → Q` and `Q → R`, derive `P → R`. -/
@@ -38,14 +38,14 @@ Statement implication_chain (P Q R : Prop) (h₁ : P → Q) (h₂ : Q → R) : P
   intro hp
   Hint "Now finish the level off using `{h₁}` and `{h₂}`. Make use of the exact tactic in a similar manner like you did in the last level.
 
-  `exact (h₁ a)` probably gives you `Q`, but the goal is `R`. But you also have `{h₂}`. So try giving an appropriate prefix/suffix to `(h₁ a)` with `h₂`.
+  `exact (modus_ponens h₁ a)` probably gives you `Q`, but the goal is `R`. But you also have `{h₂}`. So try giving an appropriate prefix/suffix to `(h₁ a)` with `h₂`, chaining the modus_ponens operation correctly.
 
   Note that binding with brackets here is very important for Lean to understand what you're proving. Else, it throws you a *type mismatch*."
   exact h₂ (h₁ hp)
 
-NewTheorem Propositional.or_elim
+
 Conclusion "
-Perfect! You directly chained together `P → Q → R` into `P → R` with `exact`. You'll explore a very useful tactic, just like `exact`, in the next level.
+Perfect! You directly chained together `P → Q → R` into `P → R` with `exact` and `Modus Ponens`.
 
 By the way, you have crossed the half way mark! Congratulations, keep the momentum going!"
 

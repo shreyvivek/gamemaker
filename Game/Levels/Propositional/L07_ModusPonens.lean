@@ -1,13 +1,13 @@
 import GameServer.Commands
-import Game.Levels.Propositional.L08_ImplicationChain
+import Game.Levels.Propositional.L06_OrIntroductionRight
 namespace Propositional
 
 World "Propositional"
-Level 9
+Level 7
 Title "Modus Ponens"
 
 Introduction "
-Time to revisit one of the most fundamental rules of inference: **Modus Ponens**.
+Time to visit one of the most fundamental rules of inference: **Modus Ponens**.
 
 It says:
 > If `P → Q` and `P` are both true, then `Q` must also be true.
@@ -21,7 +21,7 @@ then you can apply the implication to the fact to get `Q`.
 This is what we’ll do in this level:
 You’re given `P → Q` and `P`, and your goal is to prove `Q`.
 
-You might have already proved this in previous levels, but you're now going to simplify it, by making use of `apply` tactic.
+You're going to make use of `apply` tactic.
 Let’s break it down step by step.
 "
 
@@ -39,9 +39,9 @@ TacticDoc apply
 
 
 /-- Modus Ponens: from `P → Q` and `P`, conclude `Q`. -/
-TheoremDoc Propositional.modus_ponens_statement as "ModusPonens" in "Propositional"
+TheoremDoc Propositional.modus_ponens as "ModusPonens" in "Propositional"
 
-Statement modus_ponens_statement (P Q : Prop) (h₁ : P → Q) (h₂ : P) : Q := by
+Statement modus_ponens (P Q : Prop) (h₁ : P → Q) (h₂ : P) : Q := by
   Hint "Your goal is `Q`, and you have an implication `h₁ : P → Q`.
 
   Using `apply h₁ will tell Lean: 'I’ll prove `Q` by proving `P` instead.'
@@ -56,7 +56,6 @@ Statement modus_ponens_statement (P Q : Prop) (h₁ : P → Q) (h₂ : P) : Q :=
   exact h₂
 
 NewTactic apply
-NewTheorem Propositional.implication_chain
 Conclusion "
 Nicely done! You’ve applied **Modus Ponens** by thinking backwards from your goal.
 

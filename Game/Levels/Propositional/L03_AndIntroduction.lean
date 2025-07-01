@@ -39,7 +39,6 @@ Statement and_intro (P Q : Prop) (hp : P) (hq : Q) : P ∧ Q := by
   exact hq
 
 NewTactic constructor
-NewTheorem Propositional.intro_self
 
 
 Conclusion "

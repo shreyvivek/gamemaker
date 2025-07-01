@@ -1,5 +1,5 @@
 import GameServer.Commands
-import Game.Levels.Propositional.L09_ModusPonens
+import Game.Levels.Propositional.L09_ImplicationChain
 namespace Propositional
 
 World "Propositional"
@@ -34,16 +34,13 @@ Statement negation_intro (P : Prop) (h : P → False) : ¬P := by
   Hint "Your goal is `¬P`, which is just `P → False`. Use `intro` to assume that `P` holds."
   intro assumed_p
   Hint "Now your goal is to prove `False`. You have `assumed_p : P`, and a function `h : P → False`."
-  Hint "Try applying `h` to `assumed_p` using `exact h assumed_p`. That gives you a contradiction."
+  Hint "`_____ _________ __ __`. By now, you should know what to fill in the blanks! Eventually, it will give you `False`."
   Hint "This shows that assuming `P` leads to `False`, which proves `¬P`."
   exact h assumed_p
 
 
-NewTheorem Propositional.modus_ponens_statement
 Conclusion "
 You’ve introduced negation: `¬P` is proven by assuming `P` is true itself. Something like the proof by contradiction, whose applications you would have seen earlier in your math classes.
-
-You can also observe how the `apply` tactic can be alternatively written with the compound `exact` statement.
 
 There is no right or wrong method, use whatever you find more comfortable. After all, the objective of this game is to build that intuition in proving everyday statements/theorems you encounter in math."
 

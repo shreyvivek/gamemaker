@@ -1,9 +1,9 @@
 import GameServer.Commands
-import Game.Levels.Propositional.L06_OrIntroductionRight
+import Game.Levels.Propositional.L07_ModusPonens
 namespace Propositional
 
 World "Propositional"
-Level 7
+Level 8
 Title "Or Elimination"
 
 Introduction "
@@ -43,16 +43,6 @@ After:
 TacticDoc cases
 
 
-/--
-rw tactic!
--/
-TacticDoc rw
-
-/--
-assume tactic!
--/
-TacticDoc assume
-
 /-- From `P ∨ Q`, we can conclude that either `P` or `Q` has to be definitely true. Knowing that both of them imply `R`, we can conclude `R`.-/
 TheoremDoc Propositional.or_elim as "OrElim" in "Propositional"
 
@@ -60,7 +50,7 @@ Statement or_elim (P Q R : Prop) (h : P ∨ Q) (h₁ : P → R) (h₂ : Q → R)
   Hint "Use the `cases` tactic to break the disjunction `{h}` into two possible cases."
   cases h with
   | inl hp =>
-    Hint "In this level, you will see how `exact` is used with a **function applied to an argument**.
+    Hint "In this level, you will see how `exact` is used with a **theorem applied to an argument**.
 
     💡 Consider the `Active Goal`:
 
@@ -68,11 +58,13 @@ Statement or_elim (P Q R : Prop) (h : P ∨ Q) (h₁ : P → R) (h₂ : Q → R)
     - `h₁ : P → R` (an implication)
     - `h_1 : P` (from a case)
 
-    Then `h₁ h_1` is a proof of `R`.
+    This should strike a bell, as this resembles the structure of Modus Ponens.
+
+    Then `exact modus_ponens h₁ h_1` is a direct proof of `R`. It means: use `exact` on the result of modus ponens applied to h₁ and h_1.
 
     So you write:
 
-    **exact h₁ assumed_p**
+    **exact modus_ponens h₁ h_1**
     _for writing subscript 1, type h, enter a backslash and then enter 1._
     "
     Hint"
@@ -81,7 +73,7 @@ Statement or_elim (P Q R : Prop) (h : P ∨ Q) (h₁ : P → R) (h₂ : Q → R)
     `h₁ : P → R`
     `h_1 : P`
 
-    Therefore `h₁ h_1 : R` is concluded, which correctly matches what we want, `R`!
+    Therefore `R` is concluded, which correctly matches what we want, `R`!
 
     Similarly, when `Q` holds, use `{h₂}` to conclude `R`.
     "
@@ -89,15 +81,13 @@ Statement or_elim (P Q R : Prop) (h : P ∨ Q) (h₁ : P → R) (h₂ : Q → R)
   | inr hq =>
     exact h₂ hq
 
-NewTactic cases rw
+NewTactic cases
 
-NewTheorem Propositional.or_intro_right
+NewTheorem Propositional.modus_ponens
 Conclusion "
 You’ve completed a textbook disjunction elimination! You can also see how versatile the `exact` tactic is.
 
 By showing the goal holds in **both** branches of the `or`, you’ve logically proven it no matter what.
-
-If you observed this level closely, you might see some similarity to Modus Ponens. A level ahead will prove Modus Ponens in another method, with yet another tactic.
 "
 
 end Propositional

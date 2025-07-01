@@ -27,7 +27,6 @@ Statement and_elim_left (P Q : Prop) (h : P ∧ Q) : P := by
   Now you know what to do to extract the left part `P` from `P ∧ Q` using `exact`."
   exact h.left
 
-NewTheorem Propositional.and_intro
 
 Conclusion "
 Nicely done! You extracted the left side of a conjunction. A similar procedure can be followed to extract the right half of a conjunction.

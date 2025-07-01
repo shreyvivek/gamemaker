@@ -35,8 +35,6 @@ Statement implication_maze (A B C D : Prop) (h₁ : A → B) (h₂ : B → C) (h
   Hint "Finish the level now!."
   exact h₁ a
 
-NewTheorem Propositional.implication_maze
-
 Conclusion "
 You’ve just walked through a chain of reasoning — turning `A → B → C → D` into `A → D`.
 
