@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jun 30 14:50:12 2025\n"
+"POT-Creation-Date: Wed Jul  2 04:39:08 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -51,7 +51,19 @@ msgid "Purpose: Use exact when you already have a proof of exactly what the goal
 msgstr ""
 
 #: Game.Levels.Propositional.L01_AssumeAndFinish
-msgid "If you know `P`, then you can conclude `P`."
+msgid "have tactic yay!"
+msgstr ""
+
+#: Game.Levels.Propositional.L01_AssumeAndFinish
+msgid "let tactic yay!"
+msgstr ""
+
+#: Game.Levels.Propositional.L01_AssumeAndFinish
+msgid "assume tactic yay!"
+msgstr ""
+
+#: Game.Levels.Propositional.L01_AssumeAndFinish
+msgid "show tactic yay!"
 msgstr ""
 
 #: Game.Levels.Propositional.L01_AssumeAndFinish
@@ -90,10 +102,6 @@ msgid "Purpose: Use intro to assume something — usually when proving an implic
 msgstr ""
 
 #: Game.Levels.Propositional.L02_IntroduceAssumption
-msgid "From the assumption `P`, conclude `P`."
-msgstr ""
-
-#: Game.Levels.Propositional.L02_IntroduceAssumption
 msgid "Use the `intro` tactic to assume `P` is true. Try `intro h`."
 msgstr ""
 
@@ -129,10 +137,6 @@ msgid "Purpose: Use constructor when your goal is a conjunction (`P ∧ Q`).\n"
 msgstr ""
 
 #: Game.Levels.Propositional.L03_AndIntroduction
-msgid "From `P` and `Q`, derive `P ∧ Q`."
-msgstr ""
-
-#: Game.Levels.Propositional.L03_AndIntroduction
 msgid "Use the `constructor` tactic to split the goal `P ∧ Q` into two parts."
 msgstr ""
 
@@ -154,10 +158,6 @@ msgstr ""
 msgid "If you know `P ∧ Q`, then you can extract `P` from it.\n"
 "\n"
 "We’ll use the `exact` tactic, combined with `.left`, described further below."
-msgstr ""
-
-#: Game.Levels.Propositional.L04_AndEliminationLeft
-msgid "From `P ∧ Q`, derive `P`."
 msgstr ""
 
 #: Game.Levels.Propositional.L04_AndEliminationLeft
@@ -206,10 +206,6 @@ msgid "Purpose: Use `left` when your goal is a disjunction (`P ∨ Q`) and you w
 msgstr ""
 
 #: Game.Levels.Propositional.L05_OrIntroductionLeft
-msgid "From `P`, derive `P ∨ Q`."
-msgstr ""
-
-#: Game.Levels.Propositional.L05_OrIntroductionLeft
 msgid "Use the `left` tactic to say `P ∨ Q` is true because `P` is true.\n"
 "\n"
 "**Note:** Here you are directly operating on the goal itself. So you just need to type `left` and Lean will understand."
@@ -249,10 +245,6 @@ msgid "Purpose: Use `right` when your goal is a disjunction (`P ∨ Q`) and you 
 msgstr ""
 
 #: Game.Levels.Propositional.L06_OrIntroductionRight
-msgid "From `Q`, derive `P ∨ Q`."
-msgstr ""
-
-#: Game.Levels.Propositional.L06_OrIntroductionRight
 msgid "Use the `right` tactic this time, to commit to proving `Q` instead of `P`."
 msgstr ""
 
@@ -264,11 +256,78 @@ msgstr ""
 msgid "Great! You've now mastered both `left` and `right` tactics, and how they can be useful in a disjunction."
 msgstr ""
 
-#: Game.Levels.Propositional.L07_OrElimination
+#: Game.Levels.Propositional.L07_ModusPonens
+msgid "Modus Ponens"
+msgstr ""
+
+#: Game.Levels.Propositional.L07_ModusPonens
+msgid "Time to visit one of the most fundamental rules of inference: **Modus Ponens**.\n"
+"\n"
+"It says:\n"
+"> If `P → Q` and `P` are both true, then `Q` must also be true.\n"
+"\n"
+"In Lean, this means:\n"
+"- If you have `implication : P → Q`, and\n"
+"- `fact : P`,\n"
+"\n"
+"then you can apply the implication to the fact to get `Q`.\n"
+"\n"
+"This is what we’ll do in this level:\n"
+"You’re given `P → Q` and `P`, and your goal is to prove `Q`.\n"
+"\n"
+"You're going to make use of `apply` tactic.\n"
+"Let’s break it down step by step."
+msgstr ""
+
+#: Game.Levels.Propositional.L07_ModusPonens
+msgid "Purpose: Use `apply` to reduce your current goal to an earlier implication.\n"
+"\n"
+"If your goal is `Q`, and you have `implication : P → Q`,\n"
+"then `apply implication` changes the goal to `P`.\n"
+"\n"
+"📌 Think of it as:\n"
+"\n"
+"“To prove `Q`, it’s enough to prove `P` — because I already have `P → Q`.”"
+msgstr ""
+
+#: Game.Levels.Propositional.L07_ModusPonens
+msgid "Modus Ponens: from `P → Q` and `P`, conclude `Q`."
+msgstr ""
+
+#: Game.Levels.Propositional.L07_ModusPonens
+msgid "Your goal is Q, and you have an implication h₁ : P → Q.\n"
+"\n"
+"By writing apply h₁, you are telling Lean:\n"
+"“To prove Q, it suffices to prove P.”\n"
+"\n"
+"That’s because P → Q works like a function:\n"
+"If you give it P, it will return Q.\n"
+"\n"
+"So apply h₁ transforms your goal from Q to P,\n"
+"and Lean now expects you to prove P.\n"
+"\n"
+"Now go ahead — apply the implication!"
+msgstr ""
+
+#: Game.Levels.Propositional.L07_ModusPonens
+msgid "Now the goal has changed to `P`. You're being asked to prove the condition of the implication.\n"
+"\n"
+"Luckily, you already have `h₂ : P`. Use `exact` to finish!"
+msgstr ""
+
+#: Game.Levels.Propositional.L07_ModusPonens
+msgid "Nicely done! You’ve applied **Modus Ponens** by thinking backwards from your goal.\n"
+"\n"
+"You told Lean: “To prove `Q`, I’ll use `P → Q`, so just give me `P`.”\n"
+"\n"
+"That’s the core idea behind the `apply` tactic — a major tool in your proof toolkit."
+msgstr ""
+
+#: Game.Levels.Propositional.L08_OrElimination
 msgid "Or Elimination"
 msgstr ""
 
-#: Game.Levels.Propositional.L07_OrElimination
+#: Game.Levels.Propositional.L08_OrElimination
 msgid "Suppose you want to prove a proposition `R`.\n"
 "\n"
 "You’re told that either `P` or `Q` is true (i.e., `P ∨ Q`).\n"
@@ -284,7 +343,7 @@ msgid "Suppose you want to prove a proposition `R`.\n"
 "Then, in each case, use the appropriate implication to show that `R` follows."
 msgstr ""
 
-#: Game.Levels.Propositional.L07_OrElimination
+#: Game.Levels.Propositional.L08_OrElimination
 msgid "Purpose: Use `cases` on a disjunction (e.g. `P ∨ Q`) to split it into two separate cases.\n"
 "\n"
 "Each case creates a new assumption:\n"
@@ -303,16 +362,12 @@ msgid "Purpose: Use `cases` on a disjunction (e.g. `P ∨ Q`) to split it into t
 "- Case 2: `hq : Q`"
 msgstr ""
 
-#: Game.Levels.Propositional.L07_OrElimination
-msgid "From `P ∨ Q`, we can conclude that either `P` or `Q` has to be definitely true. Knowing that both of them imply `R`, we can conclude `R`."
-msgstr ""
-
-#: Game.Levels.Propositional.L07_OrElimination
+#: Game.Levels.Propositional.L08_OrElimination
 msgid "Use the `cases` tactic to break the disjunction `«{h}»` into two possible cases."
 msgstr ""
 
-#: Game.Levels.Propositional.L07_OrElimination
-msgid "In this level, you will see how `exact` is used with a **function applied to an argument**.\n"
+#: Game.Levels.Propositional.L08_OrElimination
+msgid "In this level, you will see how `exact` is used with a **theorem applied to an argument**.\n"
 "\n"
 "💡 Consider the `Active Goal`:\n"
 "\n"
@@ -320,38 +375,40 @@ msgid "In this level, you will see how `exact` is used with a **function applied
 "- `h₁ : P → R` (an implication)\n"
 "- `h_1 : P` (from a case)\n"
 "\n"
-"Then `h₁ h_1` is a proof of `R`.\n"
+"This should strike a bell, as this resembles the structure of Modus Ponens.\n"
+"\n"
+"Then `exact modus_ponens P R h₁ h_1` is a direct proof of `R`. It means: use `exact` on the result of modus ponens applied to h₁ and h_1, with propositions P and R.\n"
+"\n"
+"Even if u let P and R be underscores respectively, it would still not be an error.\n"
 "\n"
 "So you write:\n"
 "\n"
-"**exact h₁ assumed_p**\n"
+"**exact modus_ponens P R h₁ h_1**\n"
 "_for writing subscript 1, type h, enter a backslash and then enter 1._"
 msgstr ""
 
-#: Game.Levels.Propositional.L07_OrElimination
+#: Game.Levels.Propositional.L08_OrElimination
 msgid "Here, Lean will check that:\n"
 "\n"
 "`h₁ : P → R`\n"
 "`h_1 : P`\n"
 "\n"
-"Therefore `h₁ h_1 : R` is concluded, which correctly matches what we want, `R`!\n"
+"Therefore `R` is concluded, which correctly matches what we want, `R`!\n"
 "\n"
 "Similarly, when `Q` holds, use `«{h₂}»` to conclude `R`."
 msgstr ""
 
-#: Game.Levels.Propositional.L07_OrElimination
+#: Game.Levels.Propositional.L08_OrElimination
 msgid "You’ve completed a textbook disjunction elimination! You can also see how versatile the `exact` tactic is.\n"
 "\n"
-"By showing the goal holds in **both** branches of the `or`, you’ve logically proven it no matter what.\n"
-"\n"
-"If you observed this level closely, you might see some similarity to Modus Ponens. A level ahead will prove Modus Ponens in another method, with yet another tactic."
+"By showing the goal holds in **both** branches of the `or`, you’ve logically proven it no matter what."
 msgstr ""
 
-#: Game.Levels.Propositional.L08_ImplicationChain
+#: Game.Levels.Propositional.L09_ImplicationChain
 msgid "Implication Chain"
 msgstr ""
 
-#: Game.Levels.Propositional.L08_ImplicationChain
+#: Game.Levels.Propositional.L09_ImplicationChain
 msgid "You’re given two facts:\n"
 "\n"
 "1. If `P` is true, then `Q` is true. (`P → Q`)\n"
@@ -371,92 +428,26 @@ msgid "You’re given two facts:\n"
 "\n"
 "Let’s walk through this chain step by step.\n"
 "\n"
-"_**Note:** There can be many alternative ways to prove the same level, with tactics you may not already know. If you are keen, come back to this level after unlocking them!\n"
-"PS: Do not follow the hints in that case :)_"
+"_**Note:** There can be many alternative ways to prove the same level, with tactics you may already know. If you are keen, try them out!\n"
+"PS: You will not be prompted with hints in that case :)_"
 msgstr ""
 
-#: Game.Levels.Propositional.L08_ImplicationChain
-msgid "From `P → Q` and `Q → R`, derive `P → R`."
-msgstr ""
-
-#: Game.Levels.Propositional.L08_ImplicationChain
+#: Game.Levels.Propositional.L09_ImplicationChain
 msgid "Start with `intro` to assume that `P` is true."
 msgstr ""
 
-#: Game.Levels.Propositional.L08_ImplicationChain
+#: Game.Levels.Propositional.L09_ImplicationChain
 msgid "Now finish the level off using `«{h₁}»` and `«{h₂}»`. Make use of the exact tactic in a similar manner like you did in the last level.\n"
 "\n"
-"`exact (h₁ a)` probably gives you `Q`, but the goal is `R`. But you also have `«{h₂}»`. So try giving an appropriate prefix/suffix to `(h₁ a)` with `h₂`.\n"
+"`exact (modus_ponens P Q h₁ a)` probably gives you `Q`, but the goal is `R`. But you also have `«{h₂}»`. So try giving an appropriate prefix/suffix to `(modus ponens P Q h₁ a)` with `h₂`, chaining the modus_ponens operation correctly.\n"
 "\n"
 "Note that binding with brackets here is very important for Lean to understand what you're proving. Else, it throws you a *type mismatch*."
 msgstr ""
 
-#: Game.Levels.Propositional.L08_ImplicationChain
-msgid "Perfect! You directly chained together `P → Q → R` into `P → R` with `exact`. You'll explore a very useful tactic, just like `exact`, in the next level.\n"
+#: Game.Levels.Propositional.L09_ImplicationChain
+msgid "Perfect! You directly chained together `P → Q → R` into `P → R` with `exact` and `Modus Ponens`.\n"
 "\n"
 "By the way, you have crossed the half way mark! Congratulations, keep the momentum going!"
-msgstr ""
-
-#: Game.Levels.Propositional.L09_ModusPonens
-msgid "Modus Ponens"
-msgstr ""
-
-#: Game.Levels.Propositional.L09_ModusPonens
-msgid "Time to revisit one of the most fundamental rules of inference: **Modus Ponens**.\n"
-"\n"
-"It says:\n"
-"> If `P → Q` and `P` are both true, then `Q` must also be true.\n"
-"\n"
-"In Lean, this means:\n"
-"- If you have `implication : P → Q`, and\n"
-"- `fact : P`,\n"
-"\n"
-"then you can apply the implication to the fact to get `Q`.\n"
-"\n"
-"This is what we’ll do in this level:\n"
-"You’re given `P → Q` and `P`, and your goal is to prove `Q`.\n"
-"\n"
-"You might have already proved this in previous levels, but you're now going to simplify it, by making use of `apply` tactic.\n"
-"Let’s break it down step by step."
-msgstr ""
-
-#: Game.Levels.Propositional.L09_ModusPonens
-msgid "Purpose: Use `apply` to reduce your current goal to an earlier implication.\n"
-"\n"
-"If your goal is `Q`, and you have `implication : P → Q`,\n"
-"then `apply implication` changes the goal to `P`.\n"
-"\n"
-"📌 Think of it as:\n"
-"\n"
-"“To prove `Q`, it’s enough to prove `P` — because I already have `P → Q`.”"
-msgstr ""
-
-#: Game.Levels.Propositional.L09_ModusPonens
-msgid "Modus Ponens: from `P → Q` and `P`, conclude `Q`."
-msgstr ""
-
-#: Game.Levels.Propositional.L09_ModusPonens
-msgid "Your goal is `Q`, and you have an implication `h₁ : P → Q`.\n"
-"\n"
-"Using `apply h₁ will tell Lean: 'I’ll prove `Q` by proving `P` instead.'\n"
-"\n"
-"This works because `P → Q` is like a function — to get `Q`, you need to supply `P`.\n"
-"\n"
-"Now put the `apply` tactic in action!"
-msgstr ""
-
-#: Game.Levels.Propositional.L09_ModusPonens
-msgid "Now the goal has changed to `P`. You're being asked to prove the condition of the implication.\n"
-"\n"
-"Luckily, you already have `h₂ : P`. Use `exact` to finish!"
-msgstr ""
-
-#: Game.Levels.Propositional.L09_ModusPonens
-msgid "Nicely done! You’ve applied **Modus Ponens** by thinking backwards from your goal.\n"
-"\n"
-"You told Lean: “To prove `Q`, I’ll use `P → Q`, so just give me `P`.”\n"
-"\n"
-"That’s the core idea behind the `apply` tactic — a major tool in your proof toolkit."
 msgstr ""
 
 #: Game.Levels.Propositional.L10_NegationIntroduction
@@ -485,10 +476,6 @@ msgid "You’re now going to prove something of the form `¬P`.\n"
 msgstr ""
 
 #: Game.Levels.Propositional.L10_NegationIntroduction
-msgid "If `P` leads to a contradiction, then `¬P`."
-msgstr ""
-
-#: Game.Levels.Propositional.L10_NegationIntroduction
 msgid "Your goal is `¬P`, which is just `P → False`. Use `intro` to assume that `P` holds."
 msgstr ""
 
@@ -497,7 +484,7 @@ msgid "Now your goal is to prove `False`. You have `assumed_p : P`, and a functi
 msgstr ""
 
 #: Game.Levels.Propositional.L10_NegationIntroduction
-msgid "Try applying `h` to `assumed_p` using `exact h assumed_p`. That gives you a contradiction."
+msgid "`_____ _________ __ __`. By now, you should know what to fill in the blanks! Eventually, it will give you `False`."
 msgstr ""
 
 #: Game.Levels.Propositional.L10_NegationIntroduction
@@ -506,8 +493,6 @@ msgstr ""
 
 #: Game.Levels.Propositional.L10_NegationIntroduction
 msgid "You’ve introduced negation: `¬P` is proven by assuming `P` is true itself. Something like the proof by contradiction, whose applications you would have seen earlier in your math classes.\n"
-"\n"
-"You can also observe how the `apply` tactic can be alternatively written with the compound `exact` statement.\n"
 "\n"
 "There is no right or wrong method, use whatever you find more comfortable. After all, the objective of this game is to build that intuition in proving everyday statements/theorems you encounter in math."
 msgstr ""
@@ -519,7 +504,7 @@ msgstr ""
 #: Game.Levels.Propositional.L11_ModusTollens
 msgid "This level introduces another classic rule of inference: **Modus Tollens**.\n"
 "\n"
-"You may recall from Level 9 (**Modus Ponens**) that:\n"
+"You may recall from Level 7 (**Modus Ponens**) that:\n"
 "> If `P → Q` and `P` are true, then `Q` is true.\n"
 "Now imagine the opposite:\n"
 "> If `P → Q` and `Q` is **false**, then `P` must also be false.\n"
@@ -543,10 +528,6 @@ msgid "This level introduces another classic rule of inference: **Modus Tollens*
 "`P → Q`, then `Q → False`, to eventually get `P → False`.\n"
 "\n"
 "Let’s walk through this chain and build the logic slowly."
-msgstr ""
-
-#: Game.Levels.Propositional.L11_ModusTollens
-msgid "Modus Tollens: from `P → Q` and `¬Q`, conclude `¬P`."
 msgstr ""
 
 #: Game.Levels.Propositional.L11_ModusTollens
@@ -596,10 +577,6 @@ msgid "You may remember that every implication `P → Q`\n"
 "Given only `P → Q`, show that `¬Q → ¬P`.\n"
 "\n"
 "Let’s unpack this step by step."
-msgstr ""
-
-#: Game.Levels.Propositional.L12_Contrapositive
-msgid "From `P → Q`, derive `¬Q → ¬P`."
 msgstr ""
 
 #: Game.Levels.Propositional.L12_Contrapositive
@@ -660,12 +637,12 @@ msgid "In this level, you’ll prove a very common logical inference called **Di
 "If we know that `P` is *not* true (`¬P`), then `Q` is the only possibility left.\n"
 "\n"
 "This combines what you did in earlier levels:\n"
-"- In Level 7, you used `cases` to break apart a disjunction\n"
+"- In Level 8, you used `cases` to break apart a disjunction\n"
 "- In Level 10, you learned that `¬P` means `P → False`\n"
 "- In Level 11, you used contradiction (`False`) to complete a proof\n"
 "\n"
 "Now you’ll combine all of those tools into one elegant move.\n"
-"You also make use of another theorem to achieve this. Read about `False.elim` on the right!"
+"You also make use of another theorem to achieve this. Read about `False.elim` on the Theorems section!"
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
@@ -704,17 +681,23 @@ msgid "`False.elim` — From Contradiction, Anything Follows\n"
 "\n"
 "**When to use:**\n"
 "\n"
-"Your goal is `Q` (or anything)\n"
+"We use `False.elim` when we've reached a contradiction, but our goal is something else — like `Q`.\n"
 "\n"
-"You have `f : False`\n"
+"Suppose you've reached a point in your proof where you have:\n"
 "\n"
-"Then you write:\n"
+"`f : False`\n"
 "\n"
-"`exact False.elim f`"
-msgstr ""
-
-#: Game.Levels.Propositional.L13_DisjunctiveSyllogism
-msgid "From `P ∨ Q` and `¬P`, conclude `Q`."
+"That means a contradiction has occurred.\n"
+"\n"
+"Lean now gives you the power to conclude anything, including your goal `Q`, because from a contradiction, any statement is considered logically valid.\n"
+"\n"
+"You finish the proof like this:\n"
+"\n"
+"`exact False.elim f`\n"
+"\n"
+"It tells Lean: “Since `False` is true here, I can conclude whatever I want — including `Q`.\n"
+"\n"
+"While it may seem absurd, it follows the principle of *Explosion*, as mentioned earlier”"
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
@@ -743,7 +726,7 @@ msgid "Nicely done! You've applied **Disjunctive Syllogism** in this level, show
 "- Detect contradictions using `¬P`\n"
 "- Escape contradictions using `False.elim`\n"
 "\n"
-"You’re now handling classical logic like a pro."
+"You’re now handling propositional logic like a pro."
 msgstr ""
 
 #: Game.Levels.Propositional.L14_Dilemma
@@ -759,19 +742,19 @@ msgid "This is the **Constructive Dilemma**:\n"
 msgstr ""
 
 #: Game.Levels.Propositional.L14_Dilemma
-msgid "From `P ∨ Q`, `P → R`, and `Q → R`, derive `R`."
-msgstr ""
-
-#: Game.Levels.Propositional.L14_Dilemma
 msgid "Use `cases` on `«{hpq}»` to consider each possibility."
 msgstr ""
 
 #: Game.Levels.Propositional.L14_Dilemma
-msgid "`P` holds. Use `«{hpr}»` to conclude `R`."
+msgid "Now, `P` holds. Use `«{hpr}»` to conclude `R`."
 msgstr ""
 
 #: Game.Levels.Propositional.L14_Dilemma
-msgid "`Q` holds. Use `«{hqr}»` to conclude `R`."
+msgid "After that, `Goal 2` contains the scenario where `Q` holds. Use `«{hqr}»` to conclude `R`."
+msgstr ""
+
+#: Game.Levels.Propositional.L14_Dilemma
+msgid "Also, Lean is really smart. The `exact` tactic is so versatile that both `exact modus_ponens _ _ a b` and `exact a b` mean the same."
 msgstr ""
 
 #: Game.Levels.Propositional.L14_Dilemma
@@ -796,10 +779,6 @@ msgid "You've learned some of the core tactics:\n"
 "- Finish clearly\n"
 "\n"
 "(Pun intended) _Lean_ on what you know. You’ve got this!"
-msgstr ""
-
-#: Game.Levels.Propositional.L15_HandsOn
-msgid "From a chain of implications, conclude the final result."
 msgstr ""
 
 #: Game.Levels.Propositional.L15_HandsOn
