@@ -30,10 +30,7 @@ _**Note:** There can be many alternative ways to prove the same level, with tact
 PS: You will not be prompted with hints in that case :)_
 "
 
-/-- From `P → Q` and `Q → R`, derive `P → R`. -/
-TheoremDoc Propositional.implication_chain as "ImplicationChain" in "Propositional"
-
-Statement implication_chain (P Q R : Prop) (h₁ : P → Q) (h₂ : Q → R) : P → R := by
+Statement (P Q R : Prop) (h₁ : P → Q) (h₂ : Q → R) : P → R := by
   Hint "Start with `intro` to assume that `P` is true."
   intro hp
   Hint "Now finish the level off using `{h₁}` and `{h₂}`. Make use of the exact tactic in a similar manner like you did in the last level.

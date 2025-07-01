@@ -26,10 +26,9 @@ To summarize:
 -/
 TacticDoc constructor
 
-/-- From `P` and `Q`, derive `P ∧ Q`. -/
-TheoremDoc Propositional.and_intro as "AndIntro" in "Propositional"
 
-Statement and_intro (P Q : Prop) (hp : P) (hq : Q) : P ∧ Q := by
+
+Statement (P Q : Prop) (hp : P) (hq : Q) : P ∧ Q := by
   Hint "Use the `constructor` tactic to split the goal `P ∧ Q` into two parts."
   constructor
   Hint "Firstly, prove `P` using `{hp}` in the `Active Goal` to proceed to `Goal 2`

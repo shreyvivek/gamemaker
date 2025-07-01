@@ -30,10 +30,7 @@ you get an assumption `h : P` and your goal will just be `P`.
 -/
 TacticDoc intro
 
-/-- From the assumption `P`, conclude `P`. -/
-TheoremDoc Propositional.intro_self as "IntroSelf" in "Propositional"
-
-Statement intro_self (P : Prop) : P → P := by
+Statement (P : Prop) : P → P := by
   Hint "Use the `intro` tactic to assume `P` is true. Try `intro h`."
   intro h
   Hint "Now you have `{h} : P`, and your goal is `P`. Use `exact` to finish."

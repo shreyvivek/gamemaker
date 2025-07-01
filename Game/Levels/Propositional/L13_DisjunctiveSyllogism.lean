@@ -73,10 +73,7 @@ Then you write:
 -/
 TheoremDoc False.elim as "FalseElim" in "Propositional"
 
-/-- From `P ∨ Q` and `¬P`, conclude `Q`. -/
-TheoremDoc Propositional.disjunctive_syllogism as "DisjunctiveSyllogism" in "Propositional"
-
-Statement disjunctive_syllogism (P Q : Prop) (h : P ∨ Q) (not_p : ¬P) : Q := by
+Statement (P Q : Prop) (h : P ∨ Q) (not_p : ¬P) : Q := by
  Hint "Use `cases h` to consider the two possible cases: `P` or `Q`."
  cases h with
   | inl hp =>

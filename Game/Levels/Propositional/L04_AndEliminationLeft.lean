@@ -12,10 +12,7 @@ If you know `P ∧ Q`, then you can extract `P` from it.
 We’ll use the `exact` tactic, combined with `.left`, described further below.
 "
 
-/-- From `P ∧ Q`, derive `P`. -/
-TheoremDoc Propositional.and_elim_left as "AndElimLeft" in "Propositional"
-
-Statement and_elim_left (P Q : Prop) (h : P ∧ Q) : P := by
+Statement (P Q : Prop) (h : P ∧ Q) : P := by
   Hint "As you know, the `exact` tactic finishes the goal using a term that exactly matches the target.
 
   If you have `h : P ∧ Q`, then:

@@ -22,13 +22,7 @@ Given only `P → Q`, show that `¬Q → ¬P`.
 Let’s unpack this step by step.
 "
 
-
-
-
-/-- From `P → Q`, derive `¬Q → ¬P`. -/
-TheoremDoc Propositional.contrapositive_equiv as "Contrapositive" in "Propositional"
-
-Statement contrapositive_equiv (P Q : Prop) (h : P → Q) : ¬Q → ¬P := by
+Statement (P Q : Prop) (h : P → Q) : ¬Q → ¬P := by
   Hint "To prove `¬Q → ¬P`, first recognize that it's shorthand for `(Q → False) → (P → False)`."
   Hint "That means this is a **nested implication**, so we’ll need to assume both `¬Q` and `P` before we can prove `False`."
   intro not_q

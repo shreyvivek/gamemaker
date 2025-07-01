@@ -22,10 +22,7 @@ Try to:
 (Pun intended) _Lean_ on what you know. You’ve got this!
 "
 
-
-/-- From a chain of implications, conclude the final result. -/
-TheoremDoc Propositional.implication_maze as "ImplicationMaze" in "Propositional"
-Statement implication_maze (A B C D : Prop) (h₁ : A → B) (h₂ : B → C) (h₃ : C → D) : A → D := by
+Statement (A B C D : Prop) (h₁ : A → B) (h₂ : B → C) (h₃ : C → D) : A → D := by
   Hint "First you need to assume `A`."
   intro a
   Hint "Your goal is now `D`. Reduce it to `C`."

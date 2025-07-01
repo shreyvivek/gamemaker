@@ -14,10 +14,7 @@ From `P ∨ Q`, `P → R`, and `Q → R`, you can conclude `R`.
 It's case-based reasoning again.
 "
 
-/-- From `P ∨ Q`, `P → R`, and `Q → R`, derive `R`. -/
-TheoremDoc Propositional.dilemma as "Dilemma" in "Propositional"
-
-Statement dilemma (P Q R : Prop) (hpq : P ∨ Q) (hpr : P → R) (hqr : Q → R) : R := by
+Statement (P Q R : Prop) (hpq : P ∨ Q) (hpr : P → R) (hqr : Q → R) : R := by
   Hint "Use `cases` on `{hpq}` to consider each possibility."
   cases hpq with
   | inl hp =>

@@ -27,10 +27,7 @@ And your goal is to prove `¬P`.
 Let’s walk through how to unpack and apply this.
 "
 
-/-- If `P` leads to a contradiction, then `¬P`. -/
-TheoremDoc Propositional.negation_intro as "NegationIntro" in "Propositional"
-
-Statement negation_intro (P : Prop) (h : P → False) : ¬P := by
+Statement (P : Prop) (h : P → False) : ¬P := by
   Hint "Your goal is `¬P`, which is just `P → False`. Use `intro` to assume that `P` holds."
   intro assumed_p
   Hint "Now your goal is to prove `False`. You have `assumed_p : P`, and a function `h : P → False`."

@@ -28,12 +28,7 @@ After `right`, your new goal is just `Q`
 -/
 TacticDoc right
 
-
-
-/-- From `Q`, derive `P ∨ Q`. -/
-TheoremDoc Propositional.or_intro_right as "OrIntroRight" in "Propositional"
-
-Statement or_intro_right (P Q : Prop) (h : Q) : P ∨ Q := by
+Statement (P Q : Prop) (h : Q) : P ∨ Q := by
   Hint "Use the `right` tactic this time, to commit to proving `Q` instead of `P`."
   right
   Hint "Now you can finish the level yourself."

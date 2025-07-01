@@ -32,10 +32,7 @@ After `left`, your new goal is just `P`
 -/
 TacticDoc left
 
-/-- From `P`, derive `P ∨ Q`. -/
-TheoremDoc Propositional.or_intro_left as "OrIntroLeft" in "Propositional"
-
-Statement or_intro_left (P Q : Prop) (h : P) : P ∨ Q := by
+Statement (P Q : Prop) (h : P) : P ∨ Q := by
   Hint "Use the `left` tactic to say `P ∨ Q` is true because `P` is true.
 
   **Note:** Here you are directly operating on the goal itself. So you just need to type `left` and Lean will understand."

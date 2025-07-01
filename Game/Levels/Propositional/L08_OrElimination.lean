@@ -42,11 +42,7 @@ After:
 -/
 TacticDoc cases
 
-
-/-- From `P ∨ Q`, we can conclude that either `P` or `Q` has to be definitely true. Knowing that both of them imply `R`, we can conclude `R`.-/
-TheoremDoc Propositional.or_elim as "OrElim" in "Propositional"
-
-Statement or_elim (P Q R : Prop) (h : P ∨ Q) (h₁ : P → R) (h₂ : Q → R) : R := by
+Statement (P Q R : Prop) (h : P ∨ Q) (h₁ : P → R) (h₂ : Q → R) : R := by
   Hint "Use the `cases` tactic to break the disjunction `{h}` into two possible cases."
   cases h with
   | inl hp =>

@@ -39,7 +39,7 @@ TacticDoc apply
 
 
 /-- Modus Ponens: from `P → Q` and `P`, conclude `Q`. -/
-TheoremDoc Propositional.modus_ponens as "ModusPonens" in "Propositional"
+TheoremDoc Propositional.modus_ponens as "modus_ponens" in "Propositional"
 
 Statement modus_ponens (P Q : Prop) (h₁ : P → Q) (h₂ : P) : Q := by
   Hint "Your goal is `Q`, and you have an implication `h₁ : P → Q`.
