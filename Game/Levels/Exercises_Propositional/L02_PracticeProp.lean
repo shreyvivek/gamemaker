@@ -15,15 +15,13 @@ Apply both **Modus Tollens** and **Modus Ponens** in a clean logical chain.
 Hint: Make use of the `have` tactic wherever necessary, or a nested `exact` chain!
 "
 
-open Exercises_Propositional (modus_ponens modus_tollens)
-
 Statement (P Q R S T : Prop)
   (h₁ : ¬P ∧ Q)
   (h₂ : R → P)
   (h₃ : ¬R → S)
   (h₄ : S → T) : T := by
   have hnp : ¬P := h₁.left
-  have hnr : ¬R := modus_tollens P R h₂ hnp
+  have hnr : ¬R := modus_tollens _ _ h₂ hnp
   have hs : S := modus_ponens _ _ h₃ hnr
   exact modus_ponens S T h₄ hs
 

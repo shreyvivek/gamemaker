@@ -37,7 +37,7 @@ Statement (P Q : Prop) (h : P → Q) : ¬Q → ¬P := by
   Hint "Now the goal is `P`, and you already have `assumed_p : P`. Use `exact assumed_p` to finish."
   exact assumed_p
 
-
+NewTheorem Propositional.modus_tollens
 Conclusion "
 Awesome! You've just proven the **contrapositive** form of an implication — an essential logical equivalence.
 
