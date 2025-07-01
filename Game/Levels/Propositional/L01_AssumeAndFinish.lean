@@ -57,7 +57,6 @@ TacticDoc «show»
 
 
 /-- If you know `P`, then you can conclude `P`. -/
-LemmaDoc Propositional.assume_and_finish as "AssumeAndFinish" in "Propositional"
 Statement assume_and_finish (P : Prop) (h : P) : P := by
   Hint "Use the `exact` tactic with `{h}` to directly prove the goal `P`."
   exact h
