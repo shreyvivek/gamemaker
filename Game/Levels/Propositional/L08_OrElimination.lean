@@ -56,11 +56,13 @@ Statement (P Q R : Prop) (h : P ∨ Q) (h₁ : P → R) (h₂ : Q → R) : R := 
 
     This should strike a bell, as this resembles the structure of Modus Ponens.
 
-    Then `exact modus_ponens h₁ h_1` is a direct proof of `R`. It means: use `exact` on the result of modus ponens applied to h₁ and h_1.
+    Then `exact modus_ponens P R h₁ h_1` is a direct proof of `R`. It means: use `exact` on the result of modus ponens applied to h₁ and h_1, with propositions P and R.
+
+    Even if u let P and R be underscores respectively, it would still not be an error.
 
     So you write:
 
-    **exact modus_ponens h₁ h_1**
+    **exact modus_ponens P R h₁ h_1**
     _for writing subscript 1, type h, enter a backslash and then enter 1._
     "
     Hint"

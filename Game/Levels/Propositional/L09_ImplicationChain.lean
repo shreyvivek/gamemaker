@@ -35,7 +35,7 @@ Statement (P Q R : Prop) (h₁ : P → Q) (h₂ : Q → R) : P → R := by
   intro hp
   Hint "Now finish the level off using `{h₁}` and `{h₂}`. Make use of the exact tactic in a similar manner like you did in the last level.
 
-  `exact (modus_ponens h₁ a)` probably gives you `Q`, but the goal is `R`. But you also have `{h₂}`. So try giving an appropriate prefix/suffix to `(h₁ a)` with `h₂`, chaining the modus_ponens operation correctly.
+  `exact (modus_ponens P Q h₁ a)` probably gives you `Q`, but the goal is `R`. But you also have `{h₂}`. So try giving an appropriate prefix/suffix to `(modus ponens P Q h₁ a)` with `h₂`, chaining the modus_ponens operation correctly.
 
   Note that binding with brackets here is very important for Lean to understand what you're proving. Else, it throws you a *type mismatch*."
   exact h₂ (h₁ hp)

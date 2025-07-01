@@ -62,16 +62,28 @@ Then `False.elim` produces a proof of `Q`, finishing the goal
 
 **When to use:**
 
-Your goal is `Q` (or anything)
+We use `False.elim` when we've reached a contradiction, but our goal is something else — like `Q`.
 
-You have `f : False`
+Suppose you've reached a point in your proof where you have:
 
-Then you write:
+`f : False`
+
+That means a contradiction has occurred.
+
+Lean now gives you the power to conclude anything, including your goal `Q`, because from a contradiction, any statement is considered logically valid.
+
+You finish the proof like this:
 
 `exact False.elim f`
 
+It tells Lean: “Since `False` is true here, I can conclude whatever I want — including `Q`.
+
+While it may seem absurd, it follows the principle of *Explosion*, as mentioned earlier”
+
+
+
 -/
-TheoremDoc False.elim as "FalseElim" in "Propositional"
+TheoremDoc False.elim as "False.elim" in "Propositional"
 
 Statement (P Q : Prop) (h : P ∨ Q) (not_p : ¬P) : Q := by
  Hint "Use `cases h` to consider the two possible cases: `P` or `Q`."

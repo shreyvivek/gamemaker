@@ -20,7 +20,7 @@ Statement (P Q R : Prop) (hpq : P ∨ Q) (hpr : P → R) (hqr : Q → R) : R := 
   | inl hp =>
     Hint "Now, `P` holds. Use `{hpr}` to conclude `R`."
     Hint "After that, `Goal 2` contains the scenario where `Q` holds. Use `{hqr}` to conclude `R`."
-    Hint "Also, Lean is really smart. The `exact` tactic is so versatile that both `exact modus_ponens a b` and `exact a b` mean the same."
+    Hint "Also, Lean is really smart. The `exact` tactic is so versatile that both `exact modus_ponens _ _ a b` and `exact a b` mean the same."
     exact hpr hp
   | inr hq =>
     exact hqr hq
