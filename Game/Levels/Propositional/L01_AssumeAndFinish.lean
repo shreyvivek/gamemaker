@@ -55,9 +55,7 @@ show tactic yay!
 -/
 TacticDoc «show»
 
-
-/-- If you know `P`, then you can conclude `P`. -/
-Statement assume_and_finish (P : Prop) (h : P) : P := by
+Statement (P : Prop) (h : P) : P := by
   Hint "Use the `exact` tactic with `{h}` to directly prove the goal `P`."
   exact h
 
