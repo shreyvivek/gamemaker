@@ -7,26 +7,45 @@ namespace Exercises_Propositional
 World "Exercises_Propositional"
 
 Level 4
-Title "Another Modus Chain"
+Title "Disjunctive Detour"
 
 Introduction "
-Apply both **Modus Tollens** and **Modus Ponens** in a clean logical chain.
+Time to bring in disjunctions (`P ∨ Q`)!
 
-Hint: Make use of the `have` tactic wherever necessary, or a nested `exact` chain!
+You’re given:
+
+- `h₁ : P ∨ Q`
+- `h₂ : Q → ¬R`
+- `h₃ : ¬P`
+
+Your goal is to prove `¬R`.
+
+You’ll need to use:
+- The `cases` tactic to split the disjunction
+- `have` to name intermediate steps
+- Possibly use contradiction to eliminate impossible paths
+
 "
 
-Statement (T U V W X : Prop)
-  (h₁ : T ∧ U)
-  (h₂ : U → ¬V ∧ W)
-  (h₃ : X → V) : ¬X := by
-  have hu : U := h₁.right
-  have hnv_w : ¬V ∧ W := modus_ponens _ _ h₂ hu
-  have hnv : ¬V := hnv_w.left
-  have hnx : ¬X := modus_tollens _ _ h₃ hnv
-  exact hnx
+Statement (P Q R : Prop)
+  (h₁ : P ∨ Q)
+  (h₂ : Q → ¬R)
+  (h₃ : ¬P) : ¬R := by
+  intro hr
+  cases h₁ with
+  | inl hp =>
+    have f : False := h₃ hp
+    exact False.elim f
+  | inr hq =>
+    have hnr : ¬R := h₂ hq
+    exact hnr hr
 
 Conclusion "
-Excellent. You combined two powerful rules — **Modus Tollens** and **Modus Ponens** — using structured steps.
+Excellent! You split the disjunction and handled both cases carefully:
+- The first led to contradiction with `¬P`
+- The second allowed you to conclude `¬R`
+
+This is classic **disjunction reasoning** paired with a chain of implications.
 "
 
 end Exercises_Propositional
