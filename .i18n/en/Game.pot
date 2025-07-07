@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Fri Jul  4 20:17:25 2025\n"
+"POT-Creation-Date: Mon Jul  7 21:15:35 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -1059,12 +1059,115 @@ msgstr ""
 msgid "Excellent. You combined two powerful rules — **Modus Tollens** and **Modus Ponens** — using structured steps."
 msgstr ""
 
+#: Game.Levels.Exercises_Propositional.L03_PracticeProp
+msgid "Another Modus Chain"
+msgstr ""
+
+#: Game.Levels.Exercises_Propositional.L03_PracticeProp
+msgid "Apply both **Modus Tollens** and **Modus Ponens** in a clean logical chain.\n"
+"\n"
+"Hint: Make use of the `have` tactic wherever necessary, or a nested `exact` chain!"
+msgstr ""
+
+#: Game.Levels.Exercises_Propositional.L03_PracticeProp
+msgid "Excellent. You combined two powerful rules — **Modus Tollens** and **Modus Ponens** — using structured steps."
+msgstr ""
+
+#: Game.Levels.Exercises_Propositional.L04_PracticeProp
+msgid "Disjunctive Detour"
+msgstr ""
+
+#: Game.Levels.Exercises_Propositional.L04_PracticeProp
+msgid "Time to bring in disjunctions (`P ∨ Q`)!\n"
+"\n"
+"You’re given:\n"
+"\n"
+"- `h₁ : P ∨ Q`\n"
+"- `h₂ : Q → ¬R`\n"
+"- `h₃ : ¬P`\n"
+"\n"
+"Your goal is to prove `¬R`.\n"
+"\n"
+"You’ll need to use:\n"
+"- The `cases` tactic to split the disjunction\n"
+"- `have` to name intermediate steps\n"
+"- Possibly use contradiction to eliminate impossible paths"
+msgstr ""
+
+#: Game.Levels.Exercises_Propositional.L04_PracticeProp
+msgid "Excellent! You split the disjunction and handled both cases carefully:\n"
+"- The first led to contradiction with `¬P`\n"
+"- The second allowed you to conclude `¬R`\n"
+"\n"
+"This is classic **disjunction reasoning** paired with a chain of implications."
+msgstr ""
+
 #: Game.Levels.Exercises_Propositional.Exercises_Propositional
 msgid "Exercises - Propositional"
 msgstr ""
 
 #: Game.Levels.Exercises_Propositional.Exercises_Propositional
 msgid "In this world, you'll try out some exercises on propositional logic, based on the knowledge gained so far.\n"
+"\n"
+"Before you start, take note of the panel on the right (if you are on PC). You can find the documentations/descriptions for several **Tactics** we will be making use of, and **Theorems** we will be proving(_and using_) in this World. Click on them, whether locked or unlocked, to read and understand! You are encouraged to do so whenever you are prompted to use a tactic in the game.\n"
+"\n"
+"Click on the `Start` button to begin!"
+msgstr ""
+
+#: Game.Levels.Sets.L01
+msgid "Set Membership"
+msgstr ""
+
+#: Game.Levels.Sets.L01
+msgid "Welcome to the world of **Set Theory**! 🧺\n"
+"\n"
+"Sets are collections of objects. We write `x ∈ A` to say that *element x is in set A*.\n"
+"\n"
+"This level introduces one of the most fundamental ideas: **membership**.\n"
+"\n"
+"In Lean, we work with `x ∈ A` as a proposition, which we can use in proofs.\n"
+"\n"
+"Let’s prove something simple!"
+msgstr ""
+
+#: Game.Levels.Sets.L01
+msgid "Purpose: Use the `exact` tactic when your goal matches something you already know.\n"
+"\n"
+"You’re given:\n"
+"- A set `A : Set ℕ`\n"
+"- An element `x : ℕ`\n"
+"- A hypothesis `h : x ∈ A`\n"
+"\n"
+"And your goal is to prove exactly that: `x ∈ A`.\n"
+"\n"
+"Since your goal *already matches* your assumption, just use:\n"
+"`exact h`\n"
+"\n"
+"This is the most basic kind of step in a proof: confirming something you’ve already assumed."
+msgstr ""
+
+#: Game.Levels.Sets.L01
+msgid "You are trying to prove `x ∈ A`. And you already have `h : x ∈ A`.\n"
+"\n"
+"Just use `exact h` to complete the proof."
+msgstr ""
+
+#: Game.Levels.Sets.L01
+msgid "Great start! ✅\n"
+"\n"
+"You’ve just used a given assumption to complete a proof.\n"
+"\n"
+"Set membership (`x ∈ A`) is one of the most basic ideas in math — and you’ll use it a lot in upcoming levels."
+msgstr ""
+
+#: Game.Levels.Sets.Sets
+msgid "Sets"
+msgstr ""
+
+#: Game.Levels.Sets.Sets
+msgid "In this world, you'll explore the foundations of Sets.\n"
+"\n"
+"Each level presents a new fundamental theorem or principle.\n"
 "\n"
 "Before you start, take note of the panel on the right (if you are on PC). You can find the documentations/descriptions for several **Tactics** we will be making use of, and **Theorems** we will be proving(_and using_) in this World. Click on them, whether locked or unlocked, to read and understand! You are encouraged to do so whenever you are prompted to use a tactic in the game.\n"
 "\n"
