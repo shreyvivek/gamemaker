@@ -1,4 +1,5 @@
 import Game.Levels.Sets.L01
+import Game.Levels.Sets.L02
 World "Sets"
 
 Title "Sets"
