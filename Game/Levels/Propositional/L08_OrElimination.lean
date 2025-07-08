@@ -7,7 +7,7 @@ Level 8
 Title "Or Elimination"
 
 Introduction "
-Suppose you want to prove a proposition `R`.
+You might remember one such proof from lectures
 
 You’re told that either `P` or `Q` is true (i.e., `P ∨ Q`).
 But you don’t know which one — Lean won’t let you just pick one randomly.

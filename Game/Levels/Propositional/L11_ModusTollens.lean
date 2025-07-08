@@ -36,7 +36,7 @@ Let’s walk through this chain and build the logic slowly.
 "
 /-- Modus Tollens: from `Q → P` and `¬P`, conclude `¬Q`. -/
 TheoremDoc Propositional.modus_tollens as "modus_tollens" in "Propositional"
-Statement modus_tollens (P Q : Prop) (h₁ : P → Q) (h₂ : ¬Q) : ¬P := by
+Statement modus_tollens {P Q : Prop} (h₁ : P → Q) (h₂ : ¬Q) : ¬P := by
   Hint "Start by using `intro` to assume that `P` holds. This is needed to prove `¬P`, or `P → False`."
   intro hp
   Hint "Your goal is now `False`. Since you have `h₂ : Q → False`, you can use `apply h₂` to reduce the goal to `Q`."
