@@ -46,7 +46,7 @@ Just use `exact h` to complete the proof."
   exact h
 
 
-
+NewTactic exact
 Conclusion "
 Great start!
 
