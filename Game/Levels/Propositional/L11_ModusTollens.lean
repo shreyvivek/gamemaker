@@ -34,20 +34,68 @@ But here, you must **chain implications across two steps**:
 
 Let’s walk through this chain and build the logic slowly.
 "
-/-- Modus Tollens: from `Q → P` and `¬P`, conclude `¬Q`. -/
+/-- Modus Tollens: from `P → Q` and `¬Q`, conclude `¬P`. -/
 TheoremDoc Propositional.modus_tollens as "modus_tollens" in "Propositional"
 Statement modus_tollens {P Q : Prop} (h₁ : P → Q) (h₂ : ¬Q) : ¬P := by
-  Hint "Start by using `intro` to assume that `P` holds. This is needed to prove `¬P`, or `P → False`."
+  Hint "
+We are proving `¬P`, which means the goal is `P → False`.
+
+This type is a function — it says: “If you give me a proof of `P`, I will return a contradiction.”
+
+To do that, **assume `P` holds**, and then try to derive a contradiction from it.
+
+Use the `intro` tactic to assume `P`.
+"
   intro hp
-  Hint "Your goal is now `False`. Since you have `h₂ : Q → False`, you can use `apply h₂` to reduce the goal to `Q`."
+  Hint "
+Now your goal has become `False`.
+
+Let’s see what you have:
+
+- `h₂ : ¬Q` (this means `Q → False`)
+- `h₁ : P → Q`
+- `hp : P`
+
+We want to reach a contradiction — `False`.
+
+Let’s look at `h₂`. It says:
+> “If you give me `Q`, I’ll give you `False`.”
+
+So the idea is: **try to produce `Q`, then feed it into `h₂`.**
+
+Use `apply h₂` to say:
+> “To prove `False`, it’s enough to prove `Q`.”
+"
   apply h₂
-  Hint "Now your goal is `Q`, and you have `h₁ : P → Q` and `hp : P`."
-  Hint "Use `apply h₁` to reduce the goal to proving `P`, which you already assumed initially."
+  Hint "
+Now your goal is to prove `Q`.
+
+How can we get `Q`?
+
+You have:
+- `h₁ : P → Q`
+- `hp : P`
+
+So this is a perfect match for applying an implication.
+
+Use `apply h₁` to transform your goal from `Q` to `P`.
+"
   apply h₁
-  Hint "Now your goal is `P`, and you already have `hp`."
+  Hint "
+Now your goal is `P`.
+
+But you already assumed `P` at the very beginning, as `hp`.
+
+So simply use:
+exact hp
+
+css
+Copy
+Edit
+
+to conclude the proof.
+"
   exact hp
-
-
 Conclusion "
 Well done! You’ve just used **Modus Tollens** with a clean chain of `apply` steps.
 

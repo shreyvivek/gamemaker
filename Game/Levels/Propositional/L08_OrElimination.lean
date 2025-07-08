@@ -10,9 +10,9 @@ Introduction "
 You might remember one such proof from lectures - Dilemma.
 Given:
 `
--- P ∨ Q
--- P → R
--- Q → R
+-- P ∨ Q ---- (1)
+-- P → R ---- (2)
+-- Q → R ---- (3)
 `
 To prove:
 `
@@ -21,16 +21,12 @@ R is true
 Proof:
 `
 We use disjunction elimination on P ∨ Q — i.e., we consider both cases separately:
-
-Case 1: Assume P is true
+*Case 1: Assume P is true*
 From (2): P → R, so R is true.
-
-Case 2: Assume Q is true
+*Case 2: Assume Q is true.*
 From (3): Q → R, so again R is true.
-
 In both cases, R is true.
 So regardless of whether P or Q is true, we conclude:
-
 R is true.
 `
 
@@ -57,42 +53,27 @@ After:
 -/
 TacticDoc cases
 
-Statement (P Q R : Prop) (h : P ∨ Q) (h₁ : P → R) (h₂ : Q → R) : R := by
-  Hint "Use the `cases` tactic to break the disjunction `{h}` into two possible cases."
-  cases h with
-  | inl hp =>
-    Hint "In this level, you will see how `exact` is used with a **theorem applied to an argument**.
+Statement (P Q R : Prop) (hpq : P ∨ Q) (hpr : P → R) (hqr : Q → R) : R := by
+  Hint "Use the `cases` tactic to break the disjunction `hpq` into two cases: one where `P` is true, and another where `Q` is true."
+  cases hpq with
+  | inl h₁ =>
+    Hint "
+In this case, `P` holds (`h₁ : P`) and you also have `hpr : P → R`.
 
-    💡 Consider the `Active Goal`:
+This matches the **Modus Ponens** pattern: if `P` is true and `P → R`, then `R` must be true.
 
-    You have:
-    - `h₁ : P → R` (an implication)
-    - `h_1 : P` (from a case)
+Use the `exact` tactic to apply the implication, with `modus_ponens` like this : `exact modus_ponens hpr h₁`.
 
-    This should strike a bell, as this resembles the structure of Modus Ponens.
+exact hpr h₁
 
-    Then `exact modus_ponens P R h₁ h_1` is a direct proof of `R`. It means: use `exact` on the result of modus ponens applied to h₁ and h_1, with propositions P and R.
+This tells Lean to use modus_ponens on `hpr` and `h₁`, resulting in `R`.
 
-    Even if u let P and R be underscores respectively, it would still not be an error.
-
-    So you write:
-
-    **exact modus_ponens P R h₁ h_1**
-    _for writing subscript 1, type h, enter a backslash and then enter 1._
+Do similarly for when `Q` is assumed to be true in `Goal 2`.
     "
-    Hint"
-    Here, Lean will check that:
+    exact hpr h₁
+  | inr h₂ =>
+    exact hqr h₂
 
-    `h₁ : P → R`
-    `h_1 : P`
-
-    Therefore `R` is concluded, which correctly matches what we want, `R`!
-
-    Similarly, when `Q` holds, use `{h₂}` to conclude `R`.
-    "
-    exact h₁ hp
-  | inr hq =>
-    exact h₂ hq
 
 NewTactic cases
 

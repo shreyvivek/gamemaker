@@ -53,7 +53,9 @@ Statement modus_ponens {P Q : Prop} (h₁ : P → Q) (h₂ : P) : Q := by
   So apply h₁ transforms your goal from Q to P,
   and Lean now expects you to prove P.
 
-  Now go ahead — apply the implication!"
+  Now go ahead — apply the implication!
+
+  _for writing subscript 1, type h, enter a backslash and then enter 1._"
   apply h₁
   Hint "Now the goal has changed to `P`. You're being asked to prove the condition of the implication.
 

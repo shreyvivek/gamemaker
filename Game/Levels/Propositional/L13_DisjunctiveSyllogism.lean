@@ -84,18 +84,50 @@ While it may seem absurd, it follows the principle of *Explosion*, as mentioned 
 
 -/
 TheoremDoc False.elim as "False.elim" in "Propositional"
-
 Statement (P Q : Prop) (h : P ∨ Q) (not_p : ¬P) : Q := by
- Hint "Use `cases h` to consider the two possible cases: `P` or `Q`."
- cases h with
+  Hint "
+You're given a disjunction `P ∨ Q`. To proceed, you must consider both cases separately.
+
+Use the `cases` tactic on `{h}` to split the proof into two branches: one where `P` holds and one where `Q` holds.
+"
+  cases h with
   | inl hp =>
-    Hint "You are now in the case where `P` is true. But you also have `not_p : P → False`, so this leads to a contradiction."
-    Hint "A compound exact statement enclosed in `()` should help to get a contradiction (`False`)."
-    Hint "Then use `False.elim` to derive your goal `Q` from that contradiction using `exact False.elim (whatever you think the compound statement is)."
-    exact False.elim (not_p hp)
+    Hint "
+You're now in the case where `P` is assumed true (`hp : P`), but you also have `not_p : ¬P` — that is, `P → False`.
+
+These two contradict each other!
+
+So you want to derive `False` from this contradiction, and then conclude your goal `Q` using Lean's principle that anything follows from `False`.
+
+Instead of writing a compound term directly inside `exact`, we can also:
+
+1. Use `apply False.elim` to change the goal to `False`
+2. Then prove that contradiction directly
+
+This breaks it into more manageable steps and teaches a reusable pattern.
+"
+    apply False.elim
+    Hint "
+After using `apply False.elim`, your goal becomes `False`.
+
+You already have:
+
+- `not_p : ¬P`, which is `P → False`
+- `hp : P`, which came from the case assumption
+
+Use these together: `not_p hp` gives you `False`.
+
+So simply write:
+
+`exact not_p hp`
+"
+    exact not_p hp
+
   | inr hq =>
-    Hint "`Q` holds directly here. Use `exact` to finish the proof."
+    Hint "This should be straightforward. You can try it yourself."
     exact hq
+
+
 
 
 NewTheorem False.elim

@@ -11,7 +11,13 @@ You’re now going to prove something of the form `¬P`.
 
 What does that mean?
 
-> `¬P` is just shorthand for `P → False`.
+> `¬P` is just shorthand for `P → False`. Why? See below:
+
+P   ¬P   P → False
+
+T    F       F
+
+F    T       T
 
 So, to prove `¬P`, you must:
 1. Assume `P`

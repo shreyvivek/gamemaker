@@ -40,13 +40,13 @@ It lets you:
 
 ### Example:
 
-If you have `h₁ : P → Q` and `hp : P`, and you want to reach `R`, you can write:
+If you have `h₁ : P → Q` and `hp : P`, and you want to reach `Q`, you can write:
 
-`have hq : Q := modus_ponens _ _ h₁ hp`
+`have hq : Q := modus_ponens h₁ hp`.
 
-Now you have `hq : Q`, which you can use in the next line with `h₂ : Q → R`:
+Similar to what
 
-`exact modus_ponens _ _ h₂ hq`
+`exact modus_ponens h₂ hq` would do.
 
 This is useful when proofs grow longer or when you want to give names to intermediate steps to reason about them clearly.
 -/
@@ -59,7 +59,7 @@ Hint "One way to go ahead is to use the exact statement by writing something lik
 
 Looks complicated, and I hope you aren't too confused, because there's an amazing tactic to use here. Read about the `have` tactic on the right.
 
-**Note** that the `have` tactic is strict on syntax, but it simplifies your task in seconds!"
+**Note** that the `have` tactic is strict on syntax, but it simplifies your task in seconds! Also if you just write `modus_ponens h₁ hp` in the `have` tactic, it does the same thing as `exact modus_ponens h₁ hp`"
 have hq : Q := h₁ hp
 exact h₂ hq
 
