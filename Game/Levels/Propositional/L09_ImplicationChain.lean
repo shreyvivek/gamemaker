@@ -38,7 +38,7 @@ It lets you:
 - Improve clarity and structure
 - Reuse partial results later
 
-### Example:
+### For Example:
 
 If you have `h₁ : P → Q` and `hp : P`, and you want to reach `Q`, you can write:
 
