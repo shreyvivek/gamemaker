@@ -56,23 +56,21 @@ TacticDoc cases
 Statement (P Q R : Prop) (hpq : P ∨ Q) (hpr : P → R) (hqr : Q → R) : R := by
   Hint "Use the `cases` tactic to break the disjunction `hpq` into two cases: one where `P` is true, and another where `Q` is true."
   cases hpq with
-  | inl h₁ =>
+  | inl h =>
     Hint "
-In this case, `P` holds (`h₁ : P`) and you also have `hpr : P → R`.
+In this case, `P` holds (`h : P`) and you also have `hpr : P → R`.
 
 This matches the **Modus Ponens** pattern: if `P` is true and `P → R`, then `R` must be true.
 
-Use the `exact` tactic to apply the implication, with `modus_ponens` like this : `exact modus_ponens hpr h₁`.
-
-exact hpr h₁
+Use the `exact` tactic to apply the implication, with `modus_ponens` like this : `exact modus_ponens hpr h`.
 
 This tells Lean to use modus_ponens on `hpr` and `h₁`, resulting in `R`.
 
 Do similarly for when `Q` is assumed to be true in `Goal 2`.
     "
-    exact hpr h₁
-  | inr h₂ =>
-    exact hqr h₂
+    exact hpr h
+  | inr h =>
+    exact hqr h
 
 
 NewTactic cases

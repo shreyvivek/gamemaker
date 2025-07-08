@@ -16,13 +16,8 @@ It works like this:
 This makes sense — `P ∨ Q` tells us that at least one of them is true.
 If we know that `P` is *not* true (`¬P`), then `Q` is the only possibility left.
 
-This combines what you did in earlier levels:
-- In Level 8, you used `cases` to break apart a disjunction
-- In Level 10, you learned that `¬P` means `P → False`
-- In Level 11, you used contradiction (`False`) to complete a proof
-
-Now you’ll combine all of those tools into one elegant move.
-You also make use of another theorem to achieve this. Read about `False.elim` on the Theorems section!
+You will combine a lot of lessons from previous levels to clear this one.
+You will also make use of another theorem to achieve this. Read about `False.elim` on the Theorems section!
 "
 
 /--

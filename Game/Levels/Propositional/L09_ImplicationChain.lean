@@ -46,7 +46,7 @@ If you have `h₁ : P → Q` and `hp : P`, and you want to reach `Q`, you can wr
 
 Similar to what
 
-`exact modus_ponens h₂ hq` would do.
+`exact modus_ponens h₁ hp` would do.
 
 This is useful when proofs grow longer or when you want to give names to intermediate steps to reason about them clearly.
 -/
