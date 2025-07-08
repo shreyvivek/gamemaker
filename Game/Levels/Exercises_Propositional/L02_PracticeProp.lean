@@ -21,9 +21,9 @@ Statement (P Q R S T : Prop)
   (h₃ : ¬R → S)
   (h₄ : S → T) : T := by
   have hnp : ¬P := h₁.left
-  have hnr : ¬R := modus_tollens _ _ h₂ hnp
-  have hs : S := modus_ponens _ _ h₃ hnr
-  exact modus_ponens S T h₄ hs
+  have hnr : ¬R := modus_tollens h₂ hnp
+  have hs : S := modus_ponens h₃ hnr
+  exact modus_ponens h₄ hs
 
 Conclusion "
 Excellent. You combined two powerful rules — **Modus Tollens** and **Modus Ponens** — using structured steps.

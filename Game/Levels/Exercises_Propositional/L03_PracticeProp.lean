@@ -20,9 +20,9 @@ Statement (T U V W X : Prop)
   (h₂ : U → ¬V ∧ W)
   (h₃ : X → V) : ¬X := by
   have hu : U := h₁.right
-  have hnv_w : ¬V ∧ W := modus_ponens _ _ h₂ hu
+  have hnv_w : ¬V ∧ W := modus_ponens h₂ hu
   have hnv : ¬V := hnv_w.left
-  have hnx : ¬X := modus_tollens _ _ h₃ hnv
+  have hnx : ¬X := modus_tollens h₃ hnv
   exact hnx
 
 Conclusion "
