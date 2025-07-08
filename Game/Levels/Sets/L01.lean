@@ -1,8 +1,6 @@
 import GameServer.Commands
+import Game.Levels.Sets.setdef
 
--- Minimal definition of Set and membership
-def Set (α : Type) := α → Prop
-notation:50 x " ∈ " A => A x
 
 namespace Sets
 
@@ -11,7 +9,7 @@ Level 1
 Title "Set Membership"
 
 Introduction "
-Welcome to the world of **Set Theory**! 🧺
+Welcome to the world of **Set Theory**!
 
 Sets are collections of objects. We write `x ∈ A` to say that *element x is in set A*.
 
@@ -50,7 +48,7 @@ Just use `exact h` to complete the proof."
 
 
 Conclusion "
-Great start! ✅
+Great start!
 
 You’ve just used a given assumption to complete a proof.
 

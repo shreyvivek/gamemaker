@@ -1,2 +1,4 @@
 def Set (α : Type) := α → Prop
-notation:50 x " ∈ " A => A x
+
+def Mem {α : Type} (x : α) (A : Set α) : Prop := A x
+infix:50 " ∈ " => Mem
