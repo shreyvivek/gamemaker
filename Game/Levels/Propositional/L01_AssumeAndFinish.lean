@@ -51,25 +51,19 @@ show tactic yay!
 TacticDoc «show»
 
 /--
-Unicode Table
+## Unicode Table
 
-Logic Constants & Operators
+### Logic Constants & Operators
 
-Name    Symbol	      Command
-
-Not	      ¬	     \n \not \neg \lnot
-
-And	      ∧	       \and \an \wedge
-
-Or	      ∨	       \v \or \vee
-
-Implies		→	   \r \imp \to \r- \rightarrow
-
-Iff	    	↔	     \iff \lr \leftrightarrow
-
-For All		∀	        \all \forall
-
-Exists		∃	         \ex \exists
+| Name      | Symbol | Commands                          |
+|-----------|--------|-----------------------------------|
+| Not       | ¬      | `\n`, `\not`, `\neg`, `\lnot`     |
+| And       | ∧      | `\and`, `\an`, `\wedge`           |
+| Or        | ∨      | `\v`, `\or`, `\vee`               |
+| Implies   | →      | `\r`, `\imp`, `\to`, `\rightarrow` |
+| Iff       | ↔      | `\iff`, `\lr`, `\leftrightarrow`  |
+| For All   | ∀      | `\all`, `\forall`                 |
+| Exists    | ∃      | `\ex`, `\exists`                  |
 
 -/
 DefinitionDoc UniCode_Table as "UniCode Table"
