@@ -7,19 +7,34 @@ Level 8
 Title "Or Elimination"
 
 Introduction "
-You might remember one such proof from lectures
+You might remember one such proof from lectures - Dilemma.
+Given:
+`
+-- P ∨ Q
+-- P → R
+-- Q → R
+`
+To prove:
+`
+R is true
+`
+Proof:
+`
+We use disjunction elimination on P ∨ Q — i.e., we consider both cases separately:
 
-You’re told that either `P` or `Q` is true (i.e., `P ∨ Q`).
-But you don’t know which one — Lean won’t let you just pick one randomly.
+Case 1: Assume P is true
+From (2): P → R, so R is true.
 
-You’re also told that:
-- If `P` is true, then `R` follows
-- If `Q` is true, then `R` follows
-_(we ignore the vacuously true cases, which you would have possibly learnt in lectures.)_
-This means: no matter *which* side of the disjunction holds, `R` will be true either way.
-To prove `R`, you need to split into two cases using the `cases` tactic — one where `P` is true, and one where `Q` is.
+Case 2: Assume Q is true
+From (3): Q → R, so again R is true.
 
-Then, in each case, use the appropriate implication to show that `R` follows.
+In both cases, R is true.
+So regardless of whether P or Q is true, we conclude:
+
+R is true.
+`
+
+Now, we do this same proof, but in Lean.
 "
 
 /--

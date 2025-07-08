@@ -55,7 +55,7 @@ TacticDoc «have»
 Statement (P Q R : Prop) (h₁ : P → Q) (h₂ : Q → R) : P → R := by
 Hint "Quite obvious, you can start with `intro`."
 intro hp
-Hint "One way to go ahead is to use the exact statement by writing something like `exact modus_ponens Q R h₂ (modus_ponens P Q h₁ a)`
+Hint "One way to go ahead is to use the exact statement by writing something like `exact modus_ponens h₂ (modus_ponens h₁ a)`
 
 Looks complicated, and I hope you aren't too confused, because there's an amazing tactic to use here. Read about the `have` tactic on the right.
 
