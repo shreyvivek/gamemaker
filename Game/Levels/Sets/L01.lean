@@ -19,6 +19,10 @@ In Lean, we work with `x ∈ A` as a proposition, which we can use in proofs.
 
 Let’s prove something simple!
 "
+/--
+placeholder exact
+-/
+TacticDoc exact
 
 Statement (A : Set ℕ) (x : ℕ) (h : x ∈ A) : x ∈ A := by
   Hint "You are trying to prove `x ∈ A`. And you already have `h : x ∈ A`.
@@ -26,6 +30,7 @@ Statement (A : Set ℕ) (x : ℕ) (h : x ∈ A) : x ∈ A := by
 Just use `exact h` to complete the proof."
   exact h
 
+NewTactic exact
 Conclusion "
 Great start!
 

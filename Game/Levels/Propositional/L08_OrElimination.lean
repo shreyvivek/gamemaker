@@ -11,6 +11,7 @@ You might remember one such proof from lectures — **Dilemma**.
 
 "
 /--
+
 ---
 
 Purpose: Use `cases` on a disjunction (e.g. `P ∨ Q`) to split it into two separate cases.

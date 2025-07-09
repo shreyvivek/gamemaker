@@ -13,6 +13,7 @@ This level introduces the `intro` tactic.
 "
 
 /--
+
 ---
 
 Purpose: Use intro to assume something — usually when proving an implication.

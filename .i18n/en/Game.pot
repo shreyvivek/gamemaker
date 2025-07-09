@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Thu Jul 10 04:38:08 2025\n"
+"POT-Creation-Date: Thu Jul 10 05:41:57 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -41,6 +41,8 @@ msgid "Purpose: Use exact when you already have a proof of exactly what the goal
 "\n"
 "“Here's exactly what you're asking for — done!”\n"
 "\n"
+"---\n"
+"\n"
 "### In Propositional Logic:\n"
 "\n"
 "If your goal is `P` and you have a proof of `P` (say `h : P`), then `exact h` completes the proof.\n"
@@ -50,6 +52,8 @@ msgid "Purpose: Use exact when you already have a proof of exactly what the goal
 "You have : `h : P`\n"
 "Your goal : `P`\n"
 "`exact h` will complete the proof!\n"
+"\n"
+"---\n"
 "\n"
 "### In Sets:\n"
 "\n"
@@ -65,13 +69,13 @@ msgid "Purpose: Use exact when you already have a proof of exactly what the goal
 "\n"
 "`exact h`\n"
 "\n"
-"This is the most basic kind of step in a proof: confirming something you’ve already assumed."
+"This is the most basic kind of step in a proof: confirming something you’ve already assumed.\n"
+"\n"
+"---"
 msgstr ""
 
 #: Game.Levels.Propositional.L01_AssumeAndFinish
-msgid "## Unicode Table\n"
-"\n"
-"### Logic Constants & Operators\n"
+msgid "### Logic Constants & Operators\n"
 "\n"
 "|Name       | Symbol | Commands                          |\n"
 "|-----------|--------|-----------------------------------|\n"
@@ -116,11 +120,15 @@ msgid "Purpose: Use intro to assume something — usually when proving an implic
 "“Let me assume `P` is true for now, and see if I can prove `Q`.”\n"
 "Opens up an implication goal by introducing its assumption.\n"
 "\n"
+"---\n"
+"\n"
 "### In Propositional Logic:\n"
 "\n"
 "Your goal : `h : P → P`\n"
 "After `intro h`,\n"
 "you get an assumption `h : P` and your goal will just be `P`.\n"
+"\n"
+"---\n"
 "\n"
 "### In Sets:\n"
 "\n"
@@ -134,7 +142,9 @@ msgid "Purpose: Use intro to assume something — usually when proving an implic
 "2. Use `intro h` to assume `x ∈ A`.\n"
 "3. Use `exact h` to conclude `x ∈ A`.\n"
 "\n"
-"This pattern is the **structure of proving subset relations**."
+"This pattern is the **structure of proving subset relations**.\n"
+"\n"
+"---"
 msgstr ""
 
 #: Game.Levels.Propositional.L02_IntroduceAssumption
@@ -168,13 +178,19 @@ msgid "Purpose: Use constructor when your goal is a conjunction (`P ∧ Q`).\n"
 "\n"
 "“To prove both `P` and `Q`, let’s do them one at a time.”\n"
 "\n"
+"---\n"
+"\n"
 "### In Propositional Logic:\n"
 "\n"
 "`constructor` on `P ∧ Q` gives you two sub goals — one for `P` and one for `Q`.\n"
 "\n"
+"---\n"
+"\n"
 "### In Sets:\n"
 "\n"
-"If your goal is `x ∈ A ∩ B`, use `constructor` and then prove `x ∈ A` and `x ∈ B` separately."
+"If your goal is `x ∈ A ∩ B`, use `constructor` and then prove `x ∈ A` and `x ∈ B` separately.\n"
+"\n"
+"---"
 msgstr ""
 
 #: Game.Levels.Propositional.L03_AndIntroduction
@@ -240,17 +256,23 @@ msgid "Purpose: Use `left` when your goal is a disjunction (`P ∨ Q`) and you w
 "\n"
 "“I’ll prove the first part of the `or`, and that’s good enough.”\n"
 "\n"
+"---\n"
+"\n"
 "### In Propositional Logic:\n"
 "\n"
 "Your goal : `P ∨ Q`\n"
 "\n"
 "After `left`, your new goal is just `P`.\n"
 "\n"
+"---\n"
+"\n"
 "### In Sets:\n"
 "\n"
 "Your goal : `x ∈ A ∪ B`\n"
 "\n"
-"After `left`, your new goal is just `x ∈ A`."
+"After `left`, your new goal is just `x ∈ A`.\n"
+"\n"
+"---"
 msgstr ""
 
 #: Game.Levels.Propositional.L05_OrIntroductionLeft
@@ -286,17 +308,23 @@ msgid "Purpose: Use `right` when your goal is a disjunction (`P ∨ Q`) and you 
 "\n"
 "“I’ll prove the second part of the `or`, and that’s good enough.”\n"
 "\n"
+"---\n"
+"\n"
 "### In Propositional Logic:\n"
 "\n"
 "Your goal : `P ∨ Q`\n"
 "\n"
 "After `right`, your new goal is just `Q`.\n"
 "\n"
+"---\n"
+"\n"
 "### In Sets:\n"
 "\n"
 "Your goal : `x ∈ A ∪ B`\n"
 "\n"
-"After `right`, your new goal is just `x ∈ B`."
+"After `right`, your new goal is just `x ∈ B`.\n"
+"\n"
+"---"
 msgstr ""
 
 #: Game.Levels.Propositional.L06_OrIntroductionRight
@@ -342,7 +370,9 @@ msgid "Purpose: Use `apply` to reduce your current goal to an earlier implicatio
 "\n"
 "📌 Think of it as:\n"
 "\n"
-"“To prove `Q`, it’s enough to prove `P` — because I already have `P → Q`.”"
+"“To prove `Q`, it’s enough to prove `P` — because I already have `P → Q`.”\n"
+"\n"
+"---"
 msgstr ""
 
 #: Game.Levels.Propositional.L07_ModusPonens
@@ -399,6 +429,8 @@ msgid "Purpose: Use `cases` on a disjunction (e.g. `P ∨ Q`) to split it into t
 "\n"
 "“Let’s examine both possible scenarios and show that the goal works either way.”\n"
 "\n"
+"---\n"
+"\n"
 "### In Propositional Logic:\n"
 "\n"
 "Given: `h : P ∨ Q`\n"
@@ -406,6 +438,8 @@ msgid "Purpose: Use `cases` on a disjunction (e.g. `P ∨ Q`) to split it into t
 "After `cases h`:\n"
 "- Case 1: `hp : P`\n"
 "- Case 2: `hq : Q`\n"
+"\n"
+"---\n"
 "\n"
 "### In Sets:\n"
 "\n"
@@ -417,7 +451,9 @@ msgid "Purpose: Use `cases` on a disjunction (e.g. `P ∨ Q`) to split it into t
 "\n"
 "After `cases h`:\n"
 "- Case 1: `ha : x ∈ A`\n"
-"- Case 2: `hb : x ∈ B`"
+"- Case 2: `hb : x ∈ B`\n"
+"\n"
+"---"
 msgstr ""
 
 #: Game.Levels.Propositional.L08_OrElimination
@@ -512,6 +548,8 @@ msgid "Purpose: Use `have` to create and name an intermediate result in your pro
 "- Improve clarity and structure\n"
 "- Reuse partial results later\n"
 "\n"
+"---\n"
+"\n"
 "### In Propositional Logic:\n"
 "\n"
 "If you have `h₁ : P → Q` and `hp : P`, and you want to reach `Q`, you can write:\n"
@@ -521,6 +559,8 @@ msgid "Purpose: Use `have` to create and name an intermediate result in your pro
 "Similar to what\n"
 "\n"
 "`exact modus_ponens h₁ hp` would do.\n"
+"\n"
+"---\n"
 "\n"
 "### In Sets:\n"
 "\n"
@@ -535,7 +575,9 @@ msgid "Purpose: Use `have` to create and name an intermediate result in your pro
 "`have xb : x ∈ B := h₁ x h`\n"
 "Now `xb` stores `x ∈ B` for later use.\n"
 "\n"
-"This tactic is useful when proofs grow longer or when you want to give names to intermediate steps to reason about them clearly."
+"This tactic is useful when proofs grow longer or when you want to give names to intermediate steps to reason about them clearly.\n"
+"\n"
+"---"
 msgstr ""
 
 #: Game.Levels.Propositional.L09_ImplicationChain
@@ -800,6 +842,8 @@ msgstr ""
 msgid "`False.elim` — From Contradiction, Anything Follows\n"
 "it is of the type False.elim : False → α\n"
 "\n"
+"---\n"
+"\n"
 "**Meaning:**\n"
 "\n"
 "If you have a contradiction (`False`), you can conclude *any* proposition — even something unrelated.\n"
@@ -807,6 +851,8 @@ msgid "`False.elim` — From Contradiction, Anything Follows\n"
 "This is based on a principle in classical logic called “**Explosion**”, which states:\n"
 "\n"
 "Once you reach False, your system has broken, and anything can be proven.\n"
+"\n"
+"---\n"
 "\n"
 "**Intuition:**\n"
 "\n"
@@ -820,6 +866,8 @@ msgid "`False.elim` — From Contradiction, Anything Follows\n"
 "\n"
 "  False.elim (h₂ h₁)\n"
 "\n"
+"---\n"
+"\n"
 "**Explanation:**\n"
 "\n"
 "`h₁ : P`\n"
@@ -829,6 +877,8 @@ msgid "`False.elim` — From Contradiction, Anything Follows\n"
 "Applying `h₂ h₁` gives a `contradiction: False`\n"
 "\n"
 "Then `False.elim` produces a proof of `Q`, finishing the goal\n"
+"\n"
+"---\n"
 "\n"
 "**When to use:**\n"
 "\n"
@@ -848,7 +898,9 @@ msgid "`False.elim` — From Contradiction, Anything Follows\n"
 "\n"
 "It tells Lean: “Since `False` is true here, I can conclude whatever I want — including `Q`.\n"
 "\n"
-"While it may seem absurd, it follows the principle of *Explosion*, as mentioned earlier”"
+"While it may seem absurd, it follows the principle of *Explosion*, as mentioned earlier”\n"
+"\n"
+"---"
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
@@ -1439,13 +1491,17 @@ msgid "Let’s make things a little more interesting.\n"
 msgstr ""
 
 #: Game.Levels.Sets.L05
+msgid "We use this to show `A ∩ B ⊆ B ∩ A`"
+msgstr ""
+
+#: Game.Levels.Sets.L05
 msgid "Start with `intro x`, then `intro h` to assume `x ∈ A ∩ B`."
 msgstr ""
 
 #: Game.Levels.Sets.L05
 msgid "`h` is a pair: `x ∈ A ∧ x ∈ B`.\n"
 "\n"
-"Use `h.left` to get `x ∈ A`, and `h.right` to get `x ∈ B`."
+"Use `h.left` to get `x ∈ A`, and `h.right` to get `x ∈ B` using `have` tactic."
 msgstr ""
 
 #: Game.Levels.Sets.L05
@@ -1483,23 +1539,11 @@ msgid "To prove set equality, use `constructor` to break the goal into two subse
 msgstr ""
 
 #: Game.Levels.Sets.L06
-msgid "Begin by assuming `x : ℕ` is an arbitrary element of `A ∩ B`."
+msgid "Before you do this manually, we just did it last level! How about use the theorem from last level itself?"
 msgstr ""
 
 #: Game.Levels.Sets.L06
-msgid "Now assume the hypothesis `h : x ∈ A ∩ B`. That means you have both `x ∈ A` and `x ∈ B`."
-msgstr ""
-
-#: Game.Levels.Sets.L06
-msgid "You now want to prove that `x ∈ B ∩ A`. Use `constructor` to build that conjunction."
-msgstr ""
-
-#: Game.Levels.Sets.L06
-msgid "First, prove `x ∈ B` using `exact xb`."
-msgstr ""
-
-#: Game.Levels.Sets.L06
-msgid "Then, prove `x ∈ A` using `exact xa`."
+msgid "Do `exact A_and_B_subset_B_and_A A B`."
 msgstr ""
 
 #: Game.Levels.Sets.L06

@@ -13,6 +13,7 @@ Now let’s learn how to use the `right` tactic.
 "
 
 /--
+
 ---
 
 Purpose: Use `right` when your goal is a disjunction (`P ∨ Q`) and you want to prove the **right** part.

@@ -13,6 +13,7 @@ You’ll learn the `constructor` tactic in this level.
 "
 
 /--
+
 ---
 
 Purpose: Use constructor when your goal is a conjunction (`P ∧ Q`).

@@ -17,6 +17,7 @@ Sounds trivial, but this teaches you how to use assumptions to finish a goal.
 "
 
 /--
+
 ---
 
 Purpose: Use exact when you already have a proof of exactly what the goal is asking for.

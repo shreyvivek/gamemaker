@@ -31,6 +31,7 @@ _**Note:** There can be many alternative ways to prove the same level, with tact
 "
 
 /--
+
 ---
 
 Purpose: Use `have` to create and name an intermediate result in your proof.

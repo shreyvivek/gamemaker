@@ -21,6 +21,7 @@ You will also make use of another theorem to achieve this. Read about `False.eli
 "
 
 /--
+
 ---
 
 `False.elim` — From Contradiction, Anything Follows

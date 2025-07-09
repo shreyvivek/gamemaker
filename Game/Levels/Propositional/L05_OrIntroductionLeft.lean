@@ -17,6 +17,7 @@ So all you have to do is tell Lean: “I want to prove the left side of the disj
 "
 
 /--
+
 ---
 
 Purpose: Use `left` when your goal is a disjunction (`P ∨ Q`) and you want to prove the **left** part.

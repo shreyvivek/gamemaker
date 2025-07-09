@@ -26,6 +26,7 @@ Let’s break it down step by step.
 "
 
 /--
+
 ---
 
 Purpose: Use `apply` to reduce your current goal to an earlier implication.
