@@ -25,10 +25,10 @@ You might remember one such proof from lectures — **Dilemma**.
 We use disjunction elimination on `P ∨ Q`, i.e., we consider both cases separately:
 
 - *Case 1:* Assume `P` is true.
-  From (2), `P → R`, so `R` is true.
+  From (2), `P → R`, so `R` is true (Modus Ponens).
 
 - *Case 2:* Assume `Q` is true.
-  From (3), `Q → R`, so again `R` is true.
+  From (3), `Q → R`, so again `R` is true (Modus Ponens).
 
 In both cases, `R` is true.
 
