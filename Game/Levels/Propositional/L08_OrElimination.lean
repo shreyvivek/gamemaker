@@ -47,6 +47,8 @@ Statement (P Q R : Prop) (hpq : P ∨ Q) (hpr : P → R) (hqr : Q → R) : R := 
 
 We use disjunction elimination on `P ∨ Q`, i.e., we consider both cases separately:
 
+---
+
 - *Case 1:* Assume `P` is true.
 
   From (2), `P → R`, so `R` is true (Modus Ponens).
@@ -54,6 +56,8 @@ We use disjunction elimination on `P ∨ Q`, i.e., we consider both cases separa
 - *Case 2:* Assume `Q` is true.
 
   From (3), `Q → R`, so again `R` is true (Modus Ponens).
+
+---
 
 In both cases, `R` is true.
 
