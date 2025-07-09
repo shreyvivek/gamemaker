@@ -7,32 +7,35 @@ Level 8
 Title "Or Elimination"
 
 Introduction "
-You might remember one such proof from lectures - Dilemma.
-Given:
-`
--- P ∨ Q ---- (1)
--- P → R ---- (2)
--- Q → R ---- (3)
-`
-To prove:
-`
-R is true
-`
-Proof:
-`
-We use disjunction elimination on P ∨ Q — i.e., we consider both cases separately:
-*Case 1: Assume P is true*
-From (2): P → R, so R is true.
-*Case 2: Assume Q is true.*
-From (3): Q → R, so again R is true.
-In both cases, R is true.
-So regardless of whether P or Q is true, we conclude:
-R is true.
-`
+You might remember one such proof from lectures — **Dilemma**.
 
-Now, we do this same proof, but in Lean.
+---
+
+**Given:**
+- (1) `P ∨ Q`
+- (2) `P → R`
+- (3) `Q → R`
+
+**To Prove:** `R`
+
+---
+
+**Proof (in natural language):**
+
+We use disjunction elimination on `P ∨ Q`, i.e., we consider both cases separately:
+
+- *Case 1:* Assume `P` is true.
+  From (2), `P → R`, so `R` is true.
+
+- *Case 2:* Assume `Q` is true.
+  From (3), `Q → R`, so again `R` is true.
+
+In both cases, `R` is true.
+
+So regardless of whether `P` or `Q` is true, we conclude:
+
+**`R` is true.**
 "
-
 /--
 Purpose: Use `cases` on a disjunction (e.g. `P ∨ Q`) to split it into two separate cases.
 
