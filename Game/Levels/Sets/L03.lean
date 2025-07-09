@@ -23,7 +23,10 @@ This is called the **transitivity of subsets** — if everything in `A` is in `B
 
 Use `intro` to assume an arbitrary element and its membership, and then chain your reasoning using `exact`.
 "
-
+/--
+placeholder have
+-/
+TacticDoc «have»
 Statement (A B C : Set ℕ) (h₁ : A ⊆ B) (h₂ : B ⊆ C) : A ⊆ C := by
   Hint "Start by assuming an arbitrary element from `A` using `intro x`."
   intro x
@@ -38,6 +41,7 @@ Statement (A B C : Set ℕ) (h₁ : A ⊆ B) (h₂ : B ⊆ C) : A ⊆ C := by
   Hint "Now use `h₂ : B ⊆ C` to conclude that `x ∈ C`, similar to the previous command."
   exact h₂ x xb
 
+NewTactic «have»
 Conclusion "
 Nice work!
 

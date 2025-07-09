@@ -16,7 +16,10 @@ We write `A ⊆ B` to mean *every element of A is also in B*. That is: `∀ x, x
 
 This level helps you prove that one set is a subset of another, using basic logic and the `intro` and `exact` tactics.
 "
-
+/--
+placeholder intro
+-/
+TacticDoc intro
 Statement (A : Set ℕ) : A ⊆ A := by
   Hint "
 To prove a subset, use `intro x` and `intro h`, then apply `exact h`.
@@ -26,6 +29,7 @@ You are proving `A ⊆ A`, which means: for all `x`, if `x ∈ A` then `x ∈ A`
   intro h
   exact h
 
+NewTactic intro
 Conclusion "
 Well done!
 
