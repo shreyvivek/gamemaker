@@ -1,4 +1,4 @@
-
+namespace Sets
 
 def Set (α : Type) := α → Prop
 
@@ -7,3 +7,5 @@ infix:50 " ∈ " => Mem
 
 def Subset {α : Type} (A B : Set α) : Prop := ∀ x, x ∈ A → x ∈ B
 infix:50 " ⊆ " => Subset
+
+end Sets

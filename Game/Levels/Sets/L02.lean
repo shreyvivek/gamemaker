@@ -1,6 +1,7 @@
 import GameServer.Commands
 import Game.Levels.Sets.L01
 import Game.Levels.Sets.setdef
+open Sets
 
 namespace Sets
 
