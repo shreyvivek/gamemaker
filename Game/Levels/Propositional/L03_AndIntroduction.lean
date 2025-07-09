@@ -21,8 +21,13 @@ It splits the goal into two subgoals: one for `P`, and one for `Q`.
 
 “To prove both `P` and `Q`, let’s do them one at a time.”
 
-To summarize:
+### In Propositional Logic:
+
 `constructor` on `P ∧ Q` gives you two sub goals — one for `P` and one for `Q`.
+
+### In Sets:
+
+If your goal is `x ∈ A ∩ B`, use `constructor` and then prove `x ∈ A` and `x ∈ B` separately.
 -/
 TacticDoc constructor
 

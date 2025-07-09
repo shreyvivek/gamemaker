@@ -22,11 +22,25 @@ If your goal is `P → Q`, `intro h` changes the goal to `Q` and gives you `h : 
 “Let me assume `P` is true for now, and see if I can prove `Q`.”
 Opens up an implication goal by introducing its assumption.
 
-To summarize:
+### In Propositional Logic:
 
 Your goal : `h : P → P`
 After `intro h`,
 you get an assumption `h : P` and your goal will just be `P`.
+
+### In Sets:
+
+You’re given:
+- A set `A : Set ℕ`
+
+To prove `A ⊆ A`, you must show: `∀ x, x ∈ A → x ∈ A`
+
+Strategy:
+1. Use `intro x` to assume an arbitrary element.
+2. Use `intro h` to assume `x ∈ A`.
+3. Use `exact h` to conclude `x ∈ A`.
+
+This pattern is the **structure of proving subset relations**.
 -/
 TacticDoc intro
 

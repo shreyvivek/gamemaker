@@ -24,43 +24,19 @@ This is called the **transitivity of subsets** — if everything in `A` is in `B
 Use `intro` to assume an arbitrary element and its membership, and then chain your reasoning using `exact`.
 "
 
-/--
-Purpose: Create and name an intermediate result in your proof.
-
-The `have` tactic is used when you want to:
-- Break up a long proof into smaller steps
-- Store a useful intermediate result
-- Avoid repeating expressions
-
-`have h : P := proof_of_P`
-This introduces a new local hypothesis `h` with value `P`.
-
-**Example:**
-
-If you have:
-
-h₁ : A ⊆ B (which is a function: x ∈ A → x ∈ B)
-
-h : x ∈ A
-
-Then you can write:
-
-`have xb : x ∈ B := h₁ x h`
-Now `xb` stores `x ∈ B` for later use.
--/
-TacticDoc «have»
-
 Statement (A B C : Set ℕ) (h₁ : A ⊆ B) (h₂ : B ⊆ C) : A ⊆ C := by
   Hint "Start by assuming an arbitrary element from `A` using `intro x`."
   intro x
   Hint "Assume that `x ∈ A` using `intro h`."
   intro h
-  Hint "Since `h₁ : A ⊆ B`, and `x ∈ A`, you can use `have` to create `x ∈ B`."
-  have xb : x ∈ B := h₁ x h
-  Hint "Now use `h₂ : B ⊆ C` to conclude that `x ∈ C`."
-  exact h₂ x xb
+  Hint "Since `h₁ : A ⊆ B`, and `h : x ∈ A`, you can use `have` to create `x ∈ B`."
+  Hint "This is analogous to `h₁ : P → Q` and `h : P`. To prove `Q`, we would write `have hq: Q := modus_ponens h₁ h`. In fact, even `have hq: Q := h₁ h` would work!"
+  Hint "In our case now, we would write something very similar : `have xb : x ∈ B := h₁ h`. But this is not fully correct. We need to keep in mind that we're dealing with Sets, not Propositions. Hence, we must specify which member of the set we are actually talking about; in this case - `x`."
+  Hint "So the correct command would be : `have xb : x ∈ B := h₁ x h`."
 
-NewTactic «have»
+  have xb : x ∈ B := h₁ x h
+  Hint "Now use `h₂ : B ⊆ C` to conclude that `x ∈ C`, similar to the previous command."
+  exact h₂ x xb
 
 Conclusion "
 Nice work!

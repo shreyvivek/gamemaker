@@ -20,33 +20,12 @@ In Lean, we work with `x ∈ A` as a proposition, which we can use in proofs.
 Let’s prove something simple!
 "
 
-/--
-Purpose: Use the `exact` tactic when your goal matches something you already know.
-
-You’re given:
-- A set `A : Set ℕ`
-- An element `x : ℕ`
-- A hypothesis `h : x ∈ A`
-
-And your goal is to prove exactly that: `x ∈ A`.
-
-Since your goal *already matches* your assumption, just use:
-`exact h`
-
-This is the most basic kind of step in a proof: confirming something you’ve already assumed.
--/
-TacticDoc exact
-
-
-
 Statement (A : Set ℕ) (x : ℕ) (h : x ∈ A) : x ∈ A := by
   Hint "You are trying to prove `x ∈ A`. And you already have `h : x ∈ A`.
 
 Just use `exact h` to complete the proof."
   exact h
 
-
-NewTactic exact
 Conclusion "
 Great start!
 

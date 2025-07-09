@@ -38,7 +38,7 @@ It lets you:
 - Improve clarity and structure
 - Reuse partial results later
 
-### For Example:
+### In Propositional Logic:
 
 If you have `h₁ : P → Q` and `hp : P`, and you want to reach `Q`, you can write:
 
@@ -48,7 +48,20 @@ Similar to what
 
 `exact modus_ponens h₁ hp` would do.
 
-This is useful when proofs grow longer or when you want to give names to intermediate steps to reason about them clearly.
+### In Sets:
+
+If you have:
+
+h₁ : A ⊆ B (which is a function: x ∈ A → x ∈ B)
+
+h : x ∈ A
+
+Then you can write:
+
+`have xb : x ∈ B := h₁ x h`
+Now `xb` stores `x ∈ B` for later use.
+
+This tactic is useful when proofs grow longer or when you want to give names to intermediate steps to reason about them clearly.
 -/
 TacticDoc «have»
 

@@ -25,6 +25,8 @@ It closes the goal immediately if the term matches the goal’s type.
 
 “Here's exactly what you're asking for — done!”
 
+### In Propositional Logic:
+
 If your goal is `P` and you have a proof of `P` (say `h : P`), then `exact h` completes the proof.
 
 To summarize:
@@ -32,23 +34,24 @@ To summarize:
 You have : `h : P`
 Your goal : `P`
 `exact h` will complete the proof!
+
+### In Sets:
+
+You’re given:
+
+- A set `A : Set ℕ`
+- An element `x : ℕ`
+- A hypothesis `h : x ∈ A`
+
+And your goal is to prove exactly that: `x ∈ A`.
+
+Since your goal *already matches* your assumption, just use:
+
+`exact h`
+
+This is the most basic kind of step in a proof: confirming something you’ve already assumed.
 -/
 TacticDoc exact
-
-/--
-let tactic yay!
--/
-TacticDoc «let»
-
-/--
-assume tactic yay!
--/
-TacticDoc assume
-
-/--
-show tactic yay!
--/
-TacticDoc «show»
 
 /--
 ## Unicode Table
@@ -60,10 +63,14 @@ TacticDoc «show»
 |Not        | ¬      | `\n`, `\not`, `\neg`, `\lnot`     |
 |And        | ∧      | `\and`, `\an`, `\wedge`           |
 |Or         | ∨      | `\v`, `\or`, `\vee`               |
-|Implies    | →      | `\r`, `\imp`, `\to`, `\rightarrow` |
-|Iff        | ↔      | `\iff`, `\lr`, `\leftrightarrow`  |
+|Implies    | →      | `\r`, `\imp`, `\to`               |
+|Iff        | ↔      | `\iff`, `\lr`                     |
 |For All    | ∀      | `\all`, `\forall`                 |
 |Exists     | ∃      | `\ex`, `\exists`                  |
+|Belongs    | ∈      | `\in`                             |
+|Subset     | ⊆      | `\subset`                         |
+|Union      | ∪      | `\union`, `\un`                   |
+|Intersect  | ∩      | `\intersect`, `\cap`              |
 
 -/
 DefinitionDoc UniCode_Table as "UniCode Table"
@@ -72,7 +79,7 @@ Statement (P : Prop) (h : P) : P := by
   Hint "Use the `exact` tactic with `{h}` to directly prove the goal `P`."
   exact h
 
-NewTactic exact «let» «show»
+NewTactic exact
 
 NewDefinition UniCode_Table
 

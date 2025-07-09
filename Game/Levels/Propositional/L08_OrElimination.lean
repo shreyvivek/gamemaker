@@ -21,12 +21,25 @@ Each case creates a new assumption:
 
 “Let’s examine both possible scenarios and show that the goal works either way.”
 
-To summarize:
+### In Propositional Logic:
 
 Given: `h : P ∨ Q`
-After:
+
+After `cases h`:
 - Case 1: `hp : P`
 - Case 2: `hq : Q`
+
+### In Sets:
+
+Suppose:
+
+`h : x ∈ A ∪ B` (i.e., `x ∈ A ∨ x ∈ B`)
+
+Then:
+
+After `cases h`:
+- Case 1: `ha : x ∈ A`
+- Case 2: `hb : x ∈ B`
 -/
 TacticDoc cases
 

@@ -1,6 +1,13 @@
 import Game.Levels.Sets.L01
 import Game.Levels.Sets.L02
 import Game.Levels.Sets.L03
+import Game.Levels.Sets.L04
+import Game.Levels.Sets.L05
+import Game.Levels.Sets.L06
+import Game.Levels.Sets.L07
+import Game.Levels.Sets.L08
+import Game.Levels.Sets.L09
+import Game.Levels.Sets.L10
 World "Sets"
 
 Title "Sets"

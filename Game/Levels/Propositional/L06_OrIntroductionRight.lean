@@ -21,10 +21,18 @@ If your goal is `P ∨ Q`, then `right` changes the goal to proving `Q`.
 
 “I’ll prove the second part of the `or`, and that’s good enough.”
 
-To summarize:
+### In Propositional Logic:
 
 Your goal : `P ∨ Q`
-After `right`, your new goal is just `Q`
+
+After `right`, your new goal is just `Q`.
+
+### In Sets:
+
+Your goal : `x ∈ A ∪ B`
+
+After `right`, your new goal is just `x ∈ B`.
+
 -/
 TacticDoc right
 
