@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jul  7 21:16:20 2025\n"
+"POT-Creation-Date: Thu Jul 10 04:31:25 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -41,25 +41,51 @@ msgid "Purpose: Use exact when you already have a proof of exactly what the goal
 "\n"
 "“Here's exactly what you're asking for — done!”\n"
 "\n"
+"### In Propositional Logic:\n"
+"\n"
 "If your goal is `P` and you have a proof of `P` (say `h : P`), then `exact h` completes the proof.\n"
 "\n"
 "To summarize:\n"
 "\n"
 "You have : `h : P`\n"
 "Your goal : `P`\n"
-"`exact h` will complete the proof!"
+"`exact h` will complete the proof!\n"
+"\n"
+"### In Sets:\n"
+"\n"
+"You’re given:\n"
+"\n"
+"- A set `A : Set ℕ`\n"
+"- An element `x : ℕ`\n"
+"- A hypothesis `h : x ∈ A`\n"
+"\n"
+"And your goal is to prove exactly that: `x ∈ A`.\n"
+"\n"
+"Since your goal *already matches* your assumption, just use:\n"
+"\n"
+"`exact h`\n"
+"\n"
+"This is the most basic kind of step in a proof: confirming something you’ve already assumed."
 msgstr ""
 
 #: Game.Levels.Propositional.L01_AssumeAndFinish
-msgid "let tactic yay!"
-msgstr ""
-
-#: Game.Levels.Propositional.L01_AssumeAndFinish
-msgid "assume tactic yay!"
-msgstr ""
-
-#: Game.Levels.Propositional.L01_AssumeAndFinish
-msgid "show tactic yay!"
+msgid "## Unicode Table\n"
+"\n"
+"### Logic Constants & Operators\n"
+"\n"
+"|Name       | Symbol | Commands                          |\n"
+"|-----------|--------|-----------------------------------|\n"
+"|Not        | ¬      | `\\n`, `\\not`, `\\neg`, `\\lnot`     |\n"
+"|And        | ∧      | `\\and`, `\\an`, `\\wedge`           |\n"
+"|Or         | ∨      | `\\v`, `\\or`, `\\vee`               |\n"
+"|Implies    | →      | `\\r`, `\\imp`, `\\to`               |\n"
+"|Iff        | ↔      | `\\iff`, `\\lr`                     |\n"
+"|For All    | ∀      | `\\all`, `\\forall`                 |\n"
+"|Exists     | ∃      | `\\ex`, `\\exists`                  |\n"
+"|Belongs    | ∈      | `\\in`                             |\n"
+"|Subset     | ⊆      | `\\subset`                         |\n"
+"|Union      | ∪      | `\\union`, `\\un`                   |\n"
+"|Intersect  | ∩      | `\\intersect`, `\\cap`              |"
 msgstr ""
 
 #: Game.Levels.Propositional.L01_AssumeAndFinish
@@ -90,11 +116,25 @@ msgid "Purpose: Use intro to assume something — usually when proving an implic
 "“Let me assume `P` is true for now, and see if I can prove `Q`.”\n"
 "Opens up an implication goal by introducing its assumption.\n"
 "\n"
-"To summarize:\n"
+"### In Propositional Logic:\n"
 "\n"
 "Your goal : `h : P → P`\n"
 "After `intro h`,\n"
-"you get an assumption `h : P` and your goal will just be `P`."
+"you get an assumption `h : P` and your goal will just be `P`.\n"
+"\n"
+"### In Sets:\n"
+"\n"
+"You’re given:\n"
+"- A set `A : Set ℕ`\n"
+"\n"
+"To prove `A ⊆ A`, you must show: `∀ x, x ∈ A → x ∈ A`\n"
+"\n"
+"Strategy:\n"
+"1. Use `intro x` to assume an arbitrary element.\n"
+"2. Use `intro h` to assume `x ∈ A`.\n"
+"3. Use `exact h` to conclude `x ∈ A`.\n"
+"\n"
+"This pattern is the **structure of proving subset relations**."
 msgstr ""
 
 #: Game.Levels.Propositional.L02_IntroduceAssumption
@@ -128,8 +168,13 @@ msgid "Purpose: Use constructor when your goal is a conjunction (`P ∧ Q`).\n"
 "\n"
 "“To prove both `P` and `Q`, let’s do them one at a time.”\n"
 "\n"
-"To summarize:\n"
-"`constructor` on `P ∧ Q` gives you two sub goals — one for `P` and one for `Q`."
+"### In Propositional Logic:\n"
+"\n"
+"`constructor` on `P ∧ Q` gives you two sub goals — one for `P` and one for `Q`.\n"
+"\n"
+"### In Sets:\n"
+"\n"
+"If your goal is `x ∈ A ∩ B`, use `constructor` and then prove `x ∈ A` and `x ∈ B` separately."
 msgstr ""
 
 #: Game.Levels.Propositional.L03_AndIntroduction
@@ -195,10 +240,17 @@ msgid "Purpose: Use `left` when your goal is a disjunction (`P ∨ Q`) and you w
 "\n"
 "“I’ll prove the first part of the `or`, and that’s good enough.”\n"
 "\n"
-"To summarize:\n"
+"### In Propositional Logic:\n"
 "\n"
 "Your goal : `P ∨ Q`\n"
-"After `left`, your new goal is just `P`"
+"\n"
+"After `left`, your new goal is just `P`.\n"
+"\n"
+"### In Sets:\n"
+"\n"
+"Your goal : `x ∈ A ∪ B`\n"
+"\n"
+"After `left`, your new goal is just `x ∈ A`."
 msgstr ""
 
 #: Game.Levels.Propositional.L05_OrIntroductionLeft
@@ -234,10 +286,17 @@ msgid "Purpose: Use `right` when your goal is a disjunction (`P ∨ Q`) and you 
 "\n"
 "“I’ll prove the second part of the `or`, and that’s good enough.”\n"
 "\n"
-"To summarize:\n"
+"### In Propositional Logic:\n"
 "\n"
 "Your goal : `P ∨ Q`\n"
-"After `right`, your new goal is just `Q`"
+"\n"
+"After `right`, your new goal is just `Q`.\n"
+"\n"
+"### In Sets:\n"
+"\n"
+"Your goal : `x ∈ A ∪ B`\n"
+"\n"
+"After `right`, your new goal is just `x ∈ B`."
 msgstr ""
 
 #: Game.Levels.Propositional.L06_OrIntroductionRight
@@ -302,7 +361,9 @@ msgid "Your goal is Q, and you have an implication h₁ : P → Q.\n"
 "So apply h₁ transforms your goal from Q to P,\n"
 "and Lean now expects you to prove P.\n"
 "\n"
-"Now go ahead — apply the implication!"
+"Now go ahead — apply the implication!\n"
+"\n"
+"_for writing subscript 1, type h, enter a backslash and then enter 1._"
 msgstr ""
 
 #: Game.Levels.Propositional.L07_ModusPonens
@@ -324,19 +385,7 @@ msgid "Or Elimination"
 msgstr ""
 
 #: Game.Levels.Propositional.L08_OrElimination
-msgid "Suppose you want to prove a proposition `R`.\n"
-"\n"
-"You’re told that either `P` or `Q` is true (i.e., `P ∨ Q`).\n"
-"But you don’t know which one — Lean won’t let you just pick one randomly.\n"
-"\n"
-"You’re also told that:\n"
-"- If `P` is true, then `R` follows\n"
-"- If `Q` is true, then `R` follows\n"
-"_(we ignore the vacuously true cases, which you would have possibly learnt in lectures.)_\n"
-"This means: no matter *which* side of the disjunction holds, `R` will be true either way.\n"
-"To prove `R`, you need to split into two cases using the `cases` tactic — one where `P` is true, and one where `Q` is.\n"
-"\n"
-"Then, in each case, use the appropriate implication to show that `R` follows."
+msgid "You might remember one such proof from lectures — **Dilemma**."
 msgstr ""
 
 #: Game.Levels.Propositional.L08_OrElimination
@@ -350,48 +399,76 @@ msgid "Purpose: Use `cases` on a disjunction (e.g. `P ∨ Q`) to split it into t
 "\n"
 "“Let’s examine both possible scenarios and show that the goal works either way.”\n"
 "\n"
-"To summarize:\n"
+"### In Propositional Logic:\n"
 "\n"
 "Given: `h : P ∨ Q`\n"
-"After:\n"
+"\n"
+"After `cases h`:\n"
 "- Case 1: `hp : P`\n"
-"- Case 2: `hq : Q`"
+"- Case 2: `hq : Q`\n"
+"\n"
+"### In Sets:\n"
+"\n"
+"Suppose:\n"
+"\n"
+"`h : x ∈ A ∪ B` (i.e., `x ∈ A ∨ x ∈ B`)\n"
+"\n"
+"Then:\n"
+"\n"
+"After `cases h`:\n"
+"- Case 1: `ha : x ∈ A`\n"
+"- Case 2: `hb : x ∈ B`"
 msgstr ""
 
 #: Game.Levels.Propositional.L08_OrElimination
-msgid "Use the `cases` tactic to break the disjunction `«{h}»` into two possible cases."
+msgid "---\n"
+"\n"
+"**Given:**\n"
+"- (1) `P ∨ Q`\n"
+"- (2) `P → R`\n"
+"- (3) `Q → R`\n"
+"\n"
+"**To Prove:** `R`\n"
+"\n"
+"---\n"
+"\n"
+"**Proof (in natural language):**\n"
+"\n"
+"We use disjunction elimination on `P ∨ Q`, i.e., we consider both cases separately:\n"
+"\n"
+"---\n"
+"\n"
+"- *Case 1:* Assume `P` is true.\n"
+"\n"
+"From (2), `P → R`, so `R` is true (Modus Ponens).\n"
+"\n"
+"- *Case 2:* Assume `Q` is true.\n"
+"\n"
+"From (3), `Q → R`, so again `R` is true (Modus Ponens).\n"
+"\n"
+"---\n"
+"\n"
+"In both cases, `R` is true.\n"
+"\n"
+"So regardless of whether `P` or `Q` is true, we conclude:\n"
+"\n"
+"**`R` is true.**"
 msgstr ""
 
 #: Game.Levels.Propositional.L08_OrElimination
-msgid "In this level, you will see how `exact` is used with a **theorem applied to an argument**.\n"
-"\n"
-"💡 Consider the `Active Goal`:\n"
-"\n"
-"You have:\n"
-"- `h₁ : P → R` (an implication)\n"
-"- `h_1 : P` (from a case)\n"
-"\n"
-"This should strike a bell, as this resembles the structure of Modus Ponens.\n"
-"\n"
-"Then `exact modus_ponens P R h₁ h_1` is a direct proof of `R`. It means: use `exact` on the result of modus ponens applied to h₁ and h_1, with propositions P and R.\n"
-"\n"
-"Even if u let P and R be underscores respectively, it would still not be an error.\n"
-"\n"
-"So you write:\n"
-"\n"
-"**exact modus_ponens P R h₁ h_1**\n"
-"_for writing subscript 1, type h, enter a backslash and then enter 1._"
+msgid "Use the `cases` tactic to break the disjunction `hpq` into two cases: one where `P` is true, and another where `Q` is true."
 msgstr ""
 
 #: Game.Levels.Propositional.L08_OrElimination
-msgid "Here, Lean will check that:\n"
+msgid "In this case, `P` holds (`h : P`) and you also have `hpr : P → R`.\n"
 "\n"
-"`h₁ : P → R`\n"
-"`h_1 : P`\n"
+"This matches the **Modus Ponens** pattern: if `P` is true and `P → R`, then `R` must be true.\n"
 "\n"
-"Therefore `R` is concluded, which correctly matches what we want, `R`!\n"
+"Use the `exact` tactic to apply the implication, with `modus_ponens` like this : `exact modus_ponens hpr h`.\n"
 "\n"
-"Similarly, when `Q` holds, use `«{h₂}»` to conclude `R`."
+"This tells Lean to use modus_ponens on `hpr` and `h₁`, resulting in `R`.\n"
+"\n"
+"Do similarly for when `Q` is assumed to be true in `Goal 2`."
 msgstr ""
 
 #: Game.Levels.Propositional.L08_OrElimination
@@ -435,17 +512,30 @@ msgid "Purpose: Use `have` to create and name an intermediate result in your pro
 "- Improve clarity and structure\n"
 "- Reuse partial results later\n"
 "\n"
-"### Example:\n"
+"### In Propositional Logic:\n"
 "\n"
-"If you have `h₁ : P → Q` and `hp : P`, and you want to reach `R`, you can write:\n"
+"If you have `h₁ : P → Q` and `hp : P`, and you want to reach `Q`, you can write:\n"
 "\n"
-"`have hq : Q := modus_ponens _ _ h₁ hp`\n"
+"`have hq : Q := modus_ponens h₁ hp`.\n"
 "\n"
-"Now you have `hq : Q`, which you can use in the next line with `h₂ : Q → R`:\n"
+"Similar to what\n"
 "\n"
-"`exact modus_ponens _ _ h₂ hq`\n"
+"`exact modus_ponens h₁ hp` would do.\n"
 "\n"
-"This is useful when proofs grow longer or when you want to give names to intermediate steps to reason about them clearly."
+"### In Sets:\n"
+"\n"
+"If you have:\n"
+"\n"
+"h₁ : A ⊆ B (which is a function: x ∈ A → x ∈ B)\n"
+"\n"
+"h : x ∈ A\n"
+"\n"
+"Then you can write:\n"
+"\n"
+"`have xb : x ∈ B := h₁ x h`\n"
+"Now `xb` stores `x ∈ B` for later use.\n"
+"\n"
+"This tactic is useful when proofs grow longer or when you want to give names to intermediate steps to reason about them clearly."
 msgstr ""
 
 #: Game.Levels.Propositional.L09_ImplicationChain
@@ -453,11 +543,11 @@ msgid "Quite obvious, you can start with `intro`."
 msgstr ""
 
 #: Game.Levels.Propositional.L09_ImplicationChain
-msgid "One way to go ahead is to use the exact statement by writing something like `exact modus_ponens Q R h₂ (modus_ponens P Q h₁ a)`\n"
+msgid "One way to go ahead is to use the exact statement by writing something like `exact modus_ponens h₂ (modus_ponens h₁ a)`\n"
 "\n"
 "Looks complicated, and I hope you aren't too confused, because there's an amazing tactic to use here. Read about the `have` tactic on the right.\n"
 "\n"
-"**Note** that the `have` tactic is strict on syntax, but it simplifies your task in seconds!"
+"**Note** that the `have` tactic is strict on syntax, but it simplifies your task in seconds! Also if you just write `modus_ponens h₁ hp` in the `have` tactic, it does the same thing as `exact modus_ponens h₁ hp`"
 msgstr ""
 
 #: Game.Levels.Propositional.L09_ImplicationChain
@@ -475,7 +565,14 @@ msgid "You’re now going to prove something of the form `¬P`.\n"
 "\n"
 "What does that mean?\n"
 "\n"
-"> `¬P` is just shorthand for `P → False`.\n"
+"> `¬P` is just shorthand for `P → False`. Why? See below:\n"
+"\n"
+"### Truth Table for ¬P and P → False\n"
+"\n"
+"| P   | ¬P  | P → False |\n"
+"|-----|-----|-----------|\n"
+"| T   | F   | F         |\n"
+"| F   | T   | T         |\n"
 "\n"
 "So, to prove `¬P`, you must:\n"
 "1. Assume `P`\n"
@@ -547,27 +644,66 @@ msgid "This level introduces another classic rule of inference: **Modus Tollens*
 msgstr ""
 
 #: Game.Levels.Propositional.L11_ModusTollens
-msgid "Modus Tollens: from `Q → P` and `¬P`, conclude `¬Q`."
+msgid "Modus Tollens: from `P → Q` and `¬Q`, conclude `¬P`."
 msgstr ""
 
 #: Game.Levels.Propositional.L11_ModusTollens
-msgid "Start by using `intro` to assume that `P` holds. This is needed to prove `¬P`, or `P → False`."
+msgid "We are proving `¬P`, which means the goal is `P → False`.\n"
+"\n"
+"This type is a function — it says: “If you give me a proof of `P`, I will return a contradiction.”\n"
+"\n"
+"To do that, **assume `P` holds**, and then try to derive a contradiction from it.\n"
+"\n"
+"Use the `intro` tactic to assume `P`."
 msgstr ""
 
 #: Game.Levels.Propositional.L11_ModusTollens
-msgid "Your goal is now `False`. Since you have `h₂ : Q → False`, you can use `apply h₂` to reduce the goal to `Q`."
+msgid "Now your goal has become `False`.\n"
+"\n"
+"Let’s see what you have:\n"
+"\n"
+"- `h₂ : ¬Q` (this means `Q → False`)\n"
+"- `h₁ : P → Q`\n"
+"- `hp : P`\n"
+"\n"
+"We want to reach a contradiction — `False`.\n"
+"\n"
+"Let’s look at `h₂`. It says:\n"
+"> “If you give me `Q`, I’ll give you `False`.”\n"
+"\n"
+"So the idea is: **try to produce `Q`, then feed it into `h₂`.**\n"
+"\n"
+"Use `apply h₂` to say:\n"
+"> “To prove `False`, it’s enough to prove `Q`.”"
 msgstr ""
 
 #: Game.Levels.Propositional.L11_ModusTollens
-msgid "Now your goal is `Q`, and you have `h₁ : P → Q` and `hp : P`."
+msgid "Now your goal is to prove `Q`.\n"
+"\n"
+"How can we get `Q`?\n"
+"\n"
+"You have:\n"
+"- `h₁ : P → Q`\n"
+"- `hp : P`\n"
+"\n"
+"So this is a perfect match for applying an implication.\n"
+"\n"
+"Use `apply h₁` to transform your goal from `Q` to `P`."
 msgstr ""
 
 #: Game.Levels.Propositional.L11_ModusTollens
-msgid "Use `apply h₁` to reduce the goal to proving `P`, which you already assumed initially."
-msgstr ""
-
-#: Game.Levels.Propositional.L11_ModusTollens
-msgid "Now your goal is `P`, and you already have `hp`."
+msgid "Now your goal is `P`.\n"
+"\n"
+"But you already assumed `P` at the very beginning, as `hp`.\n"
+"\n"
+"So simply use:\n"
+"exact hp\n"
+"\n"
+"css\n"
+"Copy\n"
+"Edit\n"
+"\n"
+"to conclude the proof."
 msgstr ""
 
 #: Game.Levels.Propositional.L11_ModusTollens
@@ -656,13 +792,8 @@ msgid "In this level, you’ll prove a very common logical inference called **Di
 "This makes sense — `P ∨ Q` tells us that at least one of them is true.\n"
 "If we know that `P` is *not* true (`¬P`), then `Q` is the only possibility left.\n"
 "\n"
-"This combines what you did in earlier levels:\n"
-"- In Level 8, you used `cases` to break apart a disjunction\n"
-"- In Level 10, you learned that `¬P` means `P → False`\n"
-"- In Level 11, you used contradiction (`False`) to complete a proof\n"
-"\n"
-"Now you’ll combine all of those tools into one elegant move.\n"
-"You also make use of another theorem to achieve this. Read about `False.elim` on the Theorems section!"
+"You will combine a lot of lessons from previous levels to clear this one.\n"
+"You will also make use of another theorem to achieve this. Read about `False.elim` on the Theorems section!"
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
@@ -721,23 +852,43 @@ msgid "`False.elim` — From Contradiction, Anything Follows\n"
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
-msgid "Use `cases h` to consider the two possible cases: `P` or `Q`."
+msgid "You're given a disjunction `P ∨ Q`. To proceed, you must consider both cases separately.\n"
+"\n"
+"Use the `cases` tactic on `«{h}»` to split the proof into two branches: one where `P` holds and one where `Q` holds."
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
-msgid "You are now in the case where `P` is true. But you also have `not_p : P → False`, so this leads to a contradiction."
+msgid "You're now in the case where `P` is assumed true (`hp : P`), but you also have `not_p : ¬P` — that is, `P → False`.\n"
+"\n"
+"These two contradict each other!\n"
+"\n"
+"So you want to derive `False` from this contradiction, and then conclude your goal `Q` using Lean's principle that anything follows from `False`.\n"
+"\n"
+"Instead of writing a compound term directly inside `exact`, we can also:\n"
+"\n"
+"1. Use `apply False.elim` to change the goal to `False`\n"
+"2. Then prove that contradiction directly\n"
+"\n"
+"This breaks it into more manageable steps and teaches a reusable pattern."
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
-msgid "A compound exact statement enclosed in `()` should help to get a contradiction (`False`)."
+msgid "After using `apply False.elim`, your goal becomes `False`.\n"
+"\n"
+"You already have:\n"
+"\n"
+"- `not_p : ¬P`, which is `P → False`\n"
+"- `hp : P`, which came from the case assumption\n"
+"\n"
+"Use these together: `not_p hp` gives you `False`.\n"
+"\n"
+"So simply write:\n"
+"\n"
+"`exact not_p hp`"
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
-msgid "Then use `False.elim` to derive your goal `Q` from that contradiction using `exact False.elim (whatever you think the compound statement is)."
-msgstr ""
-
-#: Game.Levels.Propositional.L13_DisjunctiveSyllogism
-msgid "`Q` holds directly here. Use `exact` to finish the proof."
+msgid "This should be straightforward. You can try it yourself."
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
@@ -1119,7 +1270,7 @@ msgid "Set Membership"
 msgstr ""
 
 #: Game.Levels.Sets.L01
-msgid "Welcome to the world of **Set Theory**! 🧺\n"
+msgid "Welcome to the world of **Set Theory**!\n"
 "\n"
 "Sets are collections of objects. We write `x ∈ A` to say that *element x is in set A*.\n"
 "\n"
@@ -1131,33 +1282,416 @@ msgid "Welcome to the world of **Set Theory**! 🧺\n"
 msgstr ""
 
 #: Game.Levels.Sets.L01
-msgid "Purpose: Use the `exact` tactic when your goal matches something you already know.\n"
-"\n"
-"You’re given:\n"
-"- A set `A : Set ℕ`\n"
-"- An element `x : ℕ`\n"
-"- A hypothesis `h : x ∈ A`\n"
-"\n"
-"And your goal is to prove exactly that: `x ∈ A`.\n"
-"\n"
-"Since your goal *already matches* your assumption, just use:\n"
-"`exact h`\n"
-"\n"
-"This is the most basic kind of step in a proof: confirming something you’ve already assumed."
-msgstr ""
-
-#: Game.Levels.Sets.L01
 msgid "You are trying to prove `x ∈ A`. And you already have `h : x ∈ A`.\n"
 "\n"
 "Just use `exact h` to complete the proof."
 msgstr ""
 
 #: Game.Levels.Sets.L01
-msgid "Great start! ✅\n"
+msgid "Great start!\n"
 "\n"
 "You’ve just used a given assumption to complete a proof.\n"
 "\n"
 "Set membership (`x ∈ A`) is one of the most basic ideas in math — and you’ll use it a lot in upcoming levels."
+msgstr ""
+
+#: Game.Levels.Sets.L02
+msgid "Subset Intro"
+msgstr ""
+
+#: Game.Levels.Sets.L02
+msgid "Let’s now talk about **subsets**.\n"
+"\n"
+"We write `A ⊆ B` to mean *every element of A is also in B*. That is: `∀ x, x ∈ A → x ∈ B`\n"
+"\n"
+"This level helps you prove that one set is a subset of another, using basic logic and the `intro` and `exact` tactics."
+msgstr ""
+
+#: Game.Levels.Sets.L02
+msgid "To prove a subset, use `intro x` and `intro h`, then apply `exact h`.\n"
+"\n"
+"You are proving `A ⊆ A`, which means: for all `x`, if `x ∈ A` then `x ∈ A`."
+msgstr ""
+
+#: Game.Levels.Sets.L02
+msgid "Well done!\n"
+"\n"
+"You've just proved that a set is a subset of itself — this is called **reflexivity** of subsets.\n"
+"\n"
+"You'll use this idea as a stepping stone for more complex subset proofs."
+msgstr ""
+
+#: Game.Levels.Sets.L03
+msgid "Subset via Chain"
+msgstr ""
+
+#: Game.Levels.Sets.L03
+msgid "Let’s now apply the idea of subset proofs with some logical chaining.\n"
+"\n"
+"You're given:\n"
+"- `A ⊆ B`\n"
+"- `B ⊆ C`\n"
+"\n"
+"Your task: Prove that `A ⊆ C`.\n"
+"\n"
+"This is called the **transitivity of subsets** — if everything in `A` is in `B`, and everything in `B` is in `C`, then everything in `A` must be in `C` as well.\n"
+"\n"
+"Use `intro` to assume an arbitrary element and its membership, and then chain your reasoning using `exact`."
+msgstr ""
+
+#: Game.Levels.Sets.L03
+msgid "Start by assuming an arbitrary element from `A` using `intro x`."
+msgstr ""
+
+#: Game.Levels.Sets.L03
+msgid "Assume that `x ∈ A` using `intro h`."
+msgstr ""
+
+#: Game.Levels.Sets.L03
+msgid "Since `h₁ : A ⊆ B`, and `h : x ∈ A`, you can use `have` to create `x ∈ B`."
+msgstr ""
+
+#: Game.Levels.Sets.L03
+msgid "This is analogous to `h₁ : P → Q` and `h : P`. To prove `Q`, we would write `have hq: Q := modus_ponens h₁ h`. In fact, even `have hq: Q := h₁ h` would work!"
+msgstr ""
+
+#: Game.Levels.Sets.L03
+msgid "In our case now, we would write something very similar : `have xb : x ∈ B := h₁ h`. But this is not fully correct. We need to keep in mind that we're dealing with Sets, not Propositions. Hence, we must specify which member of the set we are actually talking about; in this case - `x`."
+msgstr ""
+
+#: Game.Levels.Sets.L03
+msgid "So the correct command would be : `have xb : x ∈ B := h₁ x h`."
+msgstr ""
+
+#: Game.Levels.Sets.L03
+msgid "Now use `h₂ : B ⊆ C` to conclude that `x ∈ C`, similar to the previous command."
+msgstr ""
+
+#: Game.Levels.Sets.L03
+msgid "Nice work!\n"
+"\n"
+"This was an example of **chaining subset relations**, and formally proves that subsets are transitive:\n"
+"\n"
+"If `A ⊆ B` and `B ⊆ C`, then `A ⊆ C`.\n"
+"\n"
+"You’ll use this kind of reasoning a lot in set theory."
+msgstr ""
+
+#: Game.Levels.Sets.L04
+msgid "Subset of Intersection"
+msgstr ""
+
+#: Game.Levels.Sets.L04
+msgid "Let’s prove something involving **intersection of sets**.\n"
+"\n"
+"You are given:\n"
+"- `A ⊆ B`\n"
+"- `A ⊆ C`\n"
+"\n"
+"You are asked to prove:\n"
+"- `A ⊆ B ∩ C`\n"
+"\n"
+"Remember, intersection (`B ∩ C`) means the set of all elements that are in **both** `B` and `C`.\n"
+"\n"
+"So this level asks: if everything in `A` is in both `B` and `C`, can we say `A` is a subset of `B ∩ C`?\n"
+"\n"
+"Let’s find out!"
+msgstr ""
+
+#: Game.Levels.Sets.L04
+msgid "You're proving a subset relation. Start with `intro x` and then `intro h` to assume `x ∈ A`."
+msgstr ""
+
+#: Game.Levels.Sets.L04
+msgid "You want to prove `x ∈ B ∩ C`, which means both `x ∈ B` and `x ∈ C`.\n"
+"\n"
+"Use `have` twice — once to get `x ∈ B` from `hAB`, and once to get `x ∈ C` from `hAC`."
+msgstr ""
+
+#: Game.Levels.Sets.L04
+msgid "Now construct the pair `(xb, xc)` using the `constructor` tactic. That will prove `x ∈ B ∩ C`."
+msgstr ""
+
+#: Game.Levels.Sets.L04
+msgid "Excellent work!\n"
+"\n"
+"You've shown that if everything in `A` is in both `B` and `C`, then everything in `A` is also in their intersection.\n"
+"\n"
+"This is one of the most common patterns in set theory — you'll use it a lot going forward."
+msgstr ""
+
+#: Game.Levels.Sets.L05
+msgid "Unpack Both Sides"
+msgstr ""
+
+#: Game.Levels.Sets.L05
+msgid "Let’s make things a little more interesting.\n"
+"\n"
+"You’re given: `x ∈ A ∩ B`\n"
+"\n"
+"Your goal is to show: `x ∈ B ∩ A`\n"
+"\n"
+"This may seem trivial, but it helps build the skill of **manipulating set expressions** using logical tools.\n"
+"\n"
+"The key is to:\n"
+"- Extract both parts of the intersection from `h : x ∈ A ∩ B`\n"
+"- Recombine them in reverse order using `constructor`."
+msgstr ""
+
+#: Game.Levels.Sets.L05
+msgid "Start with `intro x`, then `intro h` to assume `x ∈ A ∩ B`."
+msgstr ""
+
+#: Game.Levels.Sets.L05
+msgid "`h` is a pair: `x ∈ A ∧ x ∈ B`.\n"
+"\n"
+"Use `h.left` to get `x ∈ A`, and `h.right` to get `x ∈ B`."
+msgstr ""
+
+#: Game.Levels.Sets.L05
+msgid "Now use `constructor` to prove `x ∈ B ∩ A`, which means `x ∈ B ∧ x ∈ A`."
+msgstr ""
+
+#: Game.Levels.Sets.L05
+msgid "Awesome!\n"
+"\n"
+"You just took apart an intersection and built a new one in reverse.\n"
+"\n"
+"This simple trick underpins many proofs involving **set equalities** — where you must show two sets contain the same elements."
+msgstr ""
+
+#: Game.Levels.Sets.L06
+msgid "Commutativity of Intersection"
+msgstr ""
+
+#: Game.Levels.Sets.L06
+msgid "Time for your first **set equality** proof!\n"
+"\n"
+"You’re proving that: `A ∩ B = B ∩ A`\n"
+"\n"
+"That means:\n"
+"- every element of `A ∩ B` is in `B ∩ A` (*left-to-right*),\n"
+"- and every element of `B ∩ A` is in `A ∩ B` (*right-to-left*).\n"
+"\n"
+"This is called the **commutativity of intersection**.\n"
+"\n"
+"You already proved both directions separately before — now combine them together!"
+msgstr ""
+
+#: Game.Levels.Sets.L06
+msgid "To prove set equality, use `constructor` to break the goal into two subset goals: `⊆` in both directions."
+msgstr ""
+
+#: Game.Levels.Sets.L06
+msgid "Begin by assuming `x : ℕ` is an arbitrary element of `A ∩ B`."
+msgstr ""
+
+#: Game.Levels.Sets.L06
+msgid "Now assume the hypothesis `h : x ∈ A ∩ B`. That means you have both `x ∈ A` and `x ∈ B`."
+msgstr ""
+
+#: Game.Levels.Sets.L06
+msgid "You now want to prove that `x ∈ B ∩ A`. Use `constructor` to build that conjunction."
+msgstr ""
+
+#: Game.Levels.Sets.L06
+msgid "First, prove `x ∈ B` using `exact xb`."
+msgstr ""
+
+#: Game.Levels.Sets.L06
+msgid "Then, prove `x ∈ A` using `exact xa`."
+msgstr ""
+
+#: Game.Levels.Sets.L06
+msgid "Now prove the reverse direction using the same pattern."
+msgstr ""
+
+#: Game.Levels.Sets.L06
+msgid "Excellent!\n"
+"\n"
+"You’ve now formally proved that intersection is **commutative** — the order of sets doesn't matter.\n"
+"\n"
+"This idea appears often when simplifying or rearranging set expressions."
+msgstr ""
+
+#: Game.Levels.Sets.L07
+msgid "Union Superset"
+msgstr ""
+
+#: Game.Levels.Sets.L07
+msgid "Let’s now bring in a new set operation — **union**.\n"
+"\n"
+"We write `A ∪ B` for the union of two sets, which means:\n"
+"> all elements that are in `A`, or in `B`, or in both.\n"
+"\n"
+"In this level, you're asked to prove:\n"
+"> `A ⊆ A ∪ B`\n"
+"\n"
+"In words:\n"
+"Every element of `A` is definitely in the union `A ∪ B`.\n"
+"\n"
+"Lean will require you to **choose the correct branch** of the union — use what you’ve learned about proving disjunctions."
+msgstr ""
+
+#: Game.Levels.Sets.L07
+msgid "Start with `intro x` and `intro h` — you're assuming `x ∈ A` and must prove `x ∈ A ∪ B`, i.e., `x ∈ A ∨ x ∈ B`."
+msgstr ""
+
+#: Game.Levels.Sets.L07
+msgid "Since `x ∈ A`, you can conclude `x ∈ A ∨ x ∈ B` by using the `left` tactic. It tells Lean: 'I’ll prove the left side of the disjunction.'"
+msgstr ""
+
+#: Game.Levels.Sets.L07
+msgid "Perfect!\n"
+"\n"
+"This is a very important property: every set is a subset of its own union.\n"
+"\n"
+"You’ll now explore more properties of unions in the next levels."
+msgstr ""
+
+#: Game.Levels.Sets.L08
+msgid "Breaking a Union"
+msgstr ""
+
+#: Game.Levels.Sets.L08
+msgid "Previously, you proved that every element of `A` is also in `A ∪ B`.\n"
+"\n"
+"Now you’ll do the **reverse**:\n"
+"You’re given `x ∈ A ∪ B`, and must show that `x ∈ B ∪ A`.\n"
+"\n"
+"Even though the goal is another union, this time your **assumption** is a union. That means you’ll need to break it apart using `cases`.\n"
+"\n"
+"This level helps you understand how **disjunction elimination** works in the context of sets."
+msgstr ""
+
+#: Game.Levels.Sets.L08
+msgid "Start with `intro x` and `intro h` to assume `x ∈ A ∪ B`."
+msgstr ""
+
+#: Game.Levels.Sets.L08
+msgid "`h` is a disjunction — `x ∈ A ∨ x ∈ B`. Use `cases h with` to split into two possibilities."
+msgstr ""
+
+#: Game.Levels.Sets.L08
+msgid "`x ∈ A` is true in this branch. So, to prove `x ∈ B ∪ A`, use `right` — you want to show the second part of the union."
+msgstr ""
+
+#: Game.Levels.Sets.L08
+msgid "`x ∈ B` is true here. So, use `left` to show the first part holds."
+msgstr ""
+
+#: Game.Levels.Sets.L08
+msgid "Well done!\n"
+"\n"
+"You just deconstructed a union and rearranged it — this is part of proving the **commutativity** of union.\n"
+"\n"
+"Later, you'll use this pattern in longer, chained proofs."
+msgstr ""
+
+#: Game.Levels.Sets.L09
+msgid "Commutativity of Union"
+msgstr ""
+
+#: Game.Levels.Sets.L09
+msgid "You’re now ready to prove that `A ∪ B = B ∪ A` — that is, **union is commutative**.\n"
+"\n"
+"From earlier levels:\n"
+"- You proved `A ⊆ A ∪ B` and `A ∪ B ⊆ B ∪ A`.\n"
+"- You’ve learned how to split and construct disjunctions using `cases`, `left`, and `right`.\n"
+"\n"
+"Now, use these together to prove **both directions** of the subset relation."
+msgstr ""
+
+#: Game.Levels.Sets.L09
+msgid "To prove set equality, start with `constructor` to break the goal into two subset proofs: `⊆` in both directions."
+msgstr ""
+
+#: Game.Levels.Sets.L09
+msgid "Assume an arbitrary element `x : ℕ`, and a hypothesis `h : x ∈ A ∪ B`."
+msgstr ""
+
+#: Game.Levels.Sets.L09
+msgid "`h` is a disjunction — `x ∈ A ∨ x ∈ B`. Use `cases h with` to split into the two cases."
+msgstr ""
+
+#: Game.Levels.Sets.L09
+msgid "`x ∈ A` holds here. Since your goal is `x ∈ B ∪ A`, use `right` to focus on the second part of the union."
+msgstr ""
+
+#: Game.Levels.Sets.L09
+msgid "`x ∈ B` holds here. So use `left` to show `x ∈ B ∪ A` by focusing on the first part."
+msgstr ""
+
+#: Game.Levels.Sets.L09
+msgid "Now repeat the same reasoning, but with `B ∪ A` on the left side."
+msgstr ""
+
+#: Game.Levels.Sets.L09
+msgid "Great work!\n"
+"\n"
+"You’ve now proved that **union is commutative** — just like intersection.\n"
+"\n"
+"This reinforces how logic and set theory walk hand-in-hand!"
+msgstr ""
+
+#: Game.Levels.Sets.L10
+msgid "Distributivity of ∩ over ∪"
+msgstr ""
+
+#: Game.Levels.Sets.L10
+msgid "Let’s take things up a notch!\n"
+"\n"
+"In this level, you’ll prove:\n"
+"\n"
+"`A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)`.\n"
+"\n"
+"This is called the **distributivity of intersection over union** — it lets you simplify nested set expressions logically.\n"
+"\n"
+"You’ll combine everything you’ve seen so far:\n"
+"- `constructor` for set equality\n"
+"- `cases` to break disjunctions\n"
+"- `.left` / `.right` for conjunctions\n"
+"- `left` / `right` to construct disjunctions"
+msgstr ""
+
+#: Game.Levels.Sets.L10
+msgid "To prove set equality, use `constructor` to split the goal into two subset directions."
+msgstr ""
+
+#: Game.Levels.Sets.L10
+msgid "Assume an arbitrary `x` and the hypothesis `h : x ∈ A ∩ (B ∪ C)`."
+msgstr ""
+
+#: Game.Levels.Sets.L10
+msgid "Break the conjunction using `.left` and `.right`."
+msgstr ""
+
+#: Game.Levels.Sets.L10
+msgid "`x ∈ B ∪ C` is a disjunction. Use `cases` to split it."
+msgstr ""
+
+#: Game.Levels.Sets.L10
+msgid "`x ∈ B` holds. Combine with `x ∈ A` using `constructor`, then use `left` to insert into `(A ∩ B) ∪ (A ∩ C)`."
+msgstr ""
+
+#: Game.Levels.Sets.L10
+msgid "`x ∈ C` holds. Combine with `x ∈ A`, then use `right` to finish."
+msgstr ""
+
+#: Game.Levels.Sets.L10
+msgid "Now assume `x ∈ (A ∩ B) ∪ (A ∩ C)`. Use `cases` to split the disjunction."
+msgstr ""
+
+#: Game.Levels.Sets.L10
+msgid "Construct `x ∈ A ∩ (B ∪ C)` by first proving `x ∈ A`, then `x ∈ B ∨ C` using `left`."
+msgstr ""
+
+#: Game.Levels.Sets.L10
+msgid "Superb!\n"
+"\n"
+"You just proved one of the most important set identities: **distributivity of ∩ over ∪**.\n"
+"\n"
+"This type of proof trains you to handle complex logical structure using simple steps — a critical skill in discrete math."
 msgstr ""
 
 #: Game.Levels.Sets.Sets
