@@ -21,9 +21,12 @@ You will also make use of another theorem to achieve this. Read about `False.eli
 "
 
 /--
+---
 
 `False.elim` — From Contradiction, Anything Follows
 it is of the type False.elim : False → α
+
+---
 
 **Meaning:**
 
@@ -32,6 +35,8 @@ If you have a contradiction (`False`), you can conclude *any* proposition — ev
 This is based on a principle in classical logic called “**Explosion**”, which states:
 
 Once you reach False, your system has broken, and anything can be proven.
+
+---
 
 **Intuition:**
 
@@ -45,6 +50,8 @@ example (P Q : Prop) (h₁ : P) (h₂ : ¬P) : Q :=
 
   False.elim (h₂ h₁)
 
+---
+
 **Explanation:**
 
 `h₁ : P`
@@ -54,6 +61,8 @@ example (P Q : Prop) (h₁ : P) (h₂ : ¬P) : Q :=
 Applying `h₂ h₁` gives a `contradiction: False`
 
 Then `False.elim` produces a proof of `Q`, finishing the goal
+
+---
 
 **When to use:**
 
@@ -75,7 +84,7 @@ It tells Lean: “Since `False` is true here, I can conclude whatever I want —
 
 While it may seem absurd, it follows the principle of *Explosion*, as mentioned earlier”
 
-
+---
 
 -/
 TheoremDoc False.elim as "False.elim" in "Propositional"

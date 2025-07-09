@@ -31,12 +31,16 @@ _**Note:** There can be many alternative ways to prove the same level, with tact
 "
 
 /--
+---
+
 Purpose: Use `have` to create and name an intermediate result in your proof.
 
 It lets you:
 - Break up long reasoning chains
 - Improve clarity and structure
 - Reuse partial results later
+
+---
 
 ### In Propositional Logic:
 
@@ -47,6 +51,8 @@ If you have `h₁ : P → Q` and `hp : P`, and you want to reach `Q`, you can wr
 Similar to what
 
 `exact modus_ponens h₁ hp` would do.
+
+---
 
 ### In Sets:
 
@@ -62,6 +68,9 @@ Then you can write:
 Now `xb` stores `x ∈ B` for later use.
 
 This tactic is useful when proofs grow longer or when you want to give names to intermediate steps to reason about them clearly.
+
+---
+
 -/
 TacticDoc «have»
 

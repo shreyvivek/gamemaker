@@ -11,6 +11,8 @@ You might remember one such proof from lectures — **Dilemma**.
 
 "
 /--
+---
+
 Purpose: Use `cases` on a disjunction (e.g. `P ∨ Q`) to split it into two separate cases.
 
 Each case creates a new assumption:
@@ -21,6 +23,8 @@ Each case creates a new assumption:
 
 “Let’s examine both possible scenarios and show that the goal works either way.”
 
+---
+
 ### In Propositional Logic:
 
 Given: `h : P ∨ Q`
@@ -28,6 +32,8 @@ Given: `h : P ∨ Q`
 After `cases h`:
 - Case 1: `hp : P`
 - Case 2: `hq : Q`
+
+---
 
 ### In Sets:
 
@@ -40,6 +46,9 @@ Then:
 After `cases h`:
 - Case 1: `ha : x ∈ A`
 - Case 2: `hb : x ∈ B`
+
+---
+
 -/
 TacticDoc cases
 

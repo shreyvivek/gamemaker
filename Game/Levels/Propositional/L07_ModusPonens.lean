@@ -26,6 +26,8 @@ Let’s break it down step by step.
 "
 
 /--
+---
+
 Purpose: Use `apply` to reduce your current goal to an earlier implication.
 
 If your goal is `Q`, and you have `implication : P → Q`,
@@ -34,6 +36,9 @@ then `apply implication` changes the goal to `P`.
 📌 Think of it as:
 
 “To prove `Q`, it’s enough to prove `P` — because I already have `P → Q`.”
+
+---
+
 -/
 TacticDoc apply
 

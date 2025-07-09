@@ -17,6 +17,8 @@ So all you have to do is tell Lean: “I want to prove the left side of the disj
 "
 
 /--
+---
+
 Purpose: Use `left` when your goal is a disjunction (`P ∨ Q`) and you want to prove the **left** part.
 
 If your goal is `P ∨ Q`, then `left` changes the goal to proving `P`.
@@ -25,17 +27,24 @@ If your goal is `P ∨ Q`, then `left` changes the goal to proving `P`.
 
 “I’ll prove the first part of the `or`, and that’s good enough.”
 
+---
+
 ### In Propositional Logic:
 
 Your goal : `P ∨ Q`
 
 After `left`, your new goal is just `P`.
 
+---
+
 ### In Sets:
 
 Your goal : `x ∈ A ∪ B`
 
 After `left`, your new goal is just `x ∈ A`.
+
+---
+
 -/
 TacticDoc left
 

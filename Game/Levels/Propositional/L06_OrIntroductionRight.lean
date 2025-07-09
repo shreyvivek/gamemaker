@@ -13,6 +13,8 @@ Now let’s learn how to use the `right` tactic.
 "
 
 /--
+---
+
 Purpose: Use `right` when your goal is a disjunction (`P ∨ Q`) and you want to prove the **right** part.
 
 If your goal is `P ∨ Q`, then `right` changes the goal to proving `Q`.
@@ -21,17 +23,23 @@ If your goal is `P ∨ Q`, then `right` changes the goal to proving `Q`.
 
 “I’ll prove the second part of the `or`, and that’s good enough.”
 
+---
+
 ### In Propositional Logic:
 
 Your goal : `P ∨ Q`
 
 After `right`, your new goal is just `Q`.
 
+---
+
 ### In Sets:
 
 Your goal : `x ∈ A ∪ B`
 
 After `right`, your new goal is just `x ∈ B`.
+
+---
 
 -/
 TacticDoc right

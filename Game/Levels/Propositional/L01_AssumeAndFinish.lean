@@ -17,6 +17,8 @@ Sounds trivial, but this teaches you how to use assumptions to finish a goal.
 "
 
 /--
+---
+
 Purpose: Use exact when you already have a proof of exactly what the goal is asking for.
 
 It closes the goal immediately if the term matches the goal’s type.
@@ -54,6 +56,9 @@ Since your goal *already matches* your assumption, just use:
 `exact h`
 
 This is the most basic kind of step in a proof: confirming something you’ve already assumed.
+
+---
+
 -/
 TacticDoc exact
 
