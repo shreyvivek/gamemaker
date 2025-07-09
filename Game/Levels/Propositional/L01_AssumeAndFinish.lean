@@ -55,15 +55,15 @@ TacticDoc «show»
 
 ### Logic Constants & Operators
 
-| Name      | Symbol | Commands                          |
+|Name       | Symbol | Commands                          |
 |-----------|--------|-----------------------------------|
-| Not       | ¬      | `\n`, `\not`, `\neg`, `\lnot`     |
-| And       | ∧      | `\and`, `\an`, `\wedge`           |
-| Or        | ∨      | `\v`, `\or`, `\vee`               |
-| Implies   | →      | `\r`, `\imp`, `\to`, `\rightarrow` |
-| Iff       | ↔      | `\iff`, `\lr`, `\leftrightarrow`  |
-| For All   | ∀      | `\all`, `\forall`                 |
-| Exists    | ∃      | `\ex`, `\exists`                  |
+|Not        | ¬      | `\n`, `\not`, `\neg`, `\lnot`     |
+|And        | ∧      | `\and`, `\an`, `\wedge`           |
+|Or         | ∨      | `\v`, `\or`, `\vee`               |
+|Implies    | →      | `\r`, `\imp`, `\to`, `\rightarrow` |
+|Iff        | ↔      | `\iff`, `\lr`, `\leftrightarrow`  |
+|For All    | ∀      | `\all`, `\forall`                 |
+|Exists     | ∃      | `\ex`, `\exists`                  |
 
 -/
 DefinitionDoc UniCode_Table as "UniCode Table"
