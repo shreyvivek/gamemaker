@@ -11,9 +11,9 @@ infix:50 " ⊆ " => Subset
 def Inter (A B : Set ℕ) : Set ℕ := fun x => x ∈ A ∧ x ∈ B
 infix:70 " ∩ " => Inter
 
-def Equal (A B : Set ℕ) : Prop := A ⊆ B ∧ B ⊆ A
-
 def Union (A B : Set ℕ) : Set ℕ := fun x => x ∈ A ∨ x ∈ B
 infix:65 " ∪ " => Union
+
+def Equal (A B : Set ℕ) : Prop := A ⊆ B ∧ B ⊆ A
 
 end Sets

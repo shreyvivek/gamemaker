@@ -24,14 +24,16 @@ The key is to:
 - Recombine them in reverse order using `constructor`.
 "
 
-
-Statement (A B : Set ℕ) : A ∩ B ⊆ B ∩ A := by
+/--
+We use this to show `A ∩ B ⊆ B ∩ A`-/
+TheoremDoc Sets.A_and_B_subset_B_and_A as "A_and_B_subset_B_and_A" in "Sets"
+Statement A_and_B_subset_B_and_A (A B : Set ℕ) : A ∩ B ⊆ B ∩ A := by
   Hint "Start with `intro x`, then `intro h` to assume `x ∈ A ∩ B`."
   intro x
   intro h
   Hint "`h` is a pair: `x ∈ A ∧ x ∈ B`.
 
-Use `h.left` to get `x ∈ A`, and `h.right` to get `x ∈ B`."
+Use `h.left` to get `x ∈ A`, and `h.right` to get `x ∈ B` using `have` tactic."
   have xa := h.left
   have xb := h.right
   Hint "Now use `constructor` to prove `x ∈ B ∩ A`, which means `x ∈ B ∧ x ∈ A`."

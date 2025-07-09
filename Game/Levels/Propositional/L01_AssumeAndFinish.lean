@@ -25,6 +25,8 @@ It closes the goal immediately if the term matches the goal’s type.
 
 “Here's exactly what you're asking for — done!”
 
+---
+
 ### In Propositional Logic:
 
 If your goal is `P` and you have a proof of `P` (say `h : P`), then `exact h` completes the proof.
@@ -34,6 +36,8 @@ To summarize:
 You have : `h : P`
 Your goal : `P`
 `exact h` will complete the proof!
+
+---
 
 ### In Sets:
 
@@ -54,7 +58,6 @@ This is the most basic kind of step in a proof: confirming something you’ve al
 TacticDoc exact
 
 /--
-## Unicode Table
 
 ### Logic Constants & Operators
 

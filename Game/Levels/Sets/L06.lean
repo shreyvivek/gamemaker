@@ -29,18 +29,10 @@ Statement (A B : Set ℕ) : Equal (A ∩ B) (B ∩ A) := by
   constructor
 
   -- Direction 1: A ∩ B ⊆ B ∩ A
-  Hint "Begin by assuming `x : ℕ` is an arbitrary element of `A ∩ B`."
-  intro x
-  Hint "Now assume the hypothesis `h : x ∈ A ∩ B`. That means you have both `x ∈ A` and `x ∈ B`."
-  intro h
-  have xa := h.left
-  have xb := h.right
-  Hint "You now want to prove that `x ∈ B ∩ A`. Use `constructor` to build that conjunction."
-  constructor
-  Hint "First, prove `x ∈ B` using `exact xb`."
-  exact xb
-  Hint "Then, prove `x ∈ A` using `exact xa`."
-  exact xa
+  Hint "Before you do this manually, we just did it last level! How about use the theorem from last level itself?"
+  Hint "Do `exact A_and_B_subset_B_and_A A B`."
+  exact A_and_B_subset_B_and_A A B
+
 
   -- Direction 2: B ∩ A ⊆ A ∩ B
   Hint "Now prove the reverse direction using the same pattern."
@@ -52,6 +44,7 @@ Statement (A B : Set ℕ) : Equal (A ∩ B) (B ∩ A) := by
   exact xa
   exact xb
 
+NewTheorem Sets.A_and_B_subset_B_and_A
 Conclusion "
 Excellent!
 
