@@ -9,7 +9,30 @@ Title "Or Elimination"
 Introduction "
 You might remember one such proof from lectures — **Dilemma**.
 
----
+"
+/--
+Purpose: Use `cases` on a disjunction (e.g. `P ∨ Q`) to split it into two separate cases.
+
+Each case creates a new assumption:
+- `inl hp` means `P` is assumed true
+- `inr hq` means `Q` is assumed true
+
+📌 Think of it as:
+
+“Let’s examine both possible scenarios and show that the goal works either way.”
+
+To summarize:
+
+Given: `h : P ∨ Q`
+After:
+- Case 1: `hp : P`
+- Case 2: `hq : Q`
+-/
+TacticDoc cases
+
+Statement (P Q R : Prop) (hpq : P ∨ Q) (hpr : P → R) (hqr : Q → R) : R := by
+  Hint "
+  ---
 
 **Given:**
 - (1) `P ∨ Q`
@@ -35,28 +58,7 @@ In both cases, `R` is true.
 So regardless of whether `P` or `Q` is true, we conclude:
 
 **`R` is true.**
-"
-/--
-Purpose: Use `cases` on a disjunction (e.g. `P ∨ Q`) to split it into two separate cases.
-
-Each case creates a new assumption:
-- `inl hp` means `P` is assumed true
-- `inr hq` means `Q` is assumed true
-
-📌 Think of it as:
-
-“Let’s examine both possible scenarios and show that the goal works either way.”
-
-To summarize:
-
-Given: `h : P ∨ Q`
-After:
-- Case 1: `hp : P`
-- Case 2: `hq : Q`
--/
-TacticDoc cases
-
-Statement (P Q R : Prop) (hpq : P ∨ Q) (hpr : P → R) (hqr : Q → R) : R := by
+  "
   Hint "Use the `cases` tactic to break the disjunction `hpq` into two cases: one where `P` is true, and another where `Q` is true."
   cases hpq with
   | inl h =>
