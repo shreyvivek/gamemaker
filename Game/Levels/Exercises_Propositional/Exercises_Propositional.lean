@@ -4,6 +4,7 @@ import Game.Levels.Exercises_Propositional.L01_PracticeProp
 import Game.Levels.Exercises_Propositional.L02_PracticeProp
 import Game.Levels.Exercises_Propositional.L03_PracticeProp
 import Game.Levels.Exercises_Propositional.L04_PracticeProp
+import Game.Levels.Exercises_Propositional.L05_PracticeProp
 import Game.Levels.Exercises_Propositional.ProofHelpers
 World "Exercises_Propositional"
 

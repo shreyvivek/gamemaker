@@ -5,28 +5,39 @@ import Game.Levels.Exercises_Propositional.ProofHelpers
 namespace Exercises_Propositional
 
 World "Exercises_Propositional"
-
 Level 2
-Title "Modus Chain Attack"
+Title "Hands On"
 
 Introduction "
-Apply both **Modus Tollens** and **Modus Ponens** in a clean logical chain.
+You've learned some of the core tactics:
+- `intro` to assume
+- `apply` to break down implications
+- `exact` to close goals
 
-Hint: Make use of the `have` tactic wherever necessary, or a nested `exact` chain!
+In this level, you’ll combine multiple implications to reach a goal.
+All the theorems you’ve proved so far are available — so use them!
+
+Try to:
+- Think in chains
+- Finish clearly
+
+(Pun intended) _Lean_ on what you know. You’ve got this!
 "
 
-Statement (P Q R S T : Prop)
-  (h₁ : ¬P ∧ Q)
-  (h₂ : R → P)
-  (h₃ : ¬R → S)
-  (h₄ : S → T) : T := by
-  have hnp : ¬P := h₁.left
-  have hnr : ¬R := modus_tollens h₂ hnp
-  have hs : S := modus_ponens h₃ hnr
-  exact modus_ponens h₄ hs
+Statement (A B C D : Prop) (h₁ : A → B) (h₂ : B → C) (h₃ : C → D) : A → D := by
+  Hint "First you need to assume `A`."
+  intro a
+  Hint "Your goal is now `D`. Reduce it to `C`."
+  apply h₃
+  Hint "Now your goal is `C`. Reduce it to `B`."
+  apply h₂
+  Hint "Finish the level now!."
+  exact h₁ a
 
 Conclusion "
-Excellent. You combined two powerful rules — **Modus Tollens** and **Modus Ponens** — using structured steps.
+You’ve just walked through a chain of reasoning — turning `A → B → C → D` into `A → D`.
+
+This level shows how powerful basic implication chaining is — and how all the tactics you’ve learned work together.
 "
 
 end Exercises_Propositional

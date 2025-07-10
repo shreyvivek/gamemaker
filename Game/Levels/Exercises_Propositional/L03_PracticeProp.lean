@@ -7,7 +7,7 @@ namespace Exercises_Propositional
 World "Exercises_Propositional"
 
 Level 3
-Title "Another Modus Chain"
+Title "Modus Chain Attack"
 
 Introduction "
 Apply both **Modus Tollens** and **Modus Ponens** in a clean logical chain.
@@ -15,15 +15,15 @@ Apply both **Modus Tollens** and **Modus Ponens** in a clean logical chain.
 Hint: Make use of the `have` tactic wherever necessary, or a nested `exact` chain!
 "
 
-Statement (T U V W X : Prop)
-  (h₁ : T ∧ U)
-  (h₂ : U → ¬V ∧ W)
-  (h₃ : X → V) : ¬X := by
-  have hu : U := h₁.right
-  have hnv_w : ¬V ∧ W := modus_ponens h₂ hu
-  have hnv : ¬V := hnv_w.left
-  have hnx : ¬X := modus_tollens h₃ hnv
-  exact hnx
+Statement (P Q R S T : Prop)
+  (h₁ : ¬P ∧ Q)
+  (h₂ : R → P)
+  (h₃ : ¬R → S)
+  (h₄ : S → T) : T := by
+  have hnp : ¬P := h₁.left
+  have hnr : ¬R := modus_tollens h₂ hnp
+  have hs : S := modus_ponens h₃ hnr
+  exact modus_ponens h₄ hs
 
 Conclusion "
 Excellent. You combined two powerful rules — **Modus Tollens** and **Modus Ponens** — using structured steps.

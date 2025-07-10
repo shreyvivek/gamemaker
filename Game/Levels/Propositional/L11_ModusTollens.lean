@@ -87,11 +87,7 @@ Now your goal is `P`.
 But you already assumed `P` at the very beginning, as `hp`.
 
 So simply use:
-exact hp
-
-css
-Copy
-Edit
+`exact hp`
 
 to conclude the proof.
 "

@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Thu Jul 10 05:41:57 2025\n"
+"POT-Creation-Date: Thu Jul 10 06:03:02 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -1334,6 +1334,10 @@ msgid "Welcome to the world of **Set Theory**!\n"
 msgstr ""
 
 #: Game.Levels.Sets.L01
+msgid "placeholder exact"
+msgstr ""
+
+#: Game.Levels.Sets.L01
 msgid "You are trying to prove `x ∈ A`. And you already have `h : x ∈ A`.\n"
 "\n"
 "Just use `exact h` to complete the proof."
@@ -1357,6 +1361,10 @@ msgid "Let’s now talk about **subsets**.\n"
 "We write `A ⊆ B` to mean *every element of A is also in B*. That is: `∀ x, x ∈ A → x ∈ B`\n"
 "\n"
 "This level helps you prove that one set is a subset of another, using basic logic and the `intro` and `exact` tactics."
+msgstr ""
+
+#: Game.Levels.Sets.L02
+msgid "placeholder intro"
 msgstr ""
 
 #: Game.Levels.Sets.L02
@@ -1389,6 +1397,10 @@ msgid "Let’s now apply the idea of subset proofs with some logical chaining.\n
 "This is called the **transitivity of subsets** — if everything in `A` is in `B`, and everything in `B` is in `C`, then everything in `A` must be in `C` as well.\n"
 "\n"
 "Use `intro` to assume an arbitrary element and its membership, and then chain your reasoning using `exact`."
+msgstr ""
+
+#: Game.Levels.Sets.L03
+msgid "placeholder have"
 msgstr ""
 
 #: Game.Levels.Sets.L03
