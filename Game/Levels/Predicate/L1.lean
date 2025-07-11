@@ -42,12 +42,12 @@ TacticDoc apply
 /-- Instantiating a predicate rule at a specific value. -/
 TheoremDoc Predicate.predicate_intro as "predicate_intro" in "Predicate"
 
-Statement predicate_intro {α : Type} (P Q : α → Prop) (a : α) (h : ∀ x, P x → Q x) (hP : P a) : Q a := by
-Hint "You want to prove `Q a`, and you have a rule: `∀ x, P x → Q x`.
+Statement predicate_intro {α : Type} (P Q : α → Prop) (a : α) (h : ∀ x, P (x) → Q (x)) (hP : P (a)) : Q (a) := by
+Hint "You want to prove `Q (a)`, and you have a rule: `∀ x, P (x) → Q (x)`.
 
 Apply that rule at the specific value `a`."
-apply h a
-Hint "Now Lean wants you to prove `P a`, which you already have from `hP`."
+apply h (a)
+Hint "Now Lean wants you to prove `P (a)`, which you already have from `hP`."
 exact hP
 
 Conclusion "
@@ -56,7 +56,7 @@ Nice work! 🎉
 You just used a predicate rule to prove a specific case.
 
 This is the core idea of predicate logic:
-General statements like `∀ x, P x → Q x` can be instantiated at a specific value.
+General statements like `∀ x, P (x) → Q (x)` can be instantiated at a specific value.
 
 And Lean handles it just like functions!
 "

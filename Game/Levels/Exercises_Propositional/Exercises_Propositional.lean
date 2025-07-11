@@ -1,4 +1,3 @@
-
 import Game.Levels.Propositional.Propositional
 import Game.Levels.Exercises_Propositional.L01_PracticeProp
 import Game.Levels.Exercises_Propositional.L02_PracticeProp

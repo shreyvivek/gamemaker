@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Fri Jul 11 21:40:29 2025\n"
+"POT-Creation-Date: Fri Jul 11 22:00:13 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -1428,10 +1428,6 @@ msgid "Welcome to the world of **Set Theory**!\n"
 msgstr ""
 
 #: Game.Levels.Sets.L01
-msgid "placeholder exact"
-msgstr ""
-
-#: Game.Levels.Sets.L01
 msgid "You are trying to prove `x ∈ A`. And you already have `h : x ∈ A`.\n"
 "\n"
 "Just use `exact h` to complete the proof."
@@ -1899,13 +1895,13 @@ msgid "Instantiating a predicate rule at a specific value."
 msgstr ""
 
 #: Game.Levels.Predicate.L1
-msgid "You want to prove `Q a`, and you have a rule: `∀ x, P x → Q x`.\n"
+msgid "You want to prove `Q (a)`, and you have a rule: `∀ x, P (x) → Q (x)`.\n"
 "\n"
 "Apply that rule at the specific value `a`."
 msgstr ""
 
 #: Game.Levels.Predicate.L1
-msgid "Now Lean wants you to prove `P a`, which you already have from `hP`."
+msgid "Now Lean wants you to prove `P (a)`, which you already have from `hP`."
 msgstr ""
 
 #: Game.Levels.Predicate.L1
@@ -1914,7 +1910,7 @@ msgid "Nice work! 🎉\n"
 "You just used a predicate rule to prove a specific case.\n"
 "\n"
 "This is the core idea of predicate logic:\n"
-"General statements like `∀ x, P x → Q x` can be instantiated at a specific value.\n"
+"General statements like `∀ x, P (x) → Q (x)` can be instantiated at a specific value.\n"
 "\n"
 "And Lean handles it just like functions!"
 msgstr ""
