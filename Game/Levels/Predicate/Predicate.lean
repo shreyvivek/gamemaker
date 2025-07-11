@@ -1,3 +1,4 @@
+import Game.Levels.Propositional.Propositional
 import Game.Levels.Predicate.L1
 World "Predicate"
 
