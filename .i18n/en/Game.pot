@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Thu Jul 10 06:03:02 2025\n"
+"POT-Creation-Date: Fri Jul 11 21:27:54 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -492,7 +492,7 @@ msgid "---\n"
 msgstr ""
 
 #: Game.Levels.Propositional.L08_OrElimination
-msgid "Use the `cases` tactic to break the disjunction `hpq` into two cases: one where `P` is true, and another where `Q` is true."
+msgid "Use the `cases` tactic to break the disjunction `hpq` into two cases: one - the `Active Goal` where `P` is true, and `Goal 2` - where `Q` is true."
 msgstr ""
 
 #: Game.Levels.Propositional.L08_OrElimination
@@ -739,11 +739,7 @@ msgid "Now your goal is `P`.\n"
 "But you already assumed `P` at the very beginning, as `hp`.\n"
 "\n"
 "So simply use:\n"
-"exact hp\n"
-"\n"
-"css\n"
-"Copy\n"
-"Edit\n"
+"`exact hp`\n"
 "\n"
 "to conclude the proof."
 msgstr ""
@@ -952,78 +948,134 @@ msgid "Nicely done! You've applied **Disjunctive Syllogism** in this level, show
 "You’re now handling propositional logic like a pro."
 msgstr ""
 
-#: Game.Levels.Propositional.L14_Dilemma
-msgid "Dilemma"
+#: Game.Levels.Propositional.L14_DeMorgan
+msgid "Negation of a Disjunction"
 msgstr ""
 
-#: Game.Levels.Propositional.L14_Dilemma
-msgid "This is the **Constructive Dilemma**:\n"
+#: Game.Levels.Propositional.L14_DeMorgan
+msgid "Let’s practice reasoning with **negated disjunctions**.\n"
 "\n"
-"From `P ∨ Q`, `P → R`, and `Q → R`, you can conclude `R`.\n"
+"You're told that `¬(P ∨ Q)` is true. That means **neither `P` nor `Q` can be true**.\n"
 "\n"
-"It's case-based reasoning again."
-msgstr ""
-
-#: Game.Levels.Propositional.L14_Dilemma
-msgid "Use `cases` on `«{hpq}»` to consider each possibility."
-msgstr ""
-
-#: Game.Levels.Propositional.L14_Dilemma
-msgid "Now, `P` holds. Use `«{hpr}»` to conclude `R`."
-msgstr ""
-
-#: Game.Levels.Propositional.L14_Dilemma
-msgid "After that, `Goal 2` contains the scenario where `Q` holds. Use `«{hqr}»` to conclude `R`."
-msgstr ""
-
-#: Game.Levels.Propositional.L14_Dilemma
-msgid "Also, Lean is really smart. The `exact` tactic is so versatile that both `exact modus_ponens _ _ a b` and `exact a b` mean the same."
-msgstr ""
-
-#: Game.Levels.Propositional.L14_Dilemma
-msgid "Excellent! You've completed the Constructive Dilemma — a powerful inference rule using `∨`."
-msgstr ""
-
-#: Game.Levels.Propositional.L15_HandsOn
-msgid "Hands On"
-msgstr ""
-
-#: Game.Levels.Propositional.L15_HandsOn
-msgid "You've learned some of the core tactics:\n"
-"- `intro` to assume\n"
-"- `apply` to break down implications\n"
-"- `exact` to close goals\n"
+"So your goal is to prove both `¬P` and `¬Q` — together, this becomes `¬P ∧ ¬Q`.\n"
 "\n"
-"In this level, you’ll combine multiple implications to reach a goal.\n"
-"All the theorems you’ve proved so far are available — so use them!\n"
+"You’ll use:\n"
+"- The `intro` tactic to assume one of the disjuncts\n"
+"- The `apply` tactic to derive a contradiction using `¬(P ∨ Q)`\n"
+"- The `constructor` tactic to prove a conjunction"
+msgstr ""
+
+#: Game.Levels.Propositional.L14_DeMorgan
+msgid "Begin with `constructor`. Then you will separately prove `¬P` and `¬Q`."
+msgstr ""
+
+#: Game.Levels.Propositional.L14_DeMorgan
+msgid "Start with intro, then you can proceed by yourself."
+msgstr ""
+
+#: Game.Levels.Propositional.L14_DeMorgan
+msgid "Well done!\n"
 "\n"
-"Try to:\n"
-"- Think in chains\n"
-"- Finish clearly\n"
+"You proved that if `P ∨ Q` is false, then both `P` and `Q` must individually be false.\n"
 "\n"
-"(Pun intended) _Lean_ on what you know. You’ve got this!"
+"This is an application of **De Morgan’s Law** in reverse — and a great example of using elimination to handle disjunctions."
 msgstr ""
 
-#: Game.Levels.Propositional.L15_HandsOn
-msgid "First you need to assume `A`."
+#: Game.Levels.Propositional.L15_ReverseDeMorgan
+msgid "Negation of a Disjunction (←)"
 msgstr ""
 
-#: Game.Levels.Propositional.L15_HandsOn
-msgid "Your goal is now `D`. Reduce it to `C`."
-msgstr ""
-
-#: Game.Levels.Propositional.L15_HandsOn
-msgid "Now your goal is `C`. Reduce it to `B`."
-msgstr ""
-
-#: Game.Levels.Propositional.L15_HandsOn
-msgid "Finish the level now!."
-msgstr ""
-
-#: Game.Levels.Propositional.L15_HandsOn
-msgid "You’ve just walked through a chain of reasoning — turning `A → B → C → D` into `A → D`.\n"
+#: Game.Levels.Propositional.L15_ReverseDeMorgan
+msgid "Time to prove the **converse** of the previous level!\n"
 "\n"
-"This level shows how powerful basic implication chaining is — and how all the tactics you’ve learned work together.\n"
+"You're given `¬P ∧ ¬Q`, and need to prove `¬(P ∨ Q)`.\n"
+"\n"
+"That is: if both `P` and `Q` are false, then the disjunction `P ∨ Q` is also false.\n"
+"\n"
+"Strategy:\n"
+"- Use `intro` to assume `P ∨ Q` is true (for contradiction)\n"
+"- Use `cases` to consider each case: `P` or `Q`\n"
+"- In each case, derive a contradiction using `¬P` or `¬Q`"
+msgstr ""
+
+#: Game.Levels.Propositional.L15_ReverseDeMorgan
+msgid "Use `intro` first and then `cases`. It should be doable."
+msgstr ""
+
+#: Game.Levels.Propositional.L15_ReverseDeMorgan
+msgid "Great work!\n"
+"\n"
+"You’ve now proven **both directions** of this classic equivalence:\n"
+"\n"
+"- `¬(P ∨ Q) → ¬P ∧ ¬Q` (Level 14)\n"
+"- `¬P ∧ ¬Q → ¬(P ∨ Q)` (Level 15)\n"
+"\n"
+"Together, they form **De Morgan’s Law**:\n"
+"`¬(P ∨ Q) ↔ ¬P ∧ ¬Q`\n"
+"\n"
+"This logical identity is used constantly in proofs, programming, and logic design!"
+msgstr ""
+
+#: Game.Levels.Propositional.L16_Distributivity
+msgid "Distributivity of ∧ over ∨"
+msgstr ""
+
+#: Game.Levels.Propositional.L16_Distributivity
+msgid "In this level, we prove a fundamental logical identity:\n"
+"\n"
+"> `(P ∧ (Q ∨ R)) ↔ (P ∧ Q) ∨ (P ∧ R)`\n"
+"\n"
+"This is called **distributivity** — it shows how conjunction distributes over disjunction.\n"
+"\n"
+"You’ll prove this *bidirectional* statement by:\n"
+"- Using `constructor` to prove both directions of the equivalence\n"
+"- Breaking down disjunctions using `cases`\n"
+"- Building conjunctions and disjunctions using `constructor`, `left`, and `right`\n"
+"\n"
+"This is the final level in this World. And we use several tactics to arrive at the result. You will be prompted with obvious hints as well - to ensure that you take away a good understanding of the several tactics and their uses."
+msgstr ""
+
+#: Game.Levels.Propositional.L16_Distributivity
+msgid "Use `constructor` first — you're proving a ↔, so you need to prove two implications."
+msgstr ""
+
+#: Game.Levels.Propositional.L16_Distributivity
+msgid "You now have `h : P ∧ (Q ∨ R)`. Use `have hp := h.left` to extract the first part."
+msgstr ""
+
+#: Game.Levels.Propositional.L16_Distributivity
+msgid "Then do `cases h.right with` to split the `(Q ∨ R)` into two cases."
+msgstr ""
+
+#: Game.Levels.Propositional.L16_Distributivity
+msgid "Now you have `P` and `Q`. Use `left` to choose the left side of the ∨ goal, then use `constructor` to form `P ∧ Q`."
+msgstr ""
+
+#: Game.Levels.Propositional.L16_Distributivity
+msgid "This case is similar — now `P` and `R` are both true. Use `right` and `constructor` to build `P ∧ R`."
+msgstr ""
+
+#: Game.Levels.Propositional.L16_Distributivity
+msgid "To handle the ∨ on the left, use `cases h with` to handle each case separately."
+msgstr ""
+
+#: Game.Levels.Propositional.L16_Distributivity
+msgid "You now have `hpq : P ∧ Q`. Break it using `.left` and `.right`."
+msgstr ""
+
+#: Game.Levels.Propositional.L16_Distributivity
+msgid "Similarly, you now have `hpr : P ∧ R`. Use `constructor`, then `right` for the `Q ∨ R`."
+msgstr ""
+
+#: Game.Levels.Propositional.L16_Distributivity
+msgid "Beautiful!\n"
+"\n"
+"You’ve now proven the **distributive law**:\n"
+"`P ∧ (Q ∨ R) ↔ (P ∧ Q) ∨ (P ∧ R)`\n"
+"\n"
+"By carefully analyzing the structure of each side, and using basic building blocks like `cases`, `constructor`, `left`, and `right`, you've completed a foundational logical identity.\n"
+"\n"
+"You'll use this reasoning in simplifying logical formulas, circuits, and more.\n"
 "\n"
 "With that, we have come to the end of this World. Click on the Home button at the top to explore other worlds."
 msgstr ""
@@ -1249,38 +1301,80 @@ msgid "Modus Ponens: from `P → Q` and `P`, conclude `Q`."
 msgstr ""
 
 #: Game.Levels.Exercises_Propositional.L02_PracticeProp
+msgid "Hands On"
+msgstr ""
+
+#: Game.Levels.Exercises_Propositional.L02_PracticeProp
+msgid "You've learned some of the core tactics:\n"
+"- `intro` to assume\n"
+"- `apply` to break down implications\n"
+"- `exact` to close goals\n"
+"\n"
+"In this level, you’ll combine multiple implications to reach a goal.\n"
+"All the theorems you’ve proved so far are available — so use them!\n"
+"\n"
+"Try to:\n"
+"- Think in chains\n"
+"- Finish clearly\n"
+"\n"
+"(Pun intended) _Lean_ on what you know. You’ve got this!"
+msgstr ""
+
+#: Game.Levels.Exercises_Propositional.L02_PracticeProp
+msgid "First you need to assume `A`."
+msgstr ""
+
+#: Game.Levels.Exercises_Propositional.L02_PracticeProp
+msgid "Your goal is now `D`. Reduce it to `C`."
+msgstr ""
+
+#: Game.Levels.Exercises_Propositional.L02_PracticeProp
+msgid "Now your goal is `C`. Reduce it to `B`."
+msgstr ""
+
+#: Game.Levels.Exercises_Propositional.L02_PracticeProp
+msgid "Finish the level now!."
+msgstr ""
+
+#: Game.Levels.Exercises_Propositional.L02_PracticeProp
+msgid "You’ve just walked through a chain of reasoning — turning `A → B → C → D` into `A → D`.\n"
+"\n"
+"This level shows how powerful basic implication chaining is — and how all the tactics you’ve learned work together."
+msgstr ""
+
+#: Game.Levels.Exercises_Propositional.L03_PracticeProp
 msgid "Modus Chain Attack"
 msgstr ""
 
-#: Game.Levels.Exercises_Propositional.L02_PracticeProp
+#: Game.Levels.Exercises_Propositional.L03_PracticeProp
 msgid "Apply both **Modus Tollens** and **Modus Ponens** in a clean logical chain.\n"
 "\n"
 "Hint: Make use of the `have` tactic wherever necessary, or a nested `exact` chain!"
 msgstr ""
 
-#: Game.Levels.Exercises_Propositional.L02_PracticeProp
+#: Game.Levels.Exercises_Propositional.L03_PracticeProp
 msgid "Excellent. You combined two powerful rules — **Modus Tollens** and **Modus Ponens** — using structured steps."
 msgstr ""
 
-#: Game.Levels.Exercises_Propositional.L03_PracticeProp
+#: Game.Levels.Exercises_Propositional.L04_PracticeProp
 msgid "Another Modus Chain"
 msgstr ""
 
-#: Game.Levels.Exercises_Propositional.L03_PracticeProp
+#: Game.Levels.Exercises_Propositional.L04_PracticeProp
 msgid "Apply both **Modus Tollens** and **Modus Ponens** in a clean logical chain.\n"
 "\n"
 "Hint: Make use of the `have` tactic wherever necessary, or a nested `exact` chain!"
 msgstr ""
 
-#: Game.Levels.Exercises_Propositional.L03_PracticeProp
+#: Game.Levels.Exercises_Propositional.L04_PracticeProp
 msgid "Excellent. You combined two powerful rules — **Modus Tollens** and **Modus Ponens** — using structured steps."
 msgstr ""
 
-#: Game.Levels.Exercises_Propositional.L04_PracticeProp
+#: Game.Levels.Exercises_Propositional.L05_PracticeProp
 msgid "Disjunctive Detour"
 msgstr ""
 
-#: Game.Levels.Exercises_Propositional.L04_PracticeProp
+#: Game.Levels.Exercises_Propositional.L05_PracticeProp
 msgid "Time to bring in disjunctions (`P ∨ Q`)!\n"
 "\n"
 "You’re given:\n"
@@ -1297,7 +1391,7 @@ msgid "Time to bring in disjunctions (`P ∨ Q`)!\n"
 "- Possibly use contradiction to eliminate impossible paths"
 msgstr ""
 
-#: Game.Levels.Exercises_Propositional.L04_PracticeProp
+#: Game.Levels.Exercises_Propositional.L05_PracticeProp
 msgid "Excellent! You split the disjunction and handled both cases carefully:\n"
 "- The first led to contradiction with `¬P`\n"
 "- The second allowed you to conclude `¬R`\n"
@@ -1358,9 +1452,9 @@ msgstr ""
 #: Game.Levels.Sets.L02
 msgid "Let’s now talk about **subsets**.\n"
 "\n"
-"We write `A ⊆ B` to mean *every element of A is also in B*. That is: `∀ x, x ∈ A → x ∈ B`\n"
+"We write `A ⊆ B` to mean *every element of A is also an element of B*. That is: `∀ x, x ∈ A → x ∈ B`\n"
 "\n"
-"This level helps you prove that one set is a subset of another, using basic logic and the `intro` and `exact` tactics."
+"This level helps you prove that every set is a subset of itself, using basic logic and the `intro` and `exact` tactics."
 msgstr ""
 
 #: Game.Levels.Sets.L02
@@ -1368,7 +1462,7 @@ msgid "placeholder intro"
 msgstr ""
 
 #: Game.Levels.Sets.L02
-msgid "To prove a subset, use `intro x` and `intro h`, then apply `exact h`.\n"
+msgid "In order to do this proof in Lean, we use `intro x` to introduce an element `x` which belongs to both sets. Then, `intro h` assumes `x ∈ A` is true, then we write `exact h`.\n"
 "\n"
 "You are proving `A ⊆ A`, which means: for all `x`, if `x ∈ A` then `x ∈ A`."
 msgstr ""
@@ -1756,6 +1850,81 @@ msgstr ""
 
 #: Game.Levels.Sets.Sets
 msgid "In this world, you'll explore the foundations of Sets.\n"
+"\n"
+"Each level presents a new fundamental theorem or principle.\n"
+"\n"
+"Before you start, take note of the panel on the right (if you are on PC). You can find the documentations/descriptions for several **Tactics** we will be making use of, and **Theorems** we will be proving(_and using_) in this World. Click on them, whether locked or unlocked, to read and understand! You are encouraged to do so whenever you are prompted to use a tactic in the game.\n"
+"\n"
+"Click on the `Start` button to begin!"
+msgstr ""
+
+#: Game.Levels.Predicate.L1
+msgid "What’s a Predicate?"
+msgstr ""
+
+#: Game.Levels.Predicate.L1
+msgid "Welcome to **Predicate Logic**!\n"
+"\n"
+"In propositional logic, you worked with full statements like `3 > 2`.\n"
+"In predicate logic, we work with **statements that depend on a variable**.\n"
+"\n"
+"These are called **predicates**.\n"
+"\n"
+"For instance:\n"
+"> Let `P(x)` mean “x is a student”.\n"
+"\n"
+"This is not a full proposition until we plug in a value like `P(alice)`.\n"
+"\n"
+"In Lean, we write this as:\n"
+"```lean\n"
+"P : α → Prop\n"
+"```\n"
+"Let’s see how to use one!"
+msgstr ""
+
+#: Game.Levels.Predicate.L1
+msgid "Purpose: Use the apply tactic to specialize a universally quantified statement.\n"
+"\n"
+"You are given:\n"
+"\n"
+"`h : ∀ x, P x → Q x`\n"
+"\n"
+"`hP : P a`\n"
+"\n"
+"To prove `Q a`, you apply `h a`, which gives `P a → Q a`, and then use `hP`."
+msgstr ""
+
+#: Game.Levels.Predicate.L1
+msgid "Instantiating a predicate rule at a specific value."
+msgstr ""
+
+#: Game.Levels.Predicate.L1
+msgid "You want to prove `Q a`, and you have a rule: `∀ x, P x → Q x`.\n"
+"\n"
+"Apply that rule at the specific value `a`."
+msgstr ""
+
+#: Game.Levels.Predicate.L1
+msgid "Now Lean wants you to prove `P a`, which you already have from `hP`."
+msgstr ""
+
+#: Game.Levels.Predicate.L1
+msgid "Nice work! 🎉\n"
+"\n"
+"You just used a predicate rule to prove a specific case.\n"
+"\n"
+"This is the core idea of predicate logic:\n"
+"General statements like `∀ x, P x → Q x` can be instantiated at a specific value.\n"
+"\n"
+"And Lean handles it just like functions!"
+msgstr ""
+
+#: Game.Levels.Predicate.Predicate
+msgid "Predicate Logic"
+msgstr ""
+
+#: Game.Levels.Predicate.Predicate
+msgid "In this world, you'll explore the foundations of **predicate logic**.\n"
 "\n"
 "Each level presents a new fundamental theorem or principle.\n"
 "\n"

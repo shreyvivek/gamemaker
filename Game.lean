@@ -5,6 +5,7 @@ import Game.Levels.Propositional.Propositional
 import Game.Levels.Exercises_Propositional.Exercises_Propositional
 import Game.Levels.Exercises_Propositional.ProofHelpers
 import Game.Levels.Sets.Sets
+import Game.Levels.Predicate.Predicate
 
 -- Here's what we'll put on the title screen
 Title "Discrete Mathematics with Lean4"

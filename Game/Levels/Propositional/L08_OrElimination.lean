@@ -88,7 +88,7 @@ So regardless of whether `P` or `Q` is true, we conclude:
 
 **`R` is true.**
   "
-  Hint "Use the `cases` tactic to break the disjunction `hpq` into two cases: one where `P` is true, and another where `Q` is true."
+  Hint "Use the `cases` tactic to break the disjunction `hpq` into two cases: one - the `Active Goal` where `P` is true, and `Goal 2` - where `Q` is true."
   cases hpq with
   | inl h =>
     Hint "
