@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Fri Jul 11 22:00:13 2025\n"
+"POT-Creation-Date: Sat Jul 12 19:47:58 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -1411,6 +1411,81 @@ msgid "In this world, you'll try out some exercises on propositional logic, base
 "Click on the `Start` button to begin!"
 msgstr ""
 
+#: Game.Levels.Predicate.L1
+msgid "What’s a Predicate?"
+msgstr ""
+
+#: Game.Levels.Predicate.L1
+msgid "Welcome to **Predicate Logic**!\n"
+"\n"
+"In propositional logic, you worked with full statements like `3 > 2`.\n"
+"In predicate logic, we work with **statements that depend on a variable**.\n"
+"\n"
+"These are called **predicates**.\n"
+"\n"
+"For instance:\n"
+"> Let `P(x)` mean “x is a student”.\n"
+"\n"
+"This is not a full proposition until we plug in a value like `P(alice)`.\n"
+"\n"
+"In Lean, we write this as:\n"
+"```lean\n"
+"P : α → Prop\n"
+"```\n"
+"Let’s see how to use one!"
+msgstr ""
+
+#: Game.Levels.Predicate.L1
+msgid "Purpose: Use the apply tactic to specialize a universally quantified statement.\n"
+"\n"
+"You are given:\n"
+"\n"
+"`h : ∀ x, P x → Q x`\n"
+"\n"
+"`hP : P a`\n"
+"\n"
+"To prove `Q a`, you apply `h a`, which gives `P a → Q a`, and then use `hP`."
+msgstr ""
+
+#: Game.Levels.Predicate.L1
+msgid "Instantiating a predicate rule at a specific value."
+msgstr ""
+
+#: Game.Levels.Predicate.L1
+msgid "You want to prove `Q (a)`, and you have a rule: `∀ x, P (x) → Q (x)`.\n"
+"\n"
+"Apply that rule at the specific value `a`."
+msgstr ""
+
+#: Game.Levels.Predicate.L1
+msgid "Now Lean wants you to prove `P (a)`, which you already have from `hP`."
+msgstr ""
+
+#: Game.Levels.Predicate.L1
+msgid "Nice work! 🎉\n"
+"\n"
+"You just used a predicate rule to prove a specific case.\n"
+"\n"
+"This is the core idea of predicate logic:\n"
+"General statements like `∀ x, P (x) → Q (x)` can be instantiated at a specific value.\n"
+"\n"
+"And Lean handles it just like functions!"
+msgstr ""
+
+#: Game.Levels.Predicate.Predicate
+msgid "Predicate Logic"
+msgstr ""
+
+#: Game.Levels.Predicate.Predicate
+msgid "In this world, you'll explore the foundations of **predicate logic**.\n"
+"\n"
+"Each level presents a new fundamental theorem or principle.\n"
+"\n"
+"Before you start, take note of the panel on the right (if you are on PC). You can find the documentations/descriptions for several **Tactics** we will be making use of, and **Theorems** we will be proving(_and using_) in this World. Click on them, whether locked or unlocked, to read and understand! You are encouraged to do so whenever you are prompted to use a tactic in the game.\n"
+"\n"
+"Click on the `Start` button to begin!"
+msgstr ""
+
 #: Game.Levels.Sets.L01
 msgid "Set Membership"
 msgstr ""
@@ -1846,81 +1921,6 @@ msgstr ""
 
 #: Game.Levels.Sets.Sets
 msgid "In this world, you'll explore the foundations of Sets.\n"
-"\n"
-"Each level presents a new fundamental theorem or principle.\n"
-"\n"
-"Before you start, take note of the panel on the right (if you are on PC). You can find the documentations/descriptions for several **Tactics** we will be making use of, and **Theorems** we will be proving(_and using_) in this World. Click on them, whether locked or unlocked, to read and understand! You are encouraged to do so whenever you are prompted to use a tactic in the game.\n"
-"\n"
-"Click on the `Start` button to begin!"
-msgstr ""
-
-#: Game.Levels.Predicate.L1
-msgid "What’s a Predicate?"
-msgstr ""
-
-#: Game.Levels.Predicate.L1
-msgid "Welcome to **Predicate Logic**!\n"
-"\n"
-"In propositional logic, you worked with full statements like `3 > 2`.\n"
-"In predicate logic, we work with **statements that depend on a variable**.\n"
-"\n"
-"These are called **predicates**.\n"
-"\n"
-"For instance:\n"
-"> Let `P(x)` mean “x is a student”.\n"
-"\n"
-"This is not a full proposition until we plug in a value like `P(alice)`.\n"
-"\n"
-"In Lean, we write this as:\n"
-"```lean\n"
-"P : α → Prop\n"
-"```\n"
-"Let’s see how to use one!"
-msgstr ""
-
-#: Game.Levels.Predicate.L1
-msgid "Purpose: Use the apply tactic to specialize a universally quantified statement.\n"
-"\n"
-"You are given:\n"
-"\n"
-"`h : ∀ x, P x → Q x`\n"
-"\n"
-"`hP : P a`\n"
-"\n"
-"To prove `Q a`, you apply `h a`, which gives `P a → Q a`, and then use `hP`."
-msgstr ""
-
-#: Game.Levels.Predicate.L1
-msgid "Instantiating a predicate rule at a specific value."
-msgstr ""
-
-#: Game.Levels.Predicate.L1
-msgid "You want to prove `Q (a)`, and you have a rule: `∀ x, P (x) → Q (x)`.\n"
-"\n"
-"Apply that rule at the specific value `a`."
-msgstr ""
-
-#: Game.Levels.Predicate.L1
-msgid "Now Lean wants you to prove `P (a)`, which you already have from `hP`."
-msgstr ""
-
-#: Game.Levels.Predicate.L1
-msgid "Nice work! 🎉\n"
-"\n"
-"You just used a predicate rule to prove a specific case.\n"
-"\n"
-"This is the core idea of predicate logic:\n"
-"General statements like `∀ x, P (x) → Q (x)` can be instantiated at a specific value.\n"
-"\n"
-"And Lean handles it just like functions!"
-msgstr ""
-
-#: Game.Levels.Predicate.Predicate
-msgid "Predicate Logic"
-msgstr ""
-
-#: Game.Levels.Predicate.Predicate
-msgid "In this world, you'll explore the foundations of **predicate logic**.\n"
 "\n"
 "Each level presents a new fundamental theorem or principle.\n"
 "\n"
