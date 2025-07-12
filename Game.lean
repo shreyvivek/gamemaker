@@ -39,7 +39,7 @@ CoverImage "images/MH1812 Logo.png"
 
 Dependency Propositional → Exercises_Propositional
 Dependency Propositional → Predicate
-Dependency Propositional → Sets
+Dependency Predicate → Sets
 
 
 /-! Build the game. Show's warnings if it found a problem with your game. -/
