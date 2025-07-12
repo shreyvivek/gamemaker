@@ -26,23 +26,7 @@ P : α → Prop
 Let’s see how to use one!
 "
 
-/--
-Purpose: Use the apply tactic to specialize a universally quantified statement.
-
-You are given:
-
-`h : ∀ x, P x → Q x`
-
-`hP : P a`
-
-To prove `Q a`, you apply `h a`, which gives `P a → Q a`, and then use `hP`.
--/
-TacticDoc apply
-
-/-- Instantiating a predicate rule at a specific value. -/
-TheoremDoc Predicate.predicate_intro as "predicate_intro" in "Predicate"
-
-Statement predicate_intro {α : Type} (P Q : α → Prop) (a : α) (h : ∀ x, P (x) → Q (x)) (hP : P (a)) : Q (a) := by
+Statement {α : Type} (P Q : α → Prop) (a : α) (h : ∀ x, P (x) → Q (x)) (hP : P (a)) : Q (a) := by
 Hint "You want to prove `Q (a)`, and you have a rule: `∀ x, P (x) → Q (x)`.
 
 Apply that rule at the specific value `a`."
