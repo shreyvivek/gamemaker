@@ -1,5 +1,9 @@
 import Game.Levels.Propositional.Propositional
 import Game.Levels.Predicate.L1
+import Game.Levels.Predicate.L2
+import Game.Levels.Predicate.L3
+import Game.Levels.Predicate.L4
+import Game.Levels.Predicate.L5
 World "Predicate"
 
 Title "Predicate Logic"
