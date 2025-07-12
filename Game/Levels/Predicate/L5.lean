@@ -36,7 +36,9 @@ Let's try to break this down!
 Statement {α : Type} (P : α → α → Prop) (a : α) (h : ∀ x, ∃ y, P x y) : ∃ y, P a y := by
 Hint "You want to prove `∃ y, P a y`, and you have a general rule: `∀ x, ∃ y, P x y`.
 
-`apply h` to `a` to get: `∃ y, P a y`."
+`apply h` to `a` to get: `∃ y, P a y`.
+
+Both `apply h` and `apply h a` work the same. Though it is just a one line proof, it is quite crucial to understand this step."
 apply h a
 
 Conclusion "

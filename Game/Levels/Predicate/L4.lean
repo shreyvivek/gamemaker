@@ -32,8 +32,6 @@ cases h with
 |intro x hx =>
 Hint "Now you have `x : α` and `hx : P x`. Use the universal statement `hQ : ∀ x, P x → Q`.
 
-If it wasn't obvious, yes, we will make use of the `apply` tactic, but it looks slightly different in predicate logic.
-
 It wouldn't be just `apply hQ`. We also need to specify which element we are working on, which is `x` in this case. So do `apply hQ x`."
 apply hQ x
 Hint "Lean wants you to prove P x, which you have as hx."

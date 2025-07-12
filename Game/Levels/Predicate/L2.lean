@@ -22,7 +22,7 @@ So from `∀ x, P(x)`, we can conclude `P(a)`, for some value `a` — this is ca
 Statement {α : Type} (P : α → Prop) (a : α) (h : ∀ x, P (x)) : P (a) := by
 Hint "You are given `h : ∀ x, P x`, and want to prove `P a`.
 
-Just `apply` the universal statement to the specific value `a`."
+If it wasn't obvious, yes, we will make use of the `apply` tactic, `apply h`."
 apply h
 
 Conclusion "
