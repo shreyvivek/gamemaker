@@ -37,9 +37,10 @@ CaptionLong "You can use this game as a template for your own game and add your 
 -- Prerequisites "" -- add this if your game depends on other games
 CoverImage "images/MH1812 Logo.png"
 
+Dependency Propositional → Exercises_Propositional
 Dependency Propositional → Predicate
 Dependency Predicate → Sets
-Dependency Propositional → Exercises_Propositional
+
 
 /-! Build the game. Show's warnings if it found a problem with your game. -/
 MakeGame
