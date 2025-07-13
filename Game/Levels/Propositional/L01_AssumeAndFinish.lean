@@ -80,6 +80,8 @@ TacticDoc exact
 |Subset     | ⊆      | `\subset`                         |
 |Union      | ∪      | `\union`, `\un`                   |
 |Intersect  | ∩      | `\intersect`, `\cap`              |
+|Pair-Left  | ⟨       | `\<`                             |
+|Pair-Right | ⟩       | `\>`                             |
 
 -/
 DefinitionDoc UniCode_Table as "UniCode Table"

@@ -26,27 +26,27 @@ This is called **existential elimination**.
 "
 
 
-Statement {α : Type} (P : α → Prop) (Q : Prop) (h : ∃ x, P x) (hQ : ∀ x, P x → Q) : Q := by
-Hint "Use `cases h with | intro x hx =>` to extract the witness `x` and the proof `hx : P x`. It is a unique combination of `cases` and `intro` tactics, but is the most elegant way to prove it here."
+Statement {α : Type} (P : α → Prop) (Q : Prop) (h : ∃ w, P w) (hQ : ∀ w, P w → Q) : Q := by
+Hint "Use `cases h` to extract the witness `w` and the proof `h_1 : P w`."
 cases h with
-|intro x hx =>
-Hint "Now you have `x : α` and `hx : P x`. Use the universal statement `hQ : ∀ x, P x → Q`.
+|intro w h_1 =>
+Hint "Now you have `w : α` and `h_1 : P w`. Use the universal statement `hQ : ∀ w, P w → Q`.
 
-It wouldn't be just `apply hQ`. We also need to specify which element we are working on, which is `x` in this case. So do `apply hQ x`."
-apply hQ x
-Hint "Lean wants you to prove P x, which you have as hx."
-exact hx
+It wouldn't be just `apply hQ`. We also need to specify which element we are working on, which is `w` in this case. So do `apply hQ w`."
+apply hQ w
+Hint "Lean wants you to prove `P w`, which you have as `h_1`."
+exact h_1
 
 Conclusion "
 Nice! 🎉
 
 You just performed existential elimination:
 
-You started with `∃ x, P (x).`
+You started with `∃ w, P (w).`
 
 Then used `cases` to extract a witness and its property and applied a general rule to that specific value.
 
-Hence, this is one of the most important tools for reasoning about existential statements.
+This is actually one of the most important tools for reasoning about existential statements.
 "
 
 end Predicate

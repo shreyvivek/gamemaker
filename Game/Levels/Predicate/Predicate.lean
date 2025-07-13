@@ -4,6 +4,10 @@ import Game.Levels.Predicate.L2
 import Game.Levels.Predicate.L3
 import Game.Levels.Predicate.L4
 import Game.Levels.Predicate.L5
+import Game.Levels.Predicate.L6
+import Game.Levels.Predicate.L7
+import Game.Levels.Predicate.L8
+import Game.Levels.Predicate.L9
 World "Predicate"
 
 Title "Predicate Logic"
