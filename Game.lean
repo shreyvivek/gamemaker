@@ -7,10 +7,10 @@ import Game.Levels.Sets.Sets
 import Game.Levels.Predicate.Predicate
 
 -- Here's what we'll put on the title screen
-Title "Discrete Mathematics with Lean4"
+Title "Discrete Mathematics with Lean 4"
 Introduction
 "
-Welcome to **Discrete Math with Lean4**, an interactive game that will help you in proving several theorems of **Discrete Mathematics**
+Welcome to **Discrete Math with Lean 4**, an interactive game that will help you in proving several theorems of **Discrete Mathematics**
 
 **What is Lean?**
 
