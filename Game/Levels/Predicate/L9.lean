@@ -66,6 +66,7 @@ Exists.intro w (And.intro h hq)
 "
 exact Exists.intro w (And.intro h hq)
 
+NewTheorem And.intro
 Conclusion "
 Awesome! 🎉
 
