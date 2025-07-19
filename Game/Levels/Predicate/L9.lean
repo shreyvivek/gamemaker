@@ -59,7 +59,7 @@ Now construct the conjunction `P w ∧ Q w` using:
 ```lean
 And.intro h hq
 ```
-Then wrap it with the witness using:
+Then wrap it with the witness using this:
 ```lean
 Exists.intro w (And.intro h hq)
 ```
