@@ -11,7 +11,13 @@ Title "Assume and Finish"
 Introduction "
 Welcome!
 
-Let’s begin with the simplest task. If you're told `P` is true, then you can conclude `P`.
+Let’s begin with the simplest task. Let `P` be a proposition.
+
+```
+P: It is raining.
+```
+If you're told `P` is true, then you can conclude `P`.
+That's like - you already know it is raining. So you can also make the conclusion, that it is raining.
 
 Sounds trivial, but this teaches you how to use assumptions to finish a goal.
 "
