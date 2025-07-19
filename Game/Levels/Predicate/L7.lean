@@ -40,8 +40,12 @@ Hint "Now think: If you know that `P x` is true, then you can say:
 
 Lean lets you write that as:
 ```lean
-⟨x, hPx⟩
+exact Exists.intro x hPx
 ```
+But it can be packed better with the angular brackets as you read in Level 3.
+
+```lean
+⟨x, hPx⟩
 This is a value of type `∃ x, P x` — a witness `x` and proof `hPx`.
 
 So use:

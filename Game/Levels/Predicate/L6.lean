@@ -37,7 +37,7 @@ You already have a proof of `P a y` (it's called `hy`).
 
 To prove that there exists such an `x`, it’s enough to give a specific example — and you know that `a` works!
 
-Use the existential introduction syntax to finish off (with `exact`)."
+Use the `Exists.intro`syntax to finish off (with `exact`)."
 exact ⟨a, hy⟩
 
 Conclusion "

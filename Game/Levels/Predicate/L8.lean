@@ -32,7 +32,7 @@ You already know a specific `a` where `P a` is not true — it’s given by `h`.
 
 So you can just provide `a` as the witness, and `h` as the proof.
 ```lean
-exact ⟨a, h⟩
+exact Exists.intro a h
 ```"
 exact ⟨a, h⟩
 
