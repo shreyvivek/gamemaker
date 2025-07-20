@@ -1,63 +1,43 @@
 import GameServer.Commands
-import Game.Levels.Induction.natdef
 
 namespace Induction
 
-open Induction
-
 World "Induction"
 Level 1
-Title "n + 0 = n"
+Title "Base Case"
 
 Introduction "
-Let’s prove the most basic identity: adding `0` to any number `n` gives back `n`.
+Welcome to the world of **Mathematical Induction**! 🌱
 
-This is the **base case** of many induction chains.
+We'll begin by proving the **base case** of a simple statement:
+
+> For all natural numbers `n`, `n + 0 = n`
+
+This level focuses only on the **base case**, where `n = 0`.
 "
-/--
-Use `induction` to perform mathematical induction on a natural number.
-
-It splits your goal into:
-- a base case (`zero`)
-- an inductive step (`succ n`), assuming the result holds for `n`.
-
-This is the backbone of most proofs involving ℕ!
--/
-TacticDoc induction
 
 /--
-Use `simp` to simplify expressions using known definitions and lemmas.
+`rfl` stands for “reflexivity of equality”.
 
-Great for unfolding things like `add`, `zero`, etc.
--/
-TacticDoc simp
+It can be used when both sides of your goal are definitionally equal — meaning Lean can reduce/simplify both sides to the same expression.
 
-/--
-Use `rw` (rewrite) to replace one side of an equation with another using a known equality.
--/
-TacticDoc rw
-
-/--
-Use `rfl` when both sides of the equation are already the same — “reflexivity”.
+You’ll use `rfl` all the time to finish goals like `0 + 0 = 0`, `n = n`, etc.
 -/
 TacticDoc rfl
 
-Statement (n : ℕ) : n + zero = n := by
-  induction n with
-  | zero => rfl
-  | succ n ih =>
-    simp [add]
-    rw [ih]
-    rfl
+Statement : 0 + 0 = 0 := by
+Hint "You're trying to show `0 + 0 = 0`.
 
+Lean knows how to compute `0 + 0`, and simplifies it automatically using its built-in definition of addition.
 
+So simply type `rfl`."
+rfl
 
-NewTactic induction simp rw rfl
-
+NewTactic rfl
 Conclusion "
-You just performed your first induction proof!
+Nice! You’ve proven the base case. 🎉
 
-This is a cornerstone of formal mathematics — congrats!
+The next step is the **inductive step** — where we assume the statement for `n` and prove it for `n + 1`.
 "
 
 end Induction

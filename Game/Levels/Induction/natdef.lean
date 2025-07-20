@@ -1,27 +1,36 @@
-namespace Induction
+inductive MyNat where
+  | zero : MyNat
+  | succ : MyNat → MyNat
 
-inductive ℕ : Type
-| zero : ℕ
-| succ : ℕ → ℕ
-deriving Repr
+namespace MyNat
 
-open ℕ
+-- Alias ℕ to MyNat
+notation "ℕ" => MyNat
 
--- Define zero and succ notation
-notation "zero" => ℕ.zero
-notation "succ " n => ℕ.succ n
-
--- Define addition
+-- Define addition manually
 def add : ℕ → ℕ → ℕ
-| zero, m => m
-| succ n, m => succ (add n m)
+  | zero, n => n
+  | succ m, n => succ (add m n)
 
--- Allow use of `+`
+-- Provide HAdd instance so we can write n + m
 instance : HAdd ℕ ℕ ℕ where
   hAdd := add
 
--- Define custom equality
-def Equal (a b : ℕ) : Prop := ∀ P : ℕ → Prop, P a → P b
-infix:50 " ≡ " => Equal
+-- Rewrite lemmas for addition
+@[simp] theorem add_zero (n : ℕ) : zero + n = n := by rfl
+@[simp] theorem add_succ (m n : ℕ) : succ m + n = succ (m + n) := by rfl
 
-end Induction
+-- Theorem: n + 0 = n
+theorem add_right_zero (n : ℕ) : n + zero = n := by
+  induction n with
+  | zero =>
+    -- Goal: zero + zero = zero
+    rfl
+  | succ k ih =>
+    -- Goal: succ k + zero = succ k
+    -- By definition: succ k + zero = succ (k + zero)
+    -- Apply induction hypothesis: k + zero = k
+    -- So: succ (k + zero) = succ k
+    rw [add_succ, ih]
+
+end MyNat

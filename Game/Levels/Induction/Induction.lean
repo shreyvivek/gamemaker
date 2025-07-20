@@ -1,4 +1,6 @@
 import Game.Levels.Induction.L01_
+import Game.Levels.Induction.L02_
+import Game.Levels.Induction.natdef
 
 World "Induction"
 Title "Mathematical Induction"

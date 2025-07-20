@@ -5,8 +5,9 @@ import Game.Levels.Propositional.Propositional
 import Game.Levels.Exercises_Propositional.Exercises_Propositional
 import Game.Levels.Sets.Sets
 import Game.Levels.Predicate.Predicate
+import Game.Levels.Induction.Induction
 
--- Here's what we'll put on the title screen
+
 Title "Discrete Mathematics with Lean 4"
 Introduction
 "
@@ -30,15 +31,16 @@ This is the first iteration of this game. You can find the source code at [GitHu
 
 "
 
-/-! Information to be displayed on the servers landing page. -/
+
 Languages "English"
 CaptionShort "MH1812"
 CaptionLong "You can use this game as a template for your own game and add your own levels, if you are keen to learn more about Lean4."
--- Prerequisites "" -- add this if your game depends on other games
+
 CoverImage "images/MH1812 Logo.png"
 
 Dependency Propositional → Exercises_Propositional
 Dependency Propositional → Predicate
+Dependency Predicate → Induction
 Dependency Predicate → Sets
 
 
