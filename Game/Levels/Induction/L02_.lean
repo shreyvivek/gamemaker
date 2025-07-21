@@ -8,7 +8,7 @@ Level 2
 Title "Prove ∀ n, n + 0 = n"
 
 Introduction "
-You’ve seen the base case. Now let’s prove a **universal identity** using **mathematical induction**! 🧠
+You’ve seen the base case. Now let’s prove a **universal identity** using **mathematical induction**!
 
 We aim to prove:
 
@@ -24,7 +24,7 @@ Lean won't assume any built-in knowledge about +, so we prove everything from sc
 "
 
 /--
-Use `induction n with` to perform induction on `n`.
+Use `induction n` to perform induction on `n`.
 
 It splits your goal into:
 
@@ -82,7 +82,7 @@ TacticDoc rw
 
 
 Statement : ∀ n : ℕ, n + MyNat.zero = n := by
-Hint "We want to prove this for all n. Use `intro n` first, then perform `induction n with`."
+Hint "We want to prove this for all n. Use `intro n` first, then perform `induction n`."
 intro n
 induction n with
 | zero =>
