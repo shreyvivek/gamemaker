@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Sun Jul 20 22:02:18 2025\n"
+"POT-Creation-Date: Wed Jul 23 13:55:16 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -2216,7 +2216,7 @@ msgid "Prove ∀ n, n + 0 = n"
 msgstr ""
 
 #: Game.Levels.Induction.L02_
-msgid "You’ve seen the base case. Now let’s prove a **universal identity** using **mathematical induction**! 🧠\n"
+msgid "You’ve seen the base case. Now let’s prove a **universal identity** using **mathematical induction**!\n"
 "\n"
 "We aim to prove:\n"
 "\n"
@@ -2232,7 +2232,7 @@ msgid "You’ve seen the base case. Now let’s prove a **universal identity** u
 msgstr ""
 
 #: Game.Levels.Induction.L02_
-msgid "Use `induction n with` to perform induction on `n`.\n"
+msgid "Use `induction n` to perform induction on `n`.\n"
 "\n"
 "It splits your goal into:\n"
 "\n"
@@ -2286,7 +2286,7 @@ msgid "The `rw` tactic stands for **rewrite**.\n"
 msgstr ""
 
 #: Game.Levels.Induction.L02_
-msgid "We want to prove this for all n. Use `intro n` first, then perform `induction n with`."
+msgid "We want to prove this for all n. Use `intro n` first, then perform `induction n`."
 msgstr ""
 
 #: Game.Levels.Induction.L02_

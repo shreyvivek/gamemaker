@@ -1,4 +1,7 @@
 import GameServer.Commands
+import Game.Levels.Propositional.L07_ModusPonens
+
+open Propositional
 
 namespace Predicate
 
@@ -30,42 +33,11 @@ Statement {α : Type} (P Q : α → Prop)
 (h₁ : ∃ w, P w)
 (h₂ : ∀ w, P w → Q w) :
 ∃ w, P w ∧ Q w := by
-Hint "
-Start by breaking down the existential `h₁`.
 
-Use the `cases` tactic to extract a witness `w` and the fact `h : P w`:
-```lean
 cases h₁
-```
-"
-
-cases h₁ with
-| intro w h =>
-Hint "
-Now you have:
-
-```lean
-h : P w
-h₂ : ∀ w, P w → Q w
-```
-
-So you can derive `Q w` by applying h₂ to w and h:
-
-`have hq : Q w := h₂ w h`
-"
-have hq : Q w := h₂ w h
-Hint "
-Now construct the conjunction `P w ∧ Q w` using:
-```lean
-And.intro h hq
-```
-Then wrap it with the witness using this:
-```lean
-Exists.intro w (And.intro h hq)
-```
-"
-exact Exists.intro w (And.intro h hq)
-
+have hPwtQw : P w → Q w := h₂ w
+have hQw : Q w := modus_ponens hPwtQw h
+exact Exists.intro w (And.intro h hQw)
 NewTheorem And.intro
 Conclusion "
 Awesome! 🎉
