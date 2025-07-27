@@ -21,7 +21,7 @@ Strategy:
 "
 
 Statement (P Q : Prop) (h : ¬P ∧ ¬Q) : ¬(P ∨ Q) := by
-  Hint "Use `intro` first and then `cases`. It should be doable."
+  Hint "Use `intro hpq` first and then `cases hpq`. It should be doable."
   intro hpq
   cases hpq with
   | inl hp =>

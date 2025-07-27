@@ -24,15 +24,15 @@ Let’s unpack this step by step.
 
 Statement (P Q : Prop) (h : P → Q) : ¬Q → ¬P := by
   Hint "To prove `¬Q → ¬P`, first recognize that it's shorthand for `(Q → False) → (P → False)`."
-  Hint "That means this is a **nested implication**, so we’ll need to assume both `¬Q` and `P` before we can prove `False`."
+  Hint "That means this is a **nested implication**, so we’ll need to assume both `¬Q` and `P` before we can prove `False`. Do `intro not_q`"
   intro not_q
   Hint "`not_q` now holds: you’re assuming `Q → False`. Now to prove `¬P`, we must show `P → False` — so assume `P` next via `intro assumed_p`."
   intro assumed_p
   Hint "Your goal is now `False`. Think: how do you reach a contradiction from `P`?"
   Hint "You have `h : P → Q`, and you also assumed `P` as `assumed_p`. So, from those two, you can get `Q`."
-  Hint "But your goal is `False`, and you have `not_q : Q → False`. This gives you a strategy: apply `not_q` to change the goal to a proof of `Q`."
+  Hint "But your goal is `False`, and you have `not_q : Q → False`. This gives you a strategy: `apply not_q` will change the goal to a proof of `Q`."
   apply not_q
-  Hint "You now need to prove `Q`, and you have `h : P → Q` and `assumed_p : P`. This is a perfect setup for `apply` again."
+  Hint "You now need to prove `Q`, and you have `h : P → Q` and `assumed_p : P`. This is a perfect setup for `apply` again, but this time, with `h`."
   apply h
   Hint "Now the goal is `P`, and you already have `assumed_p : P`. Use `exact assumed_p` to finish."
   exact assumed_p
@@ -46,7 +46,7 @@ Though this level was heavy on hints, it brought together everything you’ve le
 - You used `apply` to break apart implications
 - And you combined all the pieces to reach a contradiction
 
-This is real formal logic — and you're solving it in Lean. 🔥
+This is real formal logic — and you're solving it in Lean.
 "
 
 end Propositional

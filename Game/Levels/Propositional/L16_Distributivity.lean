@@ -27,10 +27,11 @@ Statement (P Q R : Prop) : (P ∧ (Q ∨ R)) ↔ ((P ∧ Q) ∨ (P ∧ R)) := by
   constructor
 
   -- Forward direction: (P ∧ (Q ∨ R)) → (P ∧ Q) ∨ (P ∧ R)
+  Hint "Try `intro h`, to focus on the LHS of the implication."
   intro h
   Hint "You now have `h : P ∧ (Q ∨ R)`. Use `have hp := h.left` to extract the first part."
   have hp := h.left
-  Hint "Then do `cases h.right with` to split the `(Q ∨ R)` into two cases."
+  Hint "Then do `cases h.right` to split the `(Q ∨ R)` into two cases."
   cases h.right with
   | inl hq =>
     Hint "Now you have `P` and `Q`. Use `left` to choose the left side of the ∨ goal, then use `constructor` to form `P ∧ Q`."
@@ -46,11 +47,12 @@ Statement (P Q R : Prop) : (P ∧ (Q ∨ R)) ↔ ((P ∧ Q) ∨ (P ∧ R)) := by
     exact hr
 
   -- Reverse direction: (P ∧ Q) ∨ (P ∧ R) → (P ∧ (Q ∨ R))
+  Hint "You just finished proving the forward direction. Now `intro h` will begin the proof in the reverse direction."
   intro h
-  Hint "To handle the ∨ on the left, use `cases h with` to handle each case separately."
+  Hint "To handle the ∨ on the left, use `cases h` to handle each case separately."
   cases h with
   | inl hpq =>
-    Hint "You now have `hpq : P ∧ Q`. Break it using `.left` and `.right`."
+    Hint "You now have `hpq : P ∧ Q`. Type `constructor` and then break it using `.left` and `.right`. Use `left` for the `Q ∨ R`."
     constructor
     exact hpq.left
     left

@@ -25,13 +25,16 @@ Statement (P Q : Prop) (h : ¬(P ∨ Q)) : ¬P ∧ ¬Q := by
   constructor
 
   -- Part 1: Prove ¬P
-  Hint "Start with intro, then you can proceed by yourself."
+  Hint "Start with intro h."
   intro hp
+  Hint "Try `apply h`."
   apply h
+  Hint "Think of `left`."
   left
   exact hp
 
   -- Part 2: Prove ¬Q
+  Hint "Proof is just like the first half."
   intro hq
   apply h
   right

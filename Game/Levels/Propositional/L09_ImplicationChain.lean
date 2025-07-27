@@ -83,6 +83,10 @@ Hint "One way to go ahead is to use the exact statement by writing something lik
 Looks complicated, and I hope you aren't too confused, because there's an amazing tactic to use here. Read about the `have` tactic on the right.
 
 **Note** that the `have` tactic is strict on syntax, but it simplifies your task in seconds! Also if you just write `modus_ponens h₁ hp` in the `have` tactic, it does the same thing as `exact modus_ponens h₁ hp`"
+
+Hint "
+The syntax is something like `have hq : Q := modus_ponens h₁ hp`
+`have (_name you give_) : (_what you deduce_) := (_how you deduce it_)`"
 have hq : Q := h₁ hp
 exact h₂ hq
 

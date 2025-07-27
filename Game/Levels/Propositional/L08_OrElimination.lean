@@ -87,6 +87,9 @@ In both cases, `R` is true.
 So regardless of whether `P` or `Q` is true, we conclude:
 
 **`R` is true.**
+
+
+Let us now try it in Lean. Also, `modus_ponens` as a `Theorem` is now unlocked under `Theorems` and can be found under the `Propositional` section.
   "
   Hint "Use the `cases` tactic to break the disjunction `hpq` into two cases: one - the `Active Goal` where `P` is true, and `Goal 2` - where `Q` is true."
   cases hpq with

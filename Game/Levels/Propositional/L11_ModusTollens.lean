@@ -90,6 +90,8 @@ So simply use:
 `exact hp`
 
 to conclude the proof.
+
+If you find this whole proof to be weird, just go with `have` and `exact` everywhere, step by step.
 "
   exact hp
 Conclusion "

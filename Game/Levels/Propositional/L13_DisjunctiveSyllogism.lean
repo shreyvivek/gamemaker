@@ -98,7 +98,7 @@ Use the `cases` tactic on `{h}` to split the proof into two branches: one where 
   cases h with
   | inl hp =>
     Hint "
-You're now in the case where `P` is assumed true (`hp : P`), but you also have `not_p : ¬P` — that is, `P → False`.
+You're now in the case where `P` is assumed true (`h_1 : P`), but you also have `not_p : ¬P` — that is, `P → False`.
 
 These two contradict each other!
 
@@ -118,13 +118,13 @@ After using `apply False.elim`, your goal becomes `False`.
 You already have:
 
 - `not_p : ¬P`, which is `P → False`
-- `hp : P`, which came from the case assumption
+- `h_1 : P`, which came from the case assumption
 
-Use these together: `not_p hp` gives you `False`.
+Use these together: `not_p h_1` gives you `False`.
 
 So simply write:
 
-`exact not_p hp`
+`exact not_p h_1`
 "
     exact not_p hp
 

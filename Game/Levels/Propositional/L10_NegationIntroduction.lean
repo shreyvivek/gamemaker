@@ -38,7 +38,7 @@ Statement (P : Prop) (h : P → False) : ¬P := by
   Hint "Your goal is `¬P`, which is just `P → False`. Use `intro` to assume that `P` holds."
   intro assumed_p
   Hint "Now your goal is to prove `False`. You have `assumed_p : P`, and a function `h : P → False`."
-  Hint "`_____ _________ __ __`. By now, you should know what to fill in the blanks! Eventually, it will give you `False`."
+  Hint "`_____ modus_ponens __ __`. By now, you should know what to fill in the blanks! Eventually, it will give you `False`."
   Hint "This shows that assuming `P` leads to `False`, which proves `¬P`."
   exact h assumed_p
 

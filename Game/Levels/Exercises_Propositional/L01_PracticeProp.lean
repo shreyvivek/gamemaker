@@ -14,6 +14,7 @@ You’re given a conjunction and an implication.
 Your task: extract the right part and trigger the implication.
 "
 
+open Propositional
 
 Statement (P Q R : Prop)
   (h₁ : P ∧ Q)

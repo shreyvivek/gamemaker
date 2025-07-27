@@ -48,20 +48,20 @@ TacticDoc apply
 TheoremDoc Propositional.modus_ponens as "modus_ponens" in "Propositional"
 
 Statement modus_ponens {P Q : Prop} (h₁ : P → Q) (h₂ : P) : Q := by
-  Hint "Your goal is Q, and you have an implication h₁ : P → Q.
+  Hint "Your goal is `Q`, and you have an implication `h₁ : P → Q`.
 
-  By writing apply h₁, you are telling Lean:
-  “To prove Q, it suffices to prove P.”
+  By writing `apply h₁`, you are telling Lean:
+  “To prove `Q`, it suffices to prove `P`.”
 
-  That’s because P → Q works like a function:
-  If you give it P, it will return Q.
+  That’s because `P → Q` works like a function:
+  If you give it `P`, it will return `Q`.
 
-  So apply h₁ transforms your goal from Q to P,
-  and Lean now expects you to prove P.
+  So `apply h₁` transforms your goal from `Q` to `P`,
+  and Lean now expects you to prove `P`.
 
   Now go ahead — apply the implication!
 
-  _for writing subscript 1, type h, enter a backslash and then enter 1._"
+  _for writing subscript 1, type `h`, enter a backslash and then enter `1`._"
   apply h₁
   Hint "Now the goal has changed to `P`. You're being asked to prove the condition of the implication.
 
