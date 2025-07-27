@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jul 23 13:55:16 2025\n"
+"POT-Creation-Date: Sun Jul 27 22:27:32 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -1675,39 +1675,6 @@ msgstr ""
 
 #: Game.Levels.Predicate.L9
 msgid "Constructs a proof of `P ∧ Q` given proofs of `P` and `Q`."
-msgstr ""
-
-#: Game.Levels.Predicate.L9
-msgid "Start by breaking down the existential `h₁`.\n"
-"\n"
-"Use the `cases` tactic to extract a witness `w` and the fact `h : P w`:\n"
-"```lean\n"
-"cases h₁\n"
-"```"
-msgstr ""
-
-#: Game.Levels.Predicate.L9
-msgid "Now you have:\n"
-"\n"
-"```lean\n"
-"h : P w\n"
-"h₂ : ∀ w, P w → Q w\n"
-"```\n"
-"\n"
-"So you can derive `Q w` by applying h₂ to w and h:\n"
-"\n"
-"`have hq : Q w := h₂ w h`"
-msgstr ""
-
-#: Game.Levels.Predicate.L9
-msgid "Now construct the conjunction `P w ∧ Q w` using:\n"
-"```lean\n"
-"And.intro h hq\n"
-"```\n"
-"Then wrap it with the witness using this:\n"
-"```lean\n"
-"Exists.intro w (And.intro h hq)\n"
-"```"
 msgstr ""
 
 #: Game.Levels.Predicate.L9

@@ -93,7 +93,7 @@ TacticDoc exact
 DefinitionDoc UniCode_Table as "UniCode Table"
 
 Statement (P : Prop) (h : P) : P := by
-  Hint "Use the `exact` tactic with `{h}` to directly prove the goal `P`."
+  Hint "Use the `exact` tactic with `{h}` to directly prove the goal `P`. Type `exact h`."
   exact h
 
 NewTactic exact

@@ -1,5 +1,7 @@
 import GameServer.Commands
 import Game.Levels.Exercises_Propositional.L01_PracticeProp
+import Game.Levels.Propositional.L07_ModusPonens
+import Game.Levels.Propositional.L11_ModusTollens
 import Game.Levels.Exercises_Propositional.ProofHelpers
 
 namespace Exercises_Propositional
