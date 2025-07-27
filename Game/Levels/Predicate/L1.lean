@@ -27,7 +27,7 @@ Let’s see how to use one!
 Statement {α : Type} (P Q : α → Prop) (a : α) (h : ∀ x, P (x) → Q (x)) (hP : P (a)) : Q (a) := by
 Hint "You want to prove `Q a`, and you have a rule: `∀ x, P x → Q x`, which reads: For all `x`, `P x → Q x`.
 
-`apply` that rule at the specific value `a`, just like how we did in Propositional Logic."
+`apply` that rule at the specific value `a`, just like how we did in Propositional Logic. Do `apply h` or `apply h a"
 apply h (a)
 Hint "Now Lean wants you to prove `P a`, which you already have from `hP`."
 exact hP

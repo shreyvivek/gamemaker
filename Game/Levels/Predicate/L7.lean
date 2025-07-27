@@ -46,6 +46,7 @@ But it can be packed better with the angular brackets as you read in Level 3.
 
 ```lean
 ⟨x, hPx⟩
+```
 This is a value of type `∃ x, P x` — a witness `x` and proof `hPx`.
 
 So use:

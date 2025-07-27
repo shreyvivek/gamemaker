@@ -23,6 +23,7 @@ You’re given:
 Your goal is to prove `¬R`.
 
 You’ll need to use:
+- `intro` first.
 - The `cases` tactic to split the disjunction
 - `have` to name intermediate steps
 - Possibly use contradiction to eliminate impossible paths

@@ -58,7 +58,7 @@ You have:
 
 `P w` as `h`
 
-So you can deduce `Q w` with the `have` tactic."
+So you can deduce `Q w` as `hQw` with the `have` tactic."
 
 have hQw : Q w := modus_ponens hPwtQw h
 
