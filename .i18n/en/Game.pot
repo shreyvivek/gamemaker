@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jul 28 02:06:34 2025\n"
+"POT-Creation-Date: Mon Jul 28 03:05:19 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -2063,7 +2063,7 @@ msgid "Start with `intro x` and `intro h` to assume `x ∈ A ∪ B`."
 msgstr ""
 
 #: Game.Levels.Sets.L08
-msgid "`h` is a disjunction — `x ∈ A ∨ x ∈ B`. Use `cases h with` to split into two possibilities."
+msgid "`h` is a disjunction — `x ∈ A ∨ x ∈ B`. Use `cases h` to split into two possibilities."
 msgstr ""
 
 #: Game.Levels.Sets.L08
@@ -2105,7 +2105,7 @@ msgid "Assume an arbitrary element `x : ℕ`, and a hypothesis `h : x ∈ A ∪ 
 msgstr ""
 
 #: Game.Levels.Sets.L09
-msgid "`h` is a disjunction — `x ∈ A ∨ x ∈ B`. Use `cases h with` to split into the two cases."
+msgid "`h` is a disjunction — `x ∈ A ∨ x ∈ B`. Use `cases h` to split into the two cases."
 msgstr ""
 
 #: Game.Levels.Sets.L09
@@ -2117,7 +2117,11 @@ msgid "`x ∈ B` holds here. So use `left` to show `x ∈ B ∪ A` by focusing o
 msgstr ""
 
 #: Game.Levels.Sets.L09
-msgid "Now repeat the same reasoning, but with `B ∪ A` on the left side."
+msgid "Then repeat the same reasoning, but with `B ∪ A` on the left side."
+msgstr ""
+
+#: Game.Levels.Sets.L09
+msgid "You can take it from here."
 msgstr ""
 
 #: Game.Levels.Sets.L09
@@ -2157,7 +2161,7 @@ msgid "Assume an arbitrary `x` and the hypothesis `h : x ∈ A ∩ (B ∪ C)`."
 msgstr ""
 
 #: Game.Levels.Sets.L10
-msgid "Break the conjunction using `.left` and `.right`."
+msgid "Break the conjunction using `.left` and `.right` and `have`."
 msgstr ""
 
 #: Game.Levels.Sets.L10
@@ -2165,11 +2169,11 @@ msgid "`x ∈ B ∪ C` is a disjunction. Use `cases` to split it."
 msgstr ""
 
 #: Game.Levels.Sets.L10
-msgid "`x ∈ B` holds. Combine with `x ∈ A` using `constructor`, then use `left` to insert into `(A ∩ B) ∪ (A ∩ C)`."
+msgid "`x ∈ B` holds. Combine with `x ∈ A` using `left`, then use `constructor` to insert into `(A ∩ B) ∪ (A ∩ C)`."
 msgstr ""
 
 #: Game.Levels.Sets.L10
-msgid "`x ∈ C` holds. Combine with `x ∈ A`, then use `right` to finish."
+msgid "`x ∈ C` holds. Combine with `x ∈ A` using `right` and `constructor` to finish."
 msgstr ""
 
 #: Game.Levels.Sets.L10
@@ -2178,6 +2182,10 @@ msgstr ""
 
 #: Game.Levels.Sets.L10
 msgid "Construct `x ∈ A ∩ (B ∪ C)` by first proving `x ∈ A`, then `x ∈ B ∨ C` using `left`."
+msgstr ""
+
+#: Game.Levels.Sets.L10
+msgid "Continue to play around with `have`."
 msgstr ""
 
 #: Game.Levels.Sets.L10
