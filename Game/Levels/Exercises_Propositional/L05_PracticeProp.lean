@@ -2,7 +2,7 @@ import GameServer.Commands
 import Game.Levels.Exercises_Propositional.L04_PracticeProp
 import Game.Levels.Propositional.L07_ModusPonens
 import Game.Levels.Propositional.L11_ModusTollens
-import Game.Levels.Exercises_Propositional.ProofHelpers
+
 
 namespace Exercises_Propositional
 
@@ -28,7 +28,7 @@ You’ll need to use:
 - Possibly use contradiction to eliminate impossible paths
 
 "
-
+open Propositional
 Statement (P Q R : Prop)
   (h₁ : P ∨ Q)
   (h₂ : Q → ¬R)

@@ -2,7 +2,7 @@ import GameServer.Commands
 import Game.Levels.Exercises_Propositional.L02_PracticeProp
 import Game.Levels.Propositional.L07_ModusPonens
 import Game.Levels.Propositional.L11_ModusTollens
-import Game.Levels.Exercises_Propositional.ProofHelpers
+
 
 namespace Exercises_Propositional
 
@@ -16,7 +16,7 @@ Apply both **Modus Tollens** and **Modus Ponens** in a clean logical chain.
 
 Hint: Make use of the `have` tactic wherever necessary, or a nested `exact` chain!
 "
-
+open Propositional
 Statement (P Q R S T : Prop)
   (h₁ : ¬P ∧ Q)
   (h₂ : R → P)

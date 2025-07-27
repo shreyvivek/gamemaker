@@ -2,7 +2,7 @@ import GameServer.Commands
 import Game.Levels.Exercises_Propositional.L01_PracticeProp
 import Game.Levels.Propositional.L07_ModusPonens
 import Game.Levels.Propositional.L11_ModusTollens
-import Game.Levels.Exercises_Propositional.ProofHelpers
+
 
 namespace Exercises_Propositional
 
@@ -25,15 +25,13 @@ Try to:
 
 (Pun intended) _Lean_ on what you know. You’ve got this!
 "
-
+open Propositional
 Statement (A B C D : Prop) (h₁ : A → B) (h₂ : B → C) (h₃ : C → D) : A → D := by
   Hint "First you need to assume `A`."
   intro a
-  Hint "Your goal is now `D`. Reduce it to `C`."
+  Hint "Now proceed using tactics you already know!"
   apply h₃
-  Hint "Now your goal is `C`. Reduce it to `B`."
   apply h₂
-  Hint "Finish the level now!."
   exact h₁ a
 
 Conclusion "

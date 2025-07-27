@@ -11,7 +11,7 @@ Title "From And to Implication"
 Introduction "
 You’re given a conjunction and an implication.
 
-Your task: extract the right part and trigger the implication.
+Your task: extract the correct part from h₁ and trigger the implication.
 "
 
 open Propositional
