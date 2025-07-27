@@ -25,7 +25,7 @@ Statement (A B : Set ℕ) : A ∪ B ⊆ B ∪ A := by
   Hint "Start with `intro x` and `intro h` to assume `x ∈ A ∪ B`."
   intro x
   intro h
-  Hint "`h` is a disjunction — `x ∈ A ∨ x ∈ B`. Use `cases h with` to split into two possibilities."
+  Hint "`h` is a disjunction — `x ∈ A ∨ x ∈ B`. Use `cases h` to split into two possibilities."
   cases h with
   | inl ha =>
     Hint "`x ∈ A` is true in this branch. So, to prove `x ∈ B ∪ A`, use `right` — you want to show the second part of the union."

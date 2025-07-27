@@ -34,19 +34,19 @@ Statement (A B C : Set ℕ) : Equal (A ∩ (B ∪ C)) ((A ∩ B) ∪ (A ∩ C)) 
   Hint "Assume an arbitrary `x` and the hypothesis `h : x ∈ A ∩ (B ∪ C)`."
   intro x
   intro h
-  Hint "Break the conjunction using `.left` and `.right`."
+  Hint "Break the conjunction using `.left` and `.right` and `have`."
   have ha := h.left
   have hub := h.right
   Hint "`x ∈ B ∪ C` is a disjunction. Use `cases` to split it."
   cases hub with
   | inl hb =>
-    Hint "`x ∈ B` holds. Combine with `x ∈ A` using `constructor`, then use `left` to insert into `(A ∩ B) ∪ (A ∩ C)`."
+    Hint "`x ∈ B` holds. Combine with `x ∈ A` using `left`, then use `constructor` to insert into `(A ∩ B) ∪ (A ∩ C)`."
     left
     constructor
     exact ha
     exact hb
   | inr hc =>
-    Hint "`x ∈ C` holds. Combine with `x ∈ A`, then use `right` to finish."
+    Hint "`x ∈ C` holds. Combine with `x ∈ A` using `right` and `constructor` to finish."
     right
     constructor
     exact ha
@@ -66,6 +66,7 @@ Statement (A B C : Set ℕ) : Equal (A ∩ (B ∪ C)) ((A ∩ B) ∪ (A ∩ C)) 
     left
     exact hb
   | inr hac =>
+    Hint "Continue to play around with `have`."
     have ha := hac.left
     have hc := hac.right
     constructor

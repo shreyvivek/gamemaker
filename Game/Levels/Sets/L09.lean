@@ -28,7 +28,7 @@ Statement (A B : Set ℕ) : Equal (A ∪ B) (B ∪ A) := by
   Hint "Assume an arbitrary element `x : ℕ`, and a hypothesis `h : x ∈ A ∪ B`."
   intro x
   intro h
-  Hint "`h` is a disjunction — `x ∈ A ∨ x ∈ B`. Use `cases h with` to split into the two cases."
+  Hint "`h` is a disjunction — `x ∈ A ∨ x ∈ B`. Use `cases h` to split into the two cases."
   cases h with
   | inl ha =>
     Hint "`x ∈ A` holds here. Since your goal is `x ∈ B ∪ A`, use `right` to focus on the second part of the union."
@@ -40,11 +40,12 @@ Statement (A B : Set ℕ) : Equal (A ∪ B) (B ∪ A) := by
     exact hb
 
   -- Direction 2: B ∪ A ⊆ A ∪ B
-  Hint "Now repeat the same reasoning, but with `B ∪ A` on the left side."
+  Hint "Then repeat the same reasoning, but with `B ∪ A` on the left side."
   intro x
   intro h
   cases h with
   | inl hb =>
+    Hint "You can take it from here."
     right
     exact hb
   | inr ha =>
