@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Sun Jul 27 22:27:32 2025\n"
+"POT-Creation-Date: Mon Jul 28 02:06:34 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -101,7 +101,9 @@ msgid "### Logic Constants & Operators\n"
 msgstr ""
 
 #: Game.Levels.Propositional.L01_AssumeAndFinish
-msgid "Use the `exact` tactic with `«{h}»` to directly prove the goal `P`."
+msgid "Use the `exact` tactic with `«{h}»` to directly prove the goal `P`. Type `exact h`.\n"
+"\n"
+"Note: You need to click `Retry` whenever you encounter an error at any step. Be sure to click that particular `Retry` where the error pops up."
 msgstr ""
 
 #: Game.Levels.Propositional.L01_AssumeAndFinish
@@ -388,20 +390,20 @@ msgid "Modus Ponens: from `P → Q` and `P`, conclude `Q`."
 msgstr ""
 
 #: Game.Levels.Propositional.L07_ModusPonens
-msgid "Your goal is Q, and you have an implication h₁ : P → Q.\n"
+msgid "Your goal is `Q`, and you have an implication `h₁ : P → Q`.\n"
 "\n"
-"By writing apply h₁, you are telling Lean:\n"
-"“To prove Q, it suffices to prove P.”\n"
+"By writing `apply h₁`, you are telling Lean:\n"
+"“To prove `Q`, it suffices to prove `P`.”\n"
 "\n"
-"That’s because P → Q works like a function:\n"
-"If you give it P, it will return Q.\n"
+"That’s because `P → Q` works like a function:\n"
+"If you give it `P`, it will return `Q`.\n"
 "\n"
-"So apply h₁ transforms your goal from Q to P,\n"
-"and Lean now expects you to prove P.\n"
+"So `apply h₁` transforms your goal from `Q` to `P`,\n"
+"and Lean now expects you to prove `P`.\n"
 "\n"
 "Now go ahead — apply the implication!\n"
 "\n"
-"_for writing subscript 1, type h, enter a backslash and then enter 1._"
+"_for writing subscript 1, type `h`, enter a backslash and then enter `1`._"
 msgstr ""
 
 #: Game.Levels.Propositional.L07_ModusPonens
@@ -496,7 +498,10 @@ msgid "---\n"
 "\n"
 "So regardless of whether `P` or `Q` is true, we conclude:\n"
 "\n"
-"**`R` is true.**"
+"**`R` is true.**\n"
+"\n"
+"\n"
+"Let us now try it in Lean. Also, `modus_ponens` as a `Theorem` is now unlocked under `Theorems` and can be found under the `Propositional` section."
 msgstr ""
 
 #: Game.Levels.Propositional.L08_OrElimination
@@ -601,6 +606,11 @@ msgid "One way to go ahead is to use the exact statement by writing something li
 msgstr ""
 
 #: Game.Levels.Propositional.L09_ImplicationChain
+msgid "The syntax is something like `have hq : Q := modus_ponens h₁ hp`\n"
+"`have (_name you give_) : (_what you deduce_) := (_how you deduce it_)`"
+msgstr ""
+
+#: Game.Levels.Propositional.L09_ImplicationChain
 msgid "Perfect! You used the have tactic to extract Q from P → Q, and then concluded R cleanly.\n"
 "\n"
 "This kind of structured chaining is essential in longer proofs — well done!"
@@ -647,7 +657,7 @@ msgid "Now your goal is to prove `False`. You have `assumed_p : P`, and a functi
 msgstr ""
 
 #: Game.Levels.Propositional.L10_NegationIntroduction
-msgid "`_____ _________ __ __`. By now, you should know what to fill in the blanks! Eventually, it will give you `False`."
+msgid "`_____ modus_ponens __ __`. By now, you should know what to fill in the blanks! Eventually, it will give you `False`."
 msgstr ""
 
 #: Game.Levels.Propositional.L10_NegationIntroduction
@@ -749,7 +759,9 @@ msgid "Now your goal is `P`.\n"
 "So simply use:\n"
 "`exact hp`\n"
 "\n"
-"to conclude the proof."
+"to conclude the proof.\n"
+"\n"
+"If you find this whole proof to be weird, just go with `have` and `exact` everywhere, step by step."
 msgstr ""
 
 #: Game.Levels.Propositional.L11_ModusTollens
@@ -786,7 +798,7 @@ msgid "To prove `¬Q → ¬P`, first recognize that it's shorthand for `(Q → F
 msgstr ""
 
 #: Game.Levels.Propositional.L12_Contrapositive
-msgid "That means this is a **nested implication**, so we’ll need to assume both `¬Q` and `P` before we can prove `False`."
+msgid "That means this is a **nested implication**, so we’ll need to assume both `¬Q` and `P` before we can prove `False`. Do `intro not_q`"
 msgstr ""
 
 #: Game.Levels.Propositional.L12_Contrapositive
@@ -802,11 +814,11 @@ msgid "You have `h : P → Q`, and you also assumed `P` as `assumed_p`. So, from
 msgstr ""
 
 #: Game.Levels.Propositional.L12_Contrapositive
-msgid "But your goal is `False`, and you have `not_q : Q → False`. This gives you a strategy: apply `not_q` to change the goal to a proof of `Q`."
+msgid "But your goal is `False`, and you have `not_q : Q → False`. This gives you a strategy: `apply not_q` will change the goal to a proof of `Q`."
 msgstr ""
 
 #: Game.Levels.Propositional.L12_Contrapositive
-msgid "You now need to prove `Q`, and you have `h : P → Q` and `assumed_p : P`. This is a perfect setup for `apply` again."
+msgid "You now need to prove `Q`, and you have `h : P → Q` and `assumed_p : P`. This is a perfect setup for `apply` again, but this time, with `h`."
 msgstr ""
 
 #: Game.Levels.Propositional.L12_Contrapositive
@@ -821,7 +833,7 @@ msgid "Awesome! You've just proven the **contrapositive** form of an implication
 "- You used `apply` to break apart implications\n"
 "- And you combined all the pieces to reach a contradiction\n"
 "\n"
-"This is real formal logic — and you're solving it in Lean. 🔥"
+"This is real formal logic — and you're solving it in Lean."
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
@@ -914,7 +926,7 @@ msgid "You're given a disjunction `P ∨ Q`. To proceed, you must consider both 
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
-msgid "You're now in the case where `P` is assumed true (`hp : P`), but you also have `not_p : ¬P` — that is, `P → False`.\n"
+msgid "You're now in the case where `P` is assumed true (`h_1 : P`), but you also have `not_p : ¬P` — that is, `P → False`.\n"
 "\n"
 "These two contradict each other!\n"
 "\n"
@@ -934,13 +946,13 @@ msgid "After using `apply False.elim`, your goal becomes `False`.\n"
 "You already have:\n"
 "\n"
 "- `not_p : ¬P`, which is `P → False`\n"
-"- `hp : P`, which came from the case assumption\n"
+"- `h_1 : P`, which came from the case assumption\n"
 "\n"
-"Use these together: `not_p hp` gives you `False`.\n"
+"Use these together: `not_p h_1` gives you `False`.\n"
 "\n"
 "So simply write:\n"
 "\n"
-"`exact not_p hp`"
+"`exact not_p h_1`"
 msgstr ""
 
 #: Game.Levels.Propositional.L13_DisjunctiveSyllogism
@@ -978,7 +990,19 @@ msgid "Begin with `constructor`. Then you will separately prove `¬P` and `¬Q`.
 msgstr ""
 
 #: Game.Levels.Propositional.L14_DeMorgan
-msgid "Start with intro, then you can proceed by yourself."
+msgid "Start with intro h."
+msgstr ""
+
+#: Game.Levels.Propositional.L14_DeMorgan
+msgid "Try `apply h`."
+msgstr ""
+
+#: Game.Levels.Propositional.L14_DeMorgan
+msgid "Think of `left`."
+msgstr ""
+
+#: Game.Levels.Propositional.L14_DeMorgan
+msgid "Proof is just like the first half."
 msgstr ""
 
 #: Game.Levels.Propositional.L14_DeMorgan
@@ -1007,7 +1031,7 @@ msgid "Time to prove the **converse** of the previous level!\n"
 msgstr ""
 
 #: Game.Levels.Propositional.L15_ReverseDeMorgan
-msgid "Use `intro` first and then `cases`. It should be doable."
+msgid "Use `intro hpq` first and then `cases hpq`. It should be doable."
 msgstr ""
 
 #: Game.Levels.Propositional.L15_ReverseDeMorgan
@@ -1048,11 +1072,15 @@ msgid "Use `constructor` first — you're proving a ↔, so you need to prove tw
 msgstr ""
 
 #: Game.Levels.Propositional.L16_Distributivity
+msgid "Try `intro h`, to focus on the LHS of the implication."
+msgstr ""
+
+#: Game.Levels.Propositional.L16_Distributivity
 msgid "You now have `h : P ∧ (Q ∨ R)`. Use `have hp := h.left` to extract the first part."
 msgstr ""
 
 #: Game.Levels.Propositional.L16_Distributivity
-msgid "Then do `cases h.right with` to split the `(Q ∨ R)` into two cases."
+msgid "Then do `cases h.right` to split the `(Q ∨ R)` into two cases."
 msgstr ""
 
 #: Game.Levels.Propositional.L16_Distributivity
@@ -1064,11 +1092,15 @@ msgid "This case is similar — now `P` and `R` are both true. Use `right` and `
 msgstr ""
 
 #: Game.Levels.Propositional.L16_Distributivity
-msgid "To handle the ∨ on the left, use `cases h with` to handle each case separately."
+msgid "You just finished proving the forward direction. Now `intro h` will begin the proof in the reverse direction."
 msgstr ""
 
 #: Game.Levels.Propositional.L16_Distributivity
-msgid "You now have `hpq : P ∧ Q`. Break it using `.left` and `.right`."
+msgid "To handle the ∨ on the left, use `cases h` to handle each case separately."
+msgstr ""
+
+#: Game.Levels.Propositional.L16_Distributivity
+msgid "You now have `hpq : P ∧ Q`. Type `constructor` and then break it using `.left` and `.right`. Use `left` for the `Q ∨ R`."
 msgstr ""
 
 #: Game.Levels.Propositional.L16_Distributivity
@@ -1113,19 +1145,11 @@ msgstr ""
 #: Game.Levels.Exercises_Propositional.L01_PracticeProp
 msgid "You’re given a conjunction and an implication.\n"
 "\n"
-"Your task: extract the right part and trigger the implication."
+"Your task: extract the correct part from h₁ and trigger the implication."
 msgstr ""
 
 #: Game.Levels.Exercises_Propositional.L01_PracticeProp
 msgid "You extracted `P` from the conjunction and applied the implication to reach `R`. Nicely done!"
-msgstr ""
-
-#: Game.Levels.Exercises_Propositional.ProofHelpers
-msgid "Modus Tollens: from `Q → P` and `¬P`, conclude `¬Q`."
-msgstr ""
-
-#: Game.Levels.Exercises_Propositional.ProofHelpers
-msgid "Modus Ponens: from `P → Q` and `P`, conclude `Q`."
 msgstr ""
 
 #: Game.Levels.Exercises_Propositional.L02_PracticeProp
@@ -1153,15 +1177,7 @@ msgid "First you need to assume `A`."
 msgstr ""
 
 #: Game.Levels.Exercises_Propositional.L02_PracticeProp
-msgid "Your goal is now `D`. Reduce it to `C`."
-msgstr ""
-
-#: Game.Levels.Exercises_Propositional.L02_PracticeProp
-msgid "Now your goal is `C`. Reduce it to `B`."
-msgstr ""
-
-#: Game.Levels.Exercises_Propositional.L02_PracticeProp
-msgid "Finish the level now!."
+msgid "Now proceed using tactics you already know!"
 msgstr ""
 
 #: Game.Levels.Exercises_Propositional.L02_PracticeProp
@@ -1214,6 +1230,7 @@ msgid "Time to bring in disjunctions (`P ∨ Q`)!\n"
 "Your goal is to prove `¬R`.\n"
 "\n"
 "You’ll need to use:\n"
+"- `intro` first.\n"
 "- The `cases` tactic to split the disjunction\n"
 "- `have` to name intermediate steps\n"
 "- Possibly use contradiction to eliminate impossible paths"
@@ -1264,7 +1281,7 @@ msgstr ""
 #: Game.Levels.Predicate.L1
 msgid "You want to prove `Q a`, and you have a rule: `∀ x, P x → Q x`, which reads: For all `x`, `P x → Q x`.\n"
 "\n"
-"`apply` that rule at the specific value `a`, just like how we did in Propositional Logic."
+"`apply` that rule at the specific value `a`, just like how we did in Propositional Logic. Do `apply h` or `apply h a"
 msgstr ""
 
 #: Game.Levels.Predicate.L1
@@ -1576,6 +1593,7 @@ msgid "Now think: If you know that `P x` is true, then you can say:\n"
 "\n"
 "```lean\n"
 "⟨x, hPx⟩\n"
+"```\n"
 "This is a value of type `∃ x, P x` — a witness `x` and proof `hPx`.\n"
 "\n"
 "So use:\n"
@@ -1678,11 +1696,51 @@ msgid "Constructs a proof of `P ∧ Q` given proofs of `P` and `Q`."
 msgstr ""
 
 #: Game.Levels.Predicate.L9
+msgid "We want to extract a specific witness from the existential statement `h₁`.\n"
+"\n"
+"Use `cases h₁` to pull out:\n"
+"\n"
+"a value `w : α`\n"
+"\n"
+"and a proof `h : P w`"
+msgstr ""
+
+#: Game.Levels.Predicate.L9
+msgid "From `h₂ : ∀ w, P w → Q w`, you can specialize it to the specific `w` using:\n"
+"\n"
+"`have hPwtQw : P w → Q w := h₂ w`\n"
+"This gives you a conditional statement just for this particular `w`."
+msgstr ""
+
+#: Game.Levels.Predicate.L9
+msgid "Now apply Modus Ponens.\n"
+"\n"
+"You have:\n"
+"\n"
+"`P w → Q w` as `hPwtQw`\n"
+"\n"
+"`P w` as `h`\n"
+"\n"
+"So you can deduce `Q w` as `hQw` with the `have` tactic."
+msgstr ""
+
+#: Game.Levels.Predicate.L9
+msgid "Now you have both `P w` and `Q w`.\n"
+"\n"
+"You can combine them using `And.intro h hQw` to get `P w ∧ Q w`.\n"
+"\n"
+"Then use `Exists.intro w (...)` to finish the proof:\n"
+"```lean\n"
+"exact Exists.intro w (And.intro h hQw)\n"
+"```"
+msgstr ""
+
+#: Game.Levels.Predicate.L9
 msgid "Awesome! 🎉\n"
 "\n"
 "You used:\n"
 "\n"
-"cases to extract a witness from an existential\n"
+"`cases` to extract a witness from an existential\n"
 "\n"
 "A universal implication to derive new information\n"
 "\n"
@@ -1925,7 +1983,9 @@ msgid "Time for your first **set equality** proof!\n"
 msgstr ""
 
 #: Game.Levels.Sets.L06
-msgid "To prove set equality, use `constructor` to break the goal into two subset goals: `⊆` in both directions."
+msgid "To prove set equality, use `constructor` to break the goal into two subset goals: `⊆` in both directions.\n"
+"\n"
+"Note: `Equal (A ∩ B) (B ∩ A)` is the same as `A ∩ B = B ∩ A`"
 msgstr ""
 
 #: Game.Levels.Sets.L06
