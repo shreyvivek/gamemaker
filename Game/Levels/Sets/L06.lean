@@ -25,7 +25,9 @@ You already proved both directions separately before — now combine them togeth
 "
 
 Statement (A B : Set ℕ) : Equal (A ∩ B) (B ∩ A) := by
-  Hint "To prove set equality, use `constructor` to break the goal into two subset goals: `⊆` in both directions."
+  Hint "To prove set equality, use `constructor` to break the goal into two subset goals: `⊆` in both directions.
+
+  Note: `Equal (A ∩ B) (B ∩ A)` is the same as `A ∩ B = B ∩ A`"
   constructor
 
   -- Direction 1: A ∩ B ⊆ B ∩ A

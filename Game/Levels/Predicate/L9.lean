@@ -34,17 +34,52 @@ Statement {α : Type} (P Q : α → Prop)
 (h₂ : ∀ w, P w → Q w) :
 ∃ w, P w ∧ Q w := by
 
+Hint "We want to extract a specific witness from the existential statement `h₁`.
+
+Use `cases h₁` to pull out:
+
+a value `w : α`
+
+and a proof `h : P w`"
 cases h₁
+
+Hint "From `h₂ : ∀ w, P w → Q w`, you can specialize it to the specific `w` using:
+
+`have hPwtQw : P w → Q w := h₂ w`
+This gives you a conditional statement just for this particular `w`."
+
 have hPwtQw : P w → Q w := h₂ w
+
+Hint "Now apply Modus Ponens.
+
+You have:
+
+`P w → Q w` as `hPwtQw`
+
+`P w` as `h`
+
+So you can deduce `Q w` with the `have` tactic."
+
 have hQw : Q w := modus_ponens hPwtQw h
+
+Hint "Now you have both `P w` and `Q w`.
+
+You can combine them using `And.intro h hQw` to get `P w ∧ Q w`.
+
+Then use `Exists.intro w (...)` to finish the proof:
+```lean
 exact Exists.intro w (And.intro h hQw)
+```"
+
+exact Exists.intro w (And.intro h hQw)
+
 NewTheorem And.intro
 Conclusion "
 Awesome! 🎉
 
 You used:
 
-cases to extract a witness from an existential
+`cases` to extract a witness from an existential
 
 A universal implication to derive new information
 
