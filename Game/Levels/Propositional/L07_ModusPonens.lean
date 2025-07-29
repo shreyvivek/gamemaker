@@ -31,12 +31,35 @@ Let’s break it down step by step.
 
 Purpose: Use `apply` to reduce your current goal to an earlier implication.
 
+### In Propositional Logic:
+
 If your goal is `Q`, and you have `implication : P → Q`,
 then `apply implication` changes the goal to `P`.
 
 📌 Think of it as:
 
 “To prove `Q`, it’s enough to prove `P` — because I already have `P → Q`.”
+
+---
+
+### In Predicate Logic:
+
+You’re given:
+- `P Q : ℕ → Prop`
+- `h : ∀ x, P x → Q x`
+- `x : ℕ`
+- `hp : P x`
+
+And your goal is:
+⊢ `Q x`
+Doing this:
+`apply h x` followed by
+`exact hp` will apply `h` to the specific value `x`, which gives you:
+
+`P x → Q x`
+Then you use `exact hp` to supply the needed `P x`.
+
+Together, this proves `Q x`
 
 ---
 

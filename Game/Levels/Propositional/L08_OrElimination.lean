@@ -36,6 +36,37 @@ After `cases h`:
 
 ---
 
+### In Predicate Logic:
+
+You’re given:
+- `P : ℕ → Prop`
+- `h : ∃ x, P x`
+
+And your goal is to use that `∃ x, P x` to reason further.
+
+`cases h` will break apart the existential statement.
+After this, you’ll have:
+
+- `x : ℕ` — a specific witness
+- `hx : P x` — proof that `P x` holds for this `x`.
+
+You can now work with `x` and `hx` to prove your goal.
+
+You can also use cases on a conjunction:
+
+You’re given:
+
+`h : P x ∧ Q x`
+
+`cases h` will split the conjunction into two separate facts:
+
+- `hP : P x`
+- `hQ : Q x`
+
+Now you can use either or both in your proof.
+
+---
+
 ### In Sets:
 
 Suppose:

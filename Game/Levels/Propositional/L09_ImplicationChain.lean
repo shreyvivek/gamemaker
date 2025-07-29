@@ -55,6 +55,25 @@ Similar to what
 
 ---
 
+### In Predicate Logic:
+
+You’re given:
+- `P Q : ℕ → Prop`
+- `h : ∀ x, P x → Q x`
+- `a : ℕ`
+- `hp : P a`
+
+And your goal is to prove something that requires `Q a`.
+
+`have hq : Q a := h a hp` means:
+
+You’re using `h` and `hp` to produce `Q a`,
+and you're naming it `hq` to use later.
+
+This is useful when you want to store intermediate steps explicitly before finishing the proof.
+
+---
+
 ### In Sets:
 
 If you have:

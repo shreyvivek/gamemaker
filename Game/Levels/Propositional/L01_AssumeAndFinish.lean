@@ -47,6 +47,19 @@ Your goal : `P`
 `exact h` will complete the proof!
 
 ---
+### In Predicate Logic:
+
+You’re given:
+- `P : ℕ → Prop`
+- `x : ℕ`
+- `h : P x`
+
+And your goal is to prove exactly that: `P x`.
+
+You already have the fact `P x` as `h`, and your goal is exactly `P x`.
+So you can finish the proof directly with `exact h`.
+
+---
 
 ### In Sets:
 

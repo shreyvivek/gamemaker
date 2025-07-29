@@ -34,6 +34,21 @@ After `intro h`,
 you get an assumption `h : P` and your goal will just be `P`.
 
 ---
+### In Predicate Logic:
+
+You’re given:
+- `P : ℕ → Prop`
+
+Goal:
+
+⊢ `∀ x, P x`
+
+To prove a universal statement like `∀ x, P x`, you assume a generic `x`,
+and prove `P x`. `intro x` introduces `x : ℕ` and changes your goal to ⊢ `P x`.
+
+You now proceed to prove `P x` under that assumption.
+
+---
 
 ### In Sets:
 
