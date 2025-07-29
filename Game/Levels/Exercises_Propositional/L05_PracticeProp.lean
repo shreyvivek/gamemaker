@@ -2,6 +2,7 @@ import GameServer.Commands
 import Game.Levels.Exercises_Propositional.L04_PracticeProp
 import Game.Levels.Propositional.L07_ModusPonens
 import Game.Levels.Propositional.L11_ModusTollens
+import Game.Levels.Propositional.L13_DisjunctiveSyllogism
 
 
 namespace Exercises_Propositional
