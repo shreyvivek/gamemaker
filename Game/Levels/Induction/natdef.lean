@@ -53,6 +53,14 @@ theorem add_right_zero (n : ℕ) : n + zero = n := by
     rw [add_succ, ih]
 
 open MyNat
-attribute [eliminator] MyNat.recOn
+@[eliminator]
+def MyNat.elim {motive : ℕ → Sort _}
+  (zero_case : motive 0)
+  (succ_case : ∀ (n : ℕ), motive n → motive (succ n)) :
+  ∀ (n : ℕ), motive n :=
+  fun n =>
+    match n with
+    | zero => zero_case
+    | succ n => succ_case n (MyNat.elim zero_case succ_case n)
 
 end MyNat
