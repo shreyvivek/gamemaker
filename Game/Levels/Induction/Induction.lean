@@ -15,4 +15,6 @@ The basic structure of an induction proof involves:
 2. **Inductive Step**: Assume it holds for an arbitrary `n`, and then prove it for `n + 1`.
 
 You'll begin with some classic induction formulas to get comfortable with the structure and reasoning process.
+
+
 "
