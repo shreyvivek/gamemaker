@@ -82,7 +82,7 @@ TacticDoc rw
 
 open MyNat
 
-Statement : ∀ n : ℕ, n + MyNat.zero = n := by
+Statement : ∀ n : ℕ, n + 0 = n := by
 Hint "We want to prove this for all n. Use `intro n` first, then perform `induction n`."
 intro n
 induction n with
