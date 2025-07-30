@@ -13,7 +13,7 @@ import Game.Levels.Propositional.L12_Contrapositive
 import Game.Levels.Propositional.L13_DisjunctiveSyllogism
 import Game.Levels.Propositional.L14_DeMorgan
 import Game.Levels.Propositional.L15_ReverseDeMorgan
-import Game.Levels.Propositional.L16_Distributivity
+
 World "Propositional"
 
 Title "Propositional Logic"
