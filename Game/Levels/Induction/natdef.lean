@@ -13,6 +13,19 @@ instance : OfNat ℕ 1 where
   ofNat := succ zero
 
 
+open Lean
+
+instance : Repr ℕ where
+  reprPrec
+    | zero, _   => "0"
+    | succ n, _ =>
+      let rec go (n : ℕ) (acc : Nat) :=
+        match n with
+        | zero   => s!"{acc}"
+        | succ m => go m (acc + 1)
+      go n 1
+
+
 -- Define addition manually
 def add : ℕ → ℕ → ℕ
   | zero, n => n
