@@ -80,6 +80,7 @@ rw [add_succ, ih]
 -/
 TacticDoc rw
 
+open MyNat
 
 Statement : ∀ n : ℕ, n + MyNat.zero = n := by
 Hint "We want to prove this for all n. Use `intro n` first, then perform `induction n`."

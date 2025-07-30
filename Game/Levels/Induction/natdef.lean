@@ -7,6 +7,7 @@ namespace MyNat
 -- Alias ℕ to MyNat
 notation "ℕ" => MyNat
 
+
 -- Define addition manually
 def add : ℕ → ℕ → ℕ
   | zero, n => n
