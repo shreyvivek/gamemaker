@@ -52,4 +52,7 @@ theorem add_right_zero (n : ℕ) : n + zero = n := by
     -- So: succ (k + zero) = succ k
     rw [add_succ, ih]
 
+open MyNat
+attribute [eliminator] MyNat.recOn
+
 end MyNat
