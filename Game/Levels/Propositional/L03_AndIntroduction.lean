@@ -44,7 +44,7 @@ TacticDoc constructor
 
 
 Statement (P Q : Prop) (hp : P) (hq : Q) : P ∧ Q := by
-  Hint "Use the `constructor` tactic to split the goal `P ∧ Q` into two parts."
+  Hint "Type `constructor` and click `Execute`. `constructor` tactic will split the goal `P ∧ Q` into two parts."
   constructor
   Hint "Firstly, prove `P` using `{hp}` in the `Active Goal` to proceed to `Goal 2`
 

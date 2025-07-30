@@ -6,6 +6,11 @@ namespace MyNat
 
 -- Alias ℕ to MyNat
 notation "ℕ" => MyNat
+instance : OfNat ℕ 0 where
+  ofNat := zero
+
+instance : OfNat ℕ 1 where
+  ofNat := succ zero
 
 
 -- Define addition manually
