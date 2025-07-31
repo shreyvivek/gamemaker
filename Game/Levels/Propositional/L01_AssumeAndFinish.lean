@@ -106,7 +106,7 @@ TacticDoc exact
 DefinitionDoc UniCode_Table as "UniCode Table"
 
 Statement (P : Prop) (h : P) : P := by
-  Hint "Use the `exact` tactic with `{h}` to directly prove the goal `P`. Type `exact h` and click `Execute`.
+  Hint "Use the `exact` tactic with `{h}` to directly prove the goal `P`. Type `exact h` and click `Execute`. Read more about the `exact` tactic and other upcoming tactics on the panel in the right.
 
   Note: You need to click `Retry` whenever you encounter an error at any step. Be sure to click that particular `Retry` where the error pops up."
   exact h
